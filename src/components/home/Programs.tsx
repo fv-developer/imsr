@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SplitText from "@/components/SplitText";
+import SplitText from "@/components/ui/SplitText";
 import { 
   GraduationCap, 
   Briefcase, 
@@ -13,7 +13,7 @@ import {
   Megaphone, 
   Lightbulb 
 } from "lucide-react";
-import MoltenMetal from "./MoltenMetal";
+import MoltenMetal from "@/components/ui/MoltenMetal";
 
 function getProgramIcon(title: string) {
   const lower = title.toLowerCase();
@@ -46,6 +46,7 @@ interface ProgramItem {
   format: string;
   eligibility: string;
   duration: string;
+  slug?: string;
 }
 
 const ROW_1_PROGRAMS: ProgramItem[] = [
@@ -65,7 +66,8 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
     bg: "bg-[#f0fdf4]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bba-business-administration"
   },
   {
     title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)",
@@ -199,7 +201,7 @@ export default function Programs() {
                 return (
                   <a
                     key={`r1-${idx}`}
-                    href="#admissions-booking"
+                    href={program.slug || "#admissions-booking"}
                     className="program-card flex-shrink-0 w-[50vw] sm:w-[33.33vw] md:w-[25vw] lg:w-[20vw] h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden relative group cursor-pointer transition-all duration-300 shadow-lg select-none block hover:z-30 hover:relative"
                   >
                     {/* Background Image with Zoom */}

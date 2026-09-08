@@ -95,19 +95,19 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3 text-[14px] text-zinc-350 mb-6">
             <li>
-              <Link href="#home" className="hover:text-[#00bcda] transition-colors">Home</Link>
+              <Link href="/" className="hover:text-[#00bcda] transition-colors">Home</Link>
             </li>
             <li>
-              <Link href="#about" className="hover:text-[#00bcda] transition-colors">About Us</Link>
+              <Link href="/about" className="hover:text-[#00bcda] transition-colors">About Us</Link>
             </li>
             <li>
-              <Link href="#blog" className="hover:text-[#00bcda] transition-colors">Blogs</Link>
+              <Link href="/#blog" className="hover:text-[#00bcda] transition-colors">Blogs</Link>
             </li>
             <li>
-              <Link href="#campus" className="hover:text-[#00bcda] transition-colors">Student Life</Link>
+              <Link href="/#campus" className="hover:text-[#00bcda] transition-colors">Student Life</Link>
             </li>
             <li>
-              <Link href="#admissions" className="hover:text-[#00bcda] transition-colors">Admission Procedure</Link>
+              <Link href="/#admissions" className="hover:text-[#00bcda] transition-colors">Admission Procedure</Link>
             </li>
           </ul>
 

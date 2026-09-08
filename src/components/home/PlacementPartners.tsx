@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import SplitText from "@/components/SplitText";
+import SplitText from "@/components/ui/SplitText";
 
 interface Partner {
   name: string;

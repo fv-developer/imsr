@@ -35,7 +35,7 @@ export default function FAQs() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white text-zinc-900 border-t border-zinc-100 relative z-20">
+    <section id="faqs" className="py-16 md:py-24 bg-white text-zinc-900 border-t border-zinc-100 relative z-20">
       <div className="mx-auto max-w-7xl px-[15px]">
         <div className="grid gap-12 md:grid-cols-5 md:gap-16">
           <div className="md:col-span-2 text-left">

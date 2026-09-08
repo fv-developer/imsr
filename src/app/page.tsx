@@ -5,24 +5,26 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Footer from "@/components/Footer";
-import SplitText from "@/components/SplitText";
-import AdmissionsTicker from "@/components/AdmissionsTicker";
-import Programs from "@/components/Programs";
-import MaskedHeading from "@/components/MaskedHeading";
-import ExperientialLearning from "@/components/ExperientialLearning";
-import StatsOverview from "@/components/StatsOverview";
-import PlacementPartners from "@/components/PlacementPartners";
-import StudentSuccessStories from "@/components/StudentSuccessStories";
-import StudentTestimonials from "@/components/StudentTestimonials";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import SplitText from "@/components/ui/SplitText";
+import AdmissionsTicker from "@/components/layout/AdmissionsTicker";
+import AboutSection from "@/components/home/AboutSection";
+import Programs from "@/components/home/Programs";
+import MaskedHeading from "@/components/ui/MaskedHeading";
+import ExperientialLearning from "@/components/home/ExperientialLearning";
+import StatsOverview from "@/components/home/StatsOverview";
+import PlacementPartners from "@/components/home/PlacementPartners";
+import StudentSuccessStories from "@/components/home/StudentSuccessStories";
+import StudentTestimonials from "@/components/home/StudentTestimonials";
 import FAQs from "@/components/ui/text-reveal-faqs";
-import CampusActivity from "@/components/CampusActivity";
-import BackToTop from "@/components/BackToTop";
-import BookingSection from "@/components/BookingSection";
+import CampusActivity from "@/components/home/CampusActivity";
+import BackToTop from "@/components/layout/BackToTop";
+import BookingSection from "@/components/home/BookingSection";
 import ImageTrail from "@/components/react-bits/ImageTrail";
 import AccordionGallery from "@/components/react-bits/AccordionGallery";
-import StoryScrollSection from "@/components/StoryScrollSection";
-import ExploreCampusHorizontal from "@/components/ExploreCampusHorizontal";
+import StoryScrollSection from "@/components/home/StoryScrollSection";
+import ExploreCampusHorizontal from "@/components/home/ExploreCampusHorizontal";
 
 // Register GSAP ScrollTrigger
 if (typeof window !== "undefined") {
@@ -38,7 +40,7 @@ const TOP_NAV_LINKS = [
 
 const MAIN_NAV_LINKS = [
   { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
+  { name: "About Us", href: "/about" },
   { name: "Programs", href: "#programs", hasMega: true },
   { name: "Student Life", href: "#student-life" },
   { name: "Faculty", href: "#faculty" },
@@ -452,273 +454,7 @@ export default function Home2() {
     <div className="relative min-h-screen bg-white overflow-x-hidden text-zinc-900 font-sans">
       
       {/* 1. DUAL-LEVEL NAVBAR */}
-      <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white backdrop-blur-md shadow-md border-b border-zinc-200 py-3"
-            : "bg-gradient-to-b from-black/80 to-transparent py-5"
-        }`}
-        onMouseLeave={() => setIsMegaMenuOpen(false)}
-      >
-        {/* Top level bar (Hidden on scroll) */}
-        {!isScrolled && (
-          <div className="hidden lg:block border-b border-white/10 pb-2.5 mb-2.5">
-            <div className="max-w-7xl mx-auto px-[15px] flex items-center justify-end text-[13.5px] font-kanit font-light tracking-wider text-zinc-300">
-              <div className="flex items-center gap-6">
-                {TOP_NAV_LINKS.map((link, idx) => (
-                  <Link key={idx} href={link.href} className="hover:text-white transition-colors">
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Main Nav level bar */}
-        <div className="max-w-7xl mx-auto px-[15px] flex items-center justify-between relative">
-          <Link href="/home2" className="flex items-center gap-3">
-            <div className="relative h-12 w-48 md:w-56">
-              <Image
-                src="/images/logo.png"
-                alt="IMSR Logo"
-                fill
-                className={`object-contain object-left transition-all duration-300 ${
-                  isScrolled ? "" : "brightness-0 invert"
-                }`}
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Right-aligned Navigation & Actions container */}
-          <div className="flex items-center gap-6 lg:gap-8 md:gap-10">
-            {/* Links (Desktop) */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-              {MAIN_NAV_LINKS.map((link, idx) => (
-                <div
-                  key={idx}
-                  onMouseEnter={() => {
-                    if (link.hasMega) {
-                      setIsMegaMenuOpen(true);
-                    } else {
-                      setIsMegaMenuOpen(false);
-                    }
-                  }}
-                  className="py-2"
-                >
-                  <Link
-                    href={link.href}
-                    className={`menu-underline-effect hover:text-brand-secondary transition-colors duration-200 uppercase flex items-center gap-1.5 ${
-                      isScrolled ? "text-zinc-950" : "text-zinc-100"
-                    }`}
-                  >
-                    <span>{link.name}</span>
-                    {link.hasMega && (
-                      <svg
-                        className={`w-3 h-3 transition-transform duration-250 ${
-                          isMegaMenuOpen
-                            ? "rotate-180 text-brand-secondary"
-                            : isScrolled
-                            ? "text-zinc-600"
-                            : "text-zinc-400"
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                      </svg>
-                    )}
-                  </Link>
-                </div>
-              ))}
-            </nav>
-
-            {/* Right Actions (Desktop) */}
-            <div className="hidden sm:flex items-center gap-6">
-              {/* Search Icon Toggle */}
-              <div className="relative flex items-center">
-                <button
-                  onClick={() => {
-                    setSearchOpen(true);
-                    setSearchQuery("");
-                  }}
-                  className={`p-1 hover:text-brand-secondary transition-colors duration-200 ${
-                    isScrolled ? "text-zinc-800" : "text-zinc-200"
-                  }`}
-                  aria-label="Search"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </button>
-              </div>
-
-              {/* Apply Button */}
-              <Link
-                href="#apply"
-                className="btn-fill-effect px-[30px] py-[10px] rounded-full bg-brand-secondary text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px] border border-transparent shadow-sm select-none active:scale-[0.98] transition-all duration-[350ms] flex items-center justify-center"
-                style={{
-                  "--btn-hover-bg": "#00937e",
-                  "height": "auto",
-                } as React.CSSProperties}
-              >
-                <span className="relative z-10">Apply Now</span>
-              </Link>
-            </div>
-
-            {/* Mobile Hamburger toggle */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden p-2 hover:text-brand-secondary transition-colors duration-200 ${
-                isScrolled ? "text-zinc-900" : "text-white"
-              }`}
-              aria-label="Toggle Menu"
-            >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                )}
-              </svg>
-            </button>
-            
-            {/* 2. DYNAMIC CONTAINED MEGA MENU DROPDOWN */}
-            <div
-              className={`absolute top-full left-0 right-0 max-w-[1100px] mx-auto bg-white text-zinc-900 border border-zinc-200/80 rounded-2xl shadow-2xl transition-all duration-355 ease-in-out z-50 ${
-                isMegaMenuOpen
-                  ? "opacity-100 translate-y-2 pointer-events-auto visible"
-                  : "opacity-0 -translate-y-4 pointer-events-none invisible"
-              }`}
-              onMouseEnter={() => setIsMegaMenuOpen(true)}
-              onMouseLeave={() => setIsMegaMenuOpen(false)}
-            >
-              <div className="py-12 px-12 grid grid-cols-12 gap-0 items-start">
-                
-                {/* Category column (w-4/12 span 4) */}
-                <div className="col-span-4 flex flex-col items-start pr-8">
-                  <span className="font-kanit font-medium text-[16px] capitalize mb-[20px] text-[#222] tracking-normal">
-                    Category
-                  </span>
-                  <div className="flex flex-col gap-0 w-full">
-                    {Object.keys(MEGA_MENU_DATA).map((category, idx) => {
-                      const isActive = activeMegaCategory === category;
-                      return (
-                        <button
-                          key={idx}
-                          onMouseEnter={() => setActiveMegaCategory(category)}
-                          className={`font-kanit text-[17px] text-left transition-all duration-200 flex items-center gap-4 w-full pr-4 py-1 outline-none select-none ${
-                            isActive
-                              ? "text-zinc-950 font-medium pl-2 translate-x-1"
-                              : "text-zinc-400 hover:text-zinc-800 font-light"
-                          }`}
-                        >
-                          <span>{category}</span>
-                          {isActive && (
-                            <span className="text-zinc-950 text-lg font-sans font-light transition-transform duration-200">
-                              &rarr;
-                            </span>
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Programmes column (w-4/12 span 4) */}
-                <div className="col-span-4 flex flex-col items-start px-8 border-l border-zinc-200">
-                  <span className="font-kanit font-medium text-[16px] capitalize mb-[20px] text-[#222] tracking-normal">
-                    Programs
-                  </span>
-                  <div className="flex flex-col gap-3 w-full">
-                    {MEGA_MENU_DATA[activeMegaCategory]?.map((program, idx) => {
-                      return (
-                        <div key={idx} className="w-full flex">
-                          <span
-                            className="program-underline-effect font-kanit font-normal text-[14px] text-zinc-600 hover:text-brand-primary transition-all duration-200 cursor-pointer select-none"
-                          >
-                            {program}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Programme Overview column (w-4/12 span 4) */}
-                <div className="col-span-4 flex flex-col items-start pl-8 border-l border-zinc-200">
-                  <span className="font-kanit font-medium text-[16px] capitalize mb-[20px] text-[#222] tracking-normal">
-                    Programme Overview
-                  </span>
-                  <div className="flex flex-col gap-3 w-full">
-                    {MEGA_MENU_OVERVIEW_LIST.map((item, idx) => {
-                      return (
-                        <div key={idx} className="w-full flex">
-                          <span
-                            className="program-underline-effect font-kanit font-normal text-[14px] text-zinc-600 hover:text-brand-primary transition-all duration-200 cursor-pointer select-none"
-                          >
-                            {item}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-        {/* Mobile menu overlay */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-zinc-950 border-t border-zinc-800 py-6 px-6 shadow-xl flex flex-col gap-5 z-50">
-            <div className="flex flex-col gap-4">
-              {MAIN_NAV_LINKS.map((link, idx) => (
-                <div key={idx}>
-                  <Link
-                    key={idx}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="font-kanit font-medium text-sm tracking-widest text-zinc-300 hover:text-brand-secondary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                  {link.hasMega && (
-                    <div className="pl-4 mt-2 flex flex-col gap-2 border-l border-zinc-800">
-                      {Object.keys(MEGA_MENU_DATA).map((cat, catIdx) => (
-                        <div key={catIdx} className="text-xs text-zinc-400 font-serif">
-                          <span className="font-medium text-zinc-300">{cat}</span>
-                          <div className="pl-2 mt-1 flex flex-col gap-1 text-[11px] font-sans">
-                            {MEGA_MENU_DATA[cat].map((prog, progIdx) => (
-                              <Link key={progIdx} href="#programs" onClick={() => setMobileMenuOpen(false)} className="hover:text-brand-secondary">
-                                {prog}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="h-px bg-zinc-800 my-2" />
-            <div className="flex flex-col gap-3">
-              <Link
-                href="#apply"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-[10px] px-[30px] rounded-full bg-brand-secondary text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px] hover:bg-brand-secondary/90"
-              >
-                Apply Now
-              </Link>
-            </div>
-          </div>
-        )}
-      </header>
+      <Header activeNav="Home" />
 
       {/* 2. PREMIUM HERO BANNER */}
       <section
@@ -836,144 +572,7 @@ export default function Home2() {
       <AdmissionsTicker />
 
       {/* 4. ABOUT IMSR SECTION */}
-      <section className="py-20 md:py-28 bg-white relative z-20 overflow-hidden font-display">
-        <div className="max-w-7xl mx-auto px-[15px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            
-            {/* Left Column: Portrait Image */}
-            <div className="lg:col-span-4 flex justify-start">
-              <div 
-                className="relative w-full max-w-[380px] aspect-[2/3] overflow-hidden reveal-container"
-                style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
-              >
-                <Image
-                  src="/images/home/about/about-left.png"
-                  alt="Graduate Student"
-                  fill
-                  className="object-cover reveal-img"
-                />
-              </div>
-            </div>
-
-            {/* Right Column: Content and Landscape Image */}
-            <div className="lg:col-span-8 flex flex-col justify-between h-full">
-              <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-zinc-950 leading-[40px]">
-                  <SplitText text="Transform Your Future with" />
-                  <span 
-                    className="font-medium mt-2 block pb-1 fade-up-scroll"
-                    style={{
-                      background: "linear-gradient(135deg, #42d392, #00629f)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text"
-                    }}
-                  >
-                    Institute of Management
-                  </span>
-                  <span 
-                    className="font-medium block pb-1 fade-up-scroll"
-                    style={{
-                      background: "linear-gradient(135deg, #42d392, #00629f)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text"
-                    }}
-                  >
-                    Studies & Research
-                  </span>
-                </h2>
-                <p className="mt-6 text-[#333] font-sans font-light leading-relaxed max-w-2xl text-[18px] fade-up-scroll">
-                  Build the knowledge, skills, and confidence needed to shape a successful career. Institute of Management Studies & Research offers industry-focused learning, expert guidance, and opportunities to help you turn your ambitions into meaningful professional growth.
-                </p>
-              </div>
-
-              {/* Bottom Row: Badge & Right Image */}
-              <div className="mt-10 flex flex-col sm:flex-row items-center gap-8 lg:gap-12 w-full">
-                {/* Circular Badge */}
-                <div 
-                  className="relative overflow-hidden group w-[150px] h-[150px] rounded-full border border-zinc-400 hover:border-brand-primary flex flex-col items-center justify-center select-none cursor-pointer flex-shrink-0 transition-colors duration-300"
-                  onMouseEnter={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    e.currentTarget.style.setProperty('--x', `${x}px`);
-                    e.currentTarget.style.setProperty('--y', `${y}px`);
-                  }}
-                  onMouseMove={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    e.currentTarget.style.setProperty('--x', `${x}px`);
-                    e.currentTarget.style.setProperty('--y', `${y}px`);
-                    
-                    // Smooth magnetic attraction
-                    const centerX = e.clientX - rect.left - rect.width / 2;
-                    const centerY = e.clientY - rect.top - rect.height / 2;
-                    gsap.to(e.currentTarget, {
-                      x: centerX * 0.2,
-                      y: centerY * 0.2,
-                      duration: 0.5,
-                      ease: "power3.out"
-                    });
-                  }}
-                  onMouseLeave={(e) => {
-                    // Reset magnetic translation
-                    gsap.to(e.currentTarget, {
-                      x: 0,
-                      y: 0,
-                      duration: 0.8,
-                      ease: "power3.out"
-                    });
-                  }}
-                >
-                  {/* Bubble fill background */}
-                  <div 
-                    className="absolute bg-brand-primary rounded-full pointer-events-none w-0 h-0 group-hover:w-[300px] group-hover:h-[300px] transition-[width,height] duration-[600ms] ease-out z-0"
-                    style={{
-                      top: 'var(--y, 50%)',
-                      left: 'var(--x, 50%)',
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                  />
-                  
-                  {/* Content */}
-                  <div className="relative z-10 flex items-center gap-2">
-                    <div className="flex flex-col items-start font-sans font-medium text-[15px] tracking-wider text-zinc-950 group-hover:text-white transition-colors duration-300 leading-tight">
-                      <span>EXPLORE US</span>
-                      <span>MORE</span>
-                    </div>
-                    <svg
-                      className="w-[18px] h-[18px] text-zinc-950 group-hover:text-white transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Landscape Image */}
-                <div 
-                  className="relative w-full aspect-[16/10] overflow-hidden reveal-container flex-grow"
-                  style={{ clipPath: 'inset(0% 100% 0% 0%)' }}
-                >
-                  <Image
-                    src="/images/home/about/about-right.png"
-                    alt="Students Group"
-                    fill
-                    className="object-cover reveal-img"
-                  />
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <AboutSection />
 
       {/* 6. OUR ACADEMIC PROGRAMS */}
       <Programs />

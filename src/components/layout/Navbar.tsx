@@ -4,16 +4,16 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 
 const navLinks = [
-  { name: "Home", href: "#home", hasSub: true },
-  { name: "About Us", href: "#about", hasSub: false },
-  { name: "Programs", href: "#programs", hasSub: true },
-  { name: "Experiential Learning", href: "#experiential", hasSub: false },
-  { name: "Campus Life", href: "#campus", hasSub: false },
-  { name: "Blog & Events", href: "#blog", hasSub: true },
-  { name: "Contact Us", href: "#contact", hasSub: false },
+  { name: "Home", href: "/", hasSub: true },
+  { name: "About Us", href: "/about", hasSub: false },
+  { name: "Programs", href: "/#programs", hasSub: true },
+  { name: "Experiential Learning", href: "/#experiential", hasSub: false },
+  { name: "Campus Life", href: "/#campus", hasSub: false },
+  { name: "Blog & Events", href: "/#blog", hasSub: true },
+  { name: "Contact Us", href: "/#contact", hasSub: false },
 ];
 
 export default function Navbar() {
@@ -148,7 +148,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           
-          <Link href="#home" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="relative h-14 w-56 md:w-64">
               <Image
                 src="/images/logo.png"
