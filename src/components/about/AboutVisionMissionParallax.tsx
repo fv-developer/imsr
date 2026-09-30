@@ -110,7 +110,7 @@ export default function AboutVisionMissionParallax() {
             Our Vision
           </h2>
           <p className="vision-sub font-sans font-light text-zinc-200 text-base sm:text-lg md:text-[18px] max-w-3xl mt-4 leading-relaxed overflow-hidden">
-            Our vision is to transform the world through education by fostering the development of global citizens with strong moral values and integrity, who are dedicated to the betterment of their nation and the world. We aim to empower the youth of our nation with the necessary skills and knowledge to make a positive impact on society and contribute to a better world for all.
+            To empower the next generation of business leaders, entrepreneurs, and innovators through transformative education, strong values, and future-ready skills. We envision creating globally aware professionals who can navigate a changing world, drive meaningful innovation, and contribute positively to business, society, and the world.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function AboutVisionMissionParallax() {
             Our Mission
           </h2>
           <p className="mission-sub font-sans font-light text-zinc-200 text-base sm:text-lg md:text-[18px] max-w-3xl leading-relaxed opacity-0 h-0 overflow-hidden">
-            Our mission is to introduce new age career programs, creating valuable opportunities, and providing a multi-disciplinary &amp; practical approach towards education. We strive to empower the next generation of Leaders, Entrepreneurs and Innovators to make a positive impact on global socioeconomics.
+            Our mission is to provide future-focused, industry-oriented education that creates meaningful opportunities for students to learn, explore, and grow. Through a multidisciplinary and practical approach to education, we strive to empower the next generation of leaders, entrepreneurs, and innovators with the knowledge, skills, and confidence to create meaningful impact in the world.
           </p>
         </div>
 

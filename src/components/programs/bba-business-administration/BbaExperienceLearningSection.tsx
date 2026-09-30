@@ -44,7 +44,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     title: "Entrepreneurship In Event Industry",
     speaker: "Ms. Pooja Vaidya",
     description: "An intensive masterclass on developing leadership, innovation, and key entrepreneurial ventures across the global event management space.",
-    image: "/images/New folder/Pooja.webp",
+    image: "/images/new-folder/Pooja.webp",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
@@ -54,7 +54,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     speaker: "Industrial Experience Mandates",
     description: "Across global business hubs and plant floors, experience how companies build, scale, and operate in different commercial markets.",
     slides: [
-      { image: "/images/New folder/PARLE.jpg" },
+      { image: "/images/new-folder/PARLE.jpg" },
       { image: "/images/hero-slider/hero-slider1.jpg" },
       { image: "/images/hero-slider/hero-slider2.jpg" },
     ],
@@ -65,7 +65,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     title: "Fashion Communication & Fashion Entrepreneurship",
     speaker: "Ms. Suvidha Joshi Patil",
     description: "Insights into luxury fashion media, brand positioning, creative direction, and establishing sustainable business models in luxury retail.",
-    image: "/images/New folder/Suvidha.webp",
+    image: "/images/new-folder/Suvidha.webp",
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     title: "Business Etiquette For The Modern Workplace",
     speaker: "Mr. James Fernandes",
     description: "Hands-on corporate workshop focusing on executive communications, cross-cultural ethics, professional presence, and boardroom conduct.",
-    image: "/images/New folder/James.webp",
+    image: "/images/new-folder/James.webp",
   },
   {
     id: 5,
@@ -81,7 +81,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     title: "Stress Management & Executive Resilience",
     speaker: "Ms. Gunjan Sidhu",
     description: "Practical mindfulness techniques, mental resilience building, and emotional intelligence strategies for high-performance corporate careers.",
-    image: "/images/New folder/Gunjan.webp",
+    image: "/images/new-folder/Gunjan.webp",
   },
   {
     id: 6,
@@ -89,7 +89,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     title: "Beach Yoga & Holistic Vitality Retreat",
     speaker: "Wellness & Life Skills Division",
     description: "Morning wellness retreats promoting holistic health, team building, and physical vitality amidst open seaside surroundings.",
-    image: "/images/New folder/Beach.webp",
+    image: "/images/new-folder/Beach.webp",
   },
   {
     id: 7,
@@ -97,7 +97,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     title: "Case Study Competition & Hackathon",
     speaker: "Academic Excellence Board",
     description: "Competitive hackathons and case study challenges where students analyze real-world corporate dilemmas and present strategic solutions.",
-    image: "/images/New folder/CASE-STUDY.webp",
+    image: "/images/new-folder/CASE-STUDY.webp",
   },
 ];
 

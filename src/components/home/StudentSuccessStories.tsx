@@ -20,18 +20,18 @@ const SUCCESS_STORIES: SuccessStory[] = [
   {
     id: 1,
     studentName: "Anurag Kulkarni",
-    photo: "/images/New folder/story-cover-1.png",
+    photo: "/images/new-folder/story-cover-1.png",
     companyName: "Jio World Centre",
     companyLogo: "/images/placement-partners/YlUka06UhmjjdvZCxzOZ1cH7tLMUuSvzL4rCpYPw.webp",
     package: "8.4 LPA",
     videoUrl: "/images/video.mp4",
     role: "Marketing Specialist",
-    quote: "IMSR provided the perfect launchpad for my career. The practical training sessions gave me real-world business context that set me apart during placements.",
+    quote: "Discover where IMSR BBA graduates are building successful careers across leading companies, consulting firms, financial institutions, and emerging businesses.",
   },
   {
     id: 2,
     studentName: "Harsha Chouhan",
-    photo: "/images/New folder/story-cover-2.png",
+    photo: "/images/new-folder/story-cover-2.png",
     companyName: "Seventy Seven Entertainment",
     companyLogo: "/images/placement-partners/grgc7WlGzZildqw9PxQcclnmznmWtJeaX8AoZecX.webp",
     package: "7.8 LPA",
@@ -42,7 +42,7 @@ const SUCCESS_STORIES: SuccessStory[] = [
   {
     id: 3,
     studentName: "Aniket Dhondkar",
-    photo: "/images/New folder/story-cover-3.png",
+    photo: "/images/new-folder/story-cover-3.png",
     companyName: "Orra Events",
     companyLogo: "/images/placement-partners/Dv6ywD8jxX050Nk8iWfEfia7plVfN88AK5tpOHXj.webp",
     package: "6.5 LPA",
@@ -54,7 +54,12 @@ const SUCCESS_STORIES: SuccessStory[] = [
 
 import gsap from "gsap";
 
-export default function StudentSuccessStories() {
+interface StudentSuccessStoriesProps {
+  bgColor?: string;
+}
+
+export default function StudentSuccessStories({ bgColor }: StudentSuccessStoriesProps = {}) {
+  const isWhiteBg = bgColor === "white" || bgColor === "bg-white" || bgColor === "#fff" || bgColor === "#ffffff";
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -133,13 +138,31 @@ export default function StudentSuccessStories() {
   return (
     <section 
       id="success-stories" 
-      className="py-20 md:py-28 bg-white relative z-20 font-display select-none"
+      className={`py-20 md:py-28 relative z-20 font-display select-none overflow-hidden ${isWhiteBg ? "bg-white" : "bg-[#222]"}`}
+      style={{ background: isWhiteBg ? "#ffffff" : "#222" }}
     >
-      <div className="max-w-7xl mx-auto px-[15px]">
+      {/* SVG GRID PATTERN EFFECT */}
+      <div 
+        className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-0"
+        style={{
+          opacity: isWhiteBg ? 0.05 : 0.10,
+          maskImage: "radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 100%)",
+        }}
+      >
+        <svg className="w-full h-full" width="100%" height="100%">
+          <pattern id="success-stories-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+            <path d="M 32 0 L 0 0 0 32" fill="none" stroke={isWhiteBg ? "#000000" : "#ffffff"} strokeWidth="1.2" opacity="0.8" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#success-stories-grid)" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-[15px] relative z-10">
         {/* Story Card Container */}
-        <div className="relative w-full bg-[#14544e] rounded-3xl p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 overflow-hidden">
+        <div className="relative w-full bg-[#006756] rounded-3xl p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 overflow-hidden" style={{ backgroundColor: "rgb(0, 103, 86)" }}>
           {/* Background Decorative Patterns */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#14544e] via-[#0e3b37]/45 to-[#14544e] pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#006756] via-[#004f42] to-[#006756] pointer-events-none z-0 opacity-40" />
           
           {/* Left Side: Video Stack Player */}
           <div className="relative w-[260px] sm:w-[300px] aspect-[3/4.2] shrink-0 z-10 flex items-center justify-center">

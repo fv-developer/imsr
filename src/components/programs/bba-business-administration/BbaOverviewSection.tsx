@@ -28,7 +28,7 @@ const HIGHLIGHT_CARDS = [
   {
     icon: <Clock className="w-6 h-6 text-[#00629f]" />,
     label: "DURATION",
-    value: "4 Years (8 Semesters)",
+    value: "3/4 Years (6/8 Semesters)",
     subtext: "Includes mandatory internship & research project",
     accentBg: "bg-[#00629f]/10 border-[#00629f]/20",
   },
@@ -49,11 +49,11 @@ const HIGHLIGHT_CARDS = [
 ];
 
 const OVERVIEW_POINTS = [
-  "Comprehensive core curriculum spanning Financial Accounting, Corporate Law, and Marketing Strategy.",
-  "Hands-on Business Analytics, Data Visualization, and ERP tools integration.",
-  "Harvard Business Publishing case-study methodology and live industry simulations.",
-  "Guaranteed corporate summer internship program after Semester 4.",
-  "Personalized mentorship by senior C-suite executives and academic scholars.",
+  "Comprehensive learning across Business Management, Finance, Marketing, Entrepreneurship, and Strategy.",
+  "Practical exposure to business analytics, digital tools, data-driven decision-making, and real-world projects.",
+  "Industry case studies, expert-led masterclasses, workshops, and experiential learning opportunities.",
+  "Internship opportunities that provide students with meaningful corporate and industry exposure.",
+  "Mentorship and guidance from experienced faculty and industry professionals to support career development.",
 ];
 
 export default function BbaOverviewSection() {
@@ -96,7 +96,7 @@ export default function BbaOverviewSection() {
         {/* SECTION HEADER */}
         <div className="overview-fade max-w-3xl mb-14">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-zinc-950 leading-[1.15]">
-            Architecting Future{" "}
+            Building Visionary{" "}
             <span
               className="italic font-serif pr-2 inline-block"
               style={{
@@ -110,7 +110,7 @@ export default function BbaOverviewSection() {
             </span>
           </h2>
           <p className="mt-4 text-zinc-600 text-[18px] font-light leading-relaxed">
-            The Bachelor of Business Administration (Hons.) at IMSR provides a holistic, future-ready education designed to cultivate critical thinking, managerial competence, global perspective, and entrepreneurial drive.
+            The Bachelor of Business Administration (Hons.) at IMSR offers a future focused education designed to develop strategic thinking, managerial expertise, global awareness, and an entrepreneurial mindset.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export default function BbaOverviewSection() {
                 <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-400 mb-1">
                   {card.label}
                 </p>
-                <h3 className="font-display text-lg font-semibold text-zinc-900 group-hover:text-[#00629f] transition-colors">
+                <h3 className="font-display text-[17px] leading-[20px] font-medium text-zinc-900 group-hover:text-[#00629f] transition-colors">
                   {card.value}
                 </h3>
               </div>
@@ -149,7 +149,7 @@ export default function BbaOverviewSection() {
             </h3>
             
             <p className="text-zinc-600 font-light leading-relaxed text-[18px]">
-              Our program goes beyond traditional classroom lectures by integrating real-world corporate challenges, financial modeling, market strategy, and leadership labs. Students develop strong decision-making capabilities aligned with modern business paradigms.
+              The B.B.A. (Hons.) at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.
             </p>
 
             <ul className="space-y-3.5 pt-2">

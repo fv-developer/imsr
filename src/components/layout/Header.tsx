@@ -4,20 +4,22 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, X } from "lucide-react";
+import SearchDrawer from "./SearchDrawer";
 
 const TOP_NAV_LINKS = [
-  { name: "Industry Placement", href: "/#industry-relations" },
+  { name: "Industry Placement", href: "/industry-placement" },
   { name: "Campus Tour", href: "/#campus-tour" },
-  { name: "Blog & Events", href: "/#blog" },
+  { name: "News & Blog", href: "/news-blog" },
+  { name: "Events", href: "/events" },
   { name: "Contact Us", href: "/#contact" },
 ];
 
 const MAIN_NAV_LINKS = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  { name: "About Us", href: "/about-us" },
   { name: "Programs", href: "/#programs", hasMega: true },
-  { name: "Student Life", href: "/#student-life" },
-  { name: "Faculty", href: "/#faculty" },
+  { name: "Student Life", href: "/student-life" },
+  { name: "Faculty", href: "/faculty" },
 ];
 
 const MEGA_MENU_DATA: Record<string, { title: string; href: string }[]> = {
@@ -74,7 +76,7 @@ export default function Header({ activeNav }: HeaderProps) {
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white backdrop-blur-md shadow-md border-b border-zinc-200 py-3"
+            ? "bg-white backdrop-blur-md shadow-none lg:shadow-md border-b border-zinc-200 py-3"
             : "bg-gradient-to-b from-black/85 via-black/40 to-transparent py-5"
         }`}
         onMouseLeave={() => setIsMegaMenuOpen(false)}
@@ -124,7 +126,7 @@ export default function Header({ activeNav }: HeaderProps) {
                         setIsMegaMenuOpen(false);
                       }
                     }}
-                    className="py-2"
+                    className="py-2 relative group"
                   >
                     <Link
                       href={link.href}
@@ -133,10 +135,10 @@ export default function Header({ activeNav }: HeaderProps) {
                       } ${isActive ? "text-brand-secondary font-semibold" : ""}`}
                     >
                       <span>{link.name}</span>
-                      {link.hasMega && (
+                      {(link.hasMega || link.hasDropdown) && (
                         <svg
                           className={`w-3 h-3 transition-transform duration-250 ${
-                            isMegaMenuOpen
+                            isMegaMenuOpen && link.hasMega
                               ? "rotate-180 text-brand-secondary"
                               : isScrolled
                               ? "text-zinc-600"
@@ -151,6 +153,23 @@ export default function Header({ activeNav }: HeaderProps) {
                         </svg>
                       )}
                     </Link>
+
+                    {/* CLUBS SUB-DROPDOWN */}
+                    {link.hasDropdown && link.subItems && (
+                      <div className="absolute top-full left-0 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                        <div className="w-56 bg-white text-zinc-900 rounded-2xl shadow-xl border border-zinc-200/90 py-2.5 px-2">
+                          {link.subItems.map((sub, sIdx) => (
+                            <Link
+                              key={sIdx}
+                              href={sub.href}
+                              className="block px-4 py-2.5 text-sm font-kanit font-medium text-zinc-800 hover:text-brand-primary hover:bg-zinc-50 rounded-xl transition-colors"
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -296,35 +315,8 @@ export default function Header({ activeNav }: HeaderProps) {
         )}
       </header>
 
-      {/* SEARCH MODAL */}
-      {searchOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-md p-6">
-          <div className="relative w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-2xl">
-            <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-              <div className="flex items-center gap-3 text-zinc-400">
-                <Search className="w-5 h-5" />
-                <span className="font-display text-lg text-white font-medium">Search IMSR</span>
-              </div>
-              <button
-                onClick={() => setSearchOpen(false)}
-                className="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-zinc-800 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="py-6">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search programs, admissions, campus..."
-                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-[#00bcda] transition-colors"
-                autoFocus
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      {/* SEARCH DRAWER */}
+      <SearchDrawer isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

@@ -82,7 +82,7 @@ export default function FAQs() {
           </div>
 
           <p className="text-zinc-400 mt-6 md:hidden text-sm">
-            Can\'t find what you\'re looking for? Contact our{' '}
+            Can&apos;t find what you&apos;re looking for? Contact our{' '}
             <Link
               href="#contact"
               className="text-[#00bcda] font-medium hover:underline"

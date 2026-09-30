@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import Button from "@/components/ui/Button";
+import SearchDrawer from "./SearchDrawer";
 
 const navLinks = [
   { name: "Home", href: "/", hasSub: true },
@@ -12,7 +13,8 @@ const navLinks = [
   { name: "Programs", href: "/#programs", hasSub: true },
   { name: "Experiential Learning", href: "/#experiential", hasSub: false },
   { name: "Campus Life", href: "/#campus", hasSub: false },
-  { name: "Blog & Events", href: "/#blog", hasSub: true },
+  { name: "News & Blog", href: "/news-blog", hasSub: false },
+  { name: "Events", href: "/events", hasSub: false },
   { name: "Contact Us", href: "/#contact", hasSub: false },
 ];
 
@@ -389,46 +391,8 @@ export default function Navbar() {
 
       </div>
 
-      {/* SEARCH MODAL */}
-      {searchOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 backdrop-blur-md p-6">
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl p-8 shadow-2xl animate-in fade-in duration-300">
-            <button
-              onClick={() => setSearchOpen(false)}
-              className="absolute top-6 right-6 text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <h3 className="font-display font-medium text-2xl text-zinc-800 mb-6">Search IMSR Portal</h3>
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search programs, sports facilities, blogs..."
-                className="w-full bg-zinc-50 border border-zinc-200 rounded-full px-6 py-4 text-zinc-800 focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 transition-all font-sans"
-                autoFocus
-              />
-              <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-brand-primary text-white p-2.5 rounded-full hover:bg-brand-primary/90 transition-colors cursor-pointer">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-            </div>
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">Popular:</span>
-              {["Sport Management", "Admissions", "Campus Life", "MBA"].map((tag) => (
-                <button
-                  key={tag}
-                  className="text-xs font-semibold px-3 py-1.5 bg-zinc-100 hover:bg-brand-secondary/15 hover:text-brand-primary text-zinc-600 rounded-full transition-colors cursor-pointer"
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* SEARCH DRAWER */}
+      <SearchDrawer isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

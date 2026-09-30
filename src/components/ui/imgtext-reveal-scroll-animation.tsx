@@ -29,33 +29,33 @@ export interface ImageTextRevealProps {
 
 const DEFAULT_LINES: RevealLine[] = [
   {
-    prefix: 'We craft',
+    prefix: 'WE SHAPE',
     image:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop',
-    alt: 'Craft studio',
+    alt: 'Future leaders meeting',
   },
   {
-    prefix: 'Vivid',
+    prefix: 'FUTURE',
     image:
       'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop',
-    alt: 'Vivid technology',
-    suffix: 'spectacles',
+    alt: 'Business innovation',
+    suffix: 'LEADERS',
   },
   {
     image:
       'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop',
-    alt: 'Connect people',
-    suffix: 'to connect',
+    alt: 'Collaborative drive',
+    suffix: 'TO DRIVE',
   },
   {
-    fullText: 'human emotion',
+    fullText: 'BUSINESS INNOVATION',
   },
   {
-    prefix: 'beyond',
+    prefix: 'BEYOND',
     image:
       'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000&auto=format&fit=crop',
-    alt: 'Beyond pixels',
-    suffix: 'pixels.',
+    alt: 'Beyond classrooms',
+    suffix: 'CLASSROOMS.',
   },
 ];
 

@@ -26,7 +26,7 @@ const STUDENTS_PLACED_DATA: StudentPlacementData[] = [
   {
     id: 1,
     name: "Pooja Sharma",
-    photo: "/images/New folder/Pooja.webp",
+    photo: "/images/new-folder/Pooja.webp",
     company: "Google",
     companyLogoBg: "from-[#4285F4] to-[#34A853]",
     package: "₹52.0 LPA",
@@ -37,7 +37,7 @@ const STUDENTS_PLACED_DATA: StudentPlacementData[] = [
   {
     id: 2,
     name: "James Wilson",
-    photo: "/images/New folder/James.webp",
+    photo: "/images/new-folder/James.webp",
     company: "Microsoft",
     companyLogoBg: "from-[#00A4EF] to-[#7FBA00]",
     package: "₹34.5 LPA",
@@ -48,7 +48,7 @@ const STUDENTS_PLACED_DATA: StudentPlacementData[] = [
   {
     id: 3,
     name: "Suvidha Verma",
-    photo: "/images/New folder/Suvidha.webp",
+    photo: "/images/new-folder/Suvidha.webp",
     company: "McKinsey & Co.",
     companyLogoBg: "from-[#00205B] to-[#00529B]",
     package: "₹28.0 LPA",
@@ -59,7 +59,7 @@ const STUDENTS_PLACED_DATA: StudentPlacementData[] = [
   {
     id: 4,
     name: "Gunjan Mehta",
-    photo: "/images/New folder/Gunjan.webp",
+    photo: "/images/new-folder/Gunjan.webp",
     company: "Goldman Sachs",
     companyLogoBg: "from-[#7399C6] to-[#1D4ED8]",
     package: "₹26.5 LPA",
@@ -275,7 +275,8 @@ export default function BbaPlacementSection() {
         setIsHovered(false);
         isPaused.current = false;
       }}
-      className="py-20 md:py-28 text-white relative overflow-hidden font-sans bg-[#222] group/section select-none"
+      className="py-20 md:py-28 text-white relative overflow-hidden font-sans group/section select-none"
+      style={{ background: "linear-gradient(178deg, rgba(93, 212, 231, 1) 0%, rgba(0, 147, 126, 1) 100%)" }}
     >
       {/* INTERACTIVE MOUSE SPOTLIGHT GLOW EFFECT */}
       <div 
@@ -322,22 +323,17 @@ export default function BbaPlacementSection() {
               >
                 Industry{" "}
                 <span
-                  className="italic font-serif pr-2 inline-block"
-                  style={{
-                    background: "linear-gradient(135deg, rgb(66, 211, 146), rgb(0, 188, 218))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
+                  className="italic font-serif pr-2 inline-block text-[#222]"
+                  style={{ color: "#222" }}
                 >
                   Placement
                 </span>
               </h3>
               <p
-                className="placement-anim text-zinc-300 font-light leading-relaxed"
+                className="placement-anim text-white/90 font-light leading-relaxed"
                 style={{ fontSize: "18px" }}
               >
-                Discover where our top BBA graduates are building high-impact careers across leading global tech companies, strategy consultancies, and financial institutions.
+                IMSR provided the perfect launchpad for my career. The practical training sessions gave me real-world business context that set me apart during placements.
               </p>
             </div>
 
@@ -369,7 +365,8 @@ export default function BbaPlacementSection() {
             {STUDENTS_PLACED_DATA.map((student) => (
               <div
                 key={student.id}
-                className="placement-anim snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[340px] bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-xl hover:shadow-2xl hover:border-white/30 hover:bg-white/15 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden text-white"
+                className="placement-anim snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[340px] bg-[#004c43] border border-white/15 rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-xl hover:shadow-2xl hover:border-white/30 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden text-white"
+                style={{ backgroundColor: "#004c43" }}
               >
                 {/* TOP BRAND ACCENT BAR */}
                 <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${student.companyLogoBg}`} />

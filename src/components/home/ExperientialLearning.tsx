@@ -15,49 +15,49 @@ const cardsData = [
     speaker: "Ms. Pooja Vaidya",
     category: "Masterclass",
     description: "An intensive masterclass on developing leadership, innovation, and key entrepreneurial ventures across the global event management space.",
-    image: "/images/New folder/Pooja.webp"
+    image: "/images/new-folder/Pooja.webp"
   },
   {
     title: "Fashion Communication & Fashion Entrepreneurship",
     speaker: "Ms. Suvidha Joshi Patil",
     category: "Masterclass",
-    description: "Insights into luxury fashion media, brand positioning, creative direction, and establishing sustainable business models in fashion.",
-    image: "/images/New folder/Suvidha.webp"
+    description: "Insights into luxury fashion media, brand positioning, creative direction, and establishing sustainable business models in luxury retail.",
+    image: "/images/new-folder/Suvidha.webp"
   },
   {
     title: "Business Etiquette For The Modern Workplace",
     speaker: "Mr. James Fernandes",
     category: "Workshop",
     description: "Hands-on corporate workshop focusing on executive communications, cross-cultural ethics, professional presence, and boardroom conduct.",
-    image: "/images/New folder/James.webp"
+    image: "/images/new-folder/James.webp"
   },
   {
-    title: "Stress Management",
+    title: "Stress Management & Executive Resilience",
     speaker: "Ms. Gunjan Sidhu",
     category: "Workshop",
-    description: "Practical mindfulness techniques, mental resilience building, and emotional intelligence strategies for high-performance careers.",
-    image: "/images/New folder/Gunjan.webp"
+    description: "Practical mindfulness techniques, mental resilience building, and emotional intelligence strategies for high-performance corporate careers.",
+    image: "/images/new-folder/Gunjan.webp"
   },
   {
     title: "Visit To Parle & Jayesh Industries",
-    speaker: "Industrial Experience",
+    speaker: "Industrial Experience Mandates",
     category: "Industry Visit",
-    description: "On-site industrial plant visit to observe large-scale manufacturing workflows, supply chain systems, and quality control operations.",
-    image: "/images/New folder/PARLE.jpg"
+    description: "Across global business hubs and plant floors, experience how companies build, scale, and operate in different commercial markets.",
+    image: "/images/new-folder/PARLE.jpg"
   },
   {
-    title: "Beach Yoga",
-    speaker: "Wellness & Life Skills",
+    title: "Beach Yoga & Holistic Vitality Retreat",
+    speaker: "Wellness & Life Skills Division",
     category: "In-House Events",
     description: "Morning wellness retreats promoting holistic health, team building, and physical vitality amidst open seaside surroundings.",
-    image: "/images/New folder/Beach.webp"
+    image: "/images/new-folder/Beach.webp"
   },
   {
-    title: "Case Study Competition",
-    speaker: "Academic Excellence",
+    title: "Case Study Competition & Hackathon",
+    speaker: "Academic Excellence Board",
     category: "Students' Club Activity",
     description: "Competitive hackathons and case study challenges where students analyze real-world corporate dilemmas and present strategic solutions.",
-    image: "/images/New folder/CASE-STUDY.webp"
+    image: "/images/new-folder/CASE-STUDY.webp"
   }
 ];
 

@@ -13,7 +13,7 @@ const PROGRAM_NAV_ITEMS: NavItem[] = [
   { id: "overview", label: "Overview", icon: <Layers className="w-[18px] h-[18px]" /> },
   { id: "curriculum", label: "Curriculum", icon: <BookOpen className="w-[18px] h-[18px]" /> },
   { id: "experience-learning", label: "Experience Learning", icon: <Sparkles className="w-[18px] h-[18px]" /> },
-  { id: "industry-placement", label: "Industry Placement", icon: <Briefcase className="w-[18px] h-[18px]" /> },
+  { id: "success-stories", label: "Success Stories", icon: <Briefcase className="w-[18px] h-[18px]" /> },
   { id: "faqs", label: "FAQ's", icon: <HelpCircle className="w-[18px] h-[18px]" /> },
 ];
 

@@ -11,10 +11,10 @@ if (typeof window !== "undefined") {
 }
 
 const EXPERT_AVATARS = [
-  { name: "Mr. James Fernandes", img: "/images/New folder/James.webp" },
-  { name: "Ms. Suvidha Joshi Patil", img: "/images/New folder/Suvidha.webp" },
-  { name: "Ms. Gunjan Sidhu", img: "/images/New folder/Gunjan.webp" },
-  { name: "Ms. Pooja Vaidya", img: "/images/New folder/Pooja.webp" },
+  { name: "Mr. James Fernandes", img: "/images/new-folder/James.webp" },
+  { name: "Ms. Suvidha Joshi Patil", img: "/images/new-folder/Suvidha.webp" },
+  { name: "Ms. Gunjan Sidhu", img: "/images/new-folder/Gunjan.webp" },
+  { name: "Ms. Pooja Vaidya", img: "/images/new-folder/Pooja.webp" },
   { name: "Executive Mentor", img: "/images/home/about/about-left.png" },
 ];
 
@@ -289,7 +289,7 @@ export default function StatsOverview() {
                 onMouseLeave={handleMouseLeave}
               >
                 <Image
-                  src="/images/New folder/Pooja.webp"
+                  src="/images/new-folder/Pooja.webp"
                   alt="Students Placed Batch"
                   fill
                   className="object-cover stat-reveal-img transition-transform duration-700 ease-out group-hover:scale-108"

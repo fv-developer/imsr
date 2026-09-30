@@ -1,11 +1,18 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
@@ -37,6 +44,123 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       lenis.destroy();
     };
   }, []);
+
+  // Global GSAP ScrollTrigger reveal loop for design-system reveal classes on route changes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // 1. Generic ScrollTrigger initializers for Design System reusable classes
+      gsap.utils.toArray(".fade-up").forEach((el: any) => {
+        gsap.fromTo(
+          el,
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 92%",
+              once: true,
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".fade-down").forEach((el: any) => {
+        gsap.fromTo(
+          el,
+          { y: -35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 92%",
+              once: true,
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".fade-left").forEach((el: any) => {
+        gsap.fromTo(
+          el,
+          { x: 35, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 92%",
+              once: true,
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".fade-right").forEach((el: any) => {
+        gsap.fromTo(
+          el,
+          { x: -35, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 92%",
+              once: true,
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".scale-in").forEach((el: any) => {
+        gsap.fromTo(
+          el,
+          { scale: 0.92, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 92%",
+              once: true,
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray(".image-reveal-mask").forEach((el: any) => {
+        gsap.fromTo(
+          el,
+          { clipPath: "inset(0% 100% 0% 0%)" },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.2,
+            ease: "power3.inOut",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              once: true,
+            },
+          }
+        );
+      });
+
+      ScrollTrigger.refresh();
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   return <>{children}</>;
 }

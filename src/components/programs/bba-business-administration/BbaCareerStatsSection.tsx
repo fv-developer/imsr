@@ -260,7 +260,7 @@ export default function BbaCareerStatsSection() {
             </span>
           </h2>
           <p className="text-zinc-600 text-base sm:text-lg md:text-[18px] font-light leading-relaxed max-w-3xl mx-auto">
-            Our undergraduates build live enterprise software and launch validated commercial startups during college. Recruiters assess real deployed code, not theoretical resumes.
+            Our BBA students solve real business challenges through live projects and industry assignments. Employers evaluate practical business acumen, not just academic credentials.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-[#0a1c33] text-zinc-300 font-sans border-t border-zinc-950/20 pt-16 pb-8 select-none">
       
       {/* CAMPUSES SECTION - 3 COLUMNS GRID */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto px-[15px] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         
         {/* MALAD CAMPUS */}
         <div className="flex flex-col">
@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       {/* MID ROW LINKS SECTION - GRID SYSTEM */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-12 pt-12 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-[15px] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-12 pt-12 border-t border-white/10">
         
         {/* PAGE LINKS */}
         <div className="flex flex-col">
@@ -98,7 +98,7 @@ export default function Footer() {
               <Link href="/" className="hover:text-[#00bcda] transition-colors">Home</Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-[#00bcda] transition-colors">About Us</Link>
+              <Link href="/about-us" className="hover:text-[#00bcda] transition-colors">About Us</Link>
             </li>
             <li>
               <Link href="/#blog" className="hover:text-[#00bcda] transition-colors">Blogs</Link>
@@ -222,7 +222,7 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM LEGAL BAR */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/10 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-zinc-400 font-medium">
+      <div className="max-w-7xl mx-auto px-[15px] border-t border-white/10 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-zinc-400 font-medium">
         <div>
           <Link href="#policies" className="hover:text-white transition-colors">
             Policies and documents

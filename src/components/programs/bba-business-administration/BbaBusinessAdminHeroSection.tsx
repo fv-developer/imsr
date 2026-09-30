@@ -87,7 +87,7 @@ export default function BbaBusinessAdminHeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-zinc-950 text-white pt-36 pb-16 sm:pt-44 sm:pb-24 overflow-hidden"
+      className="relative min-h-[85vh] w-full flex flex-col justify-end bg-zinc-950 text-white pt-32 pb-[60px] overflow-hidden"
     >
       {/* HERO BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -102,7 +102,7 @@ export default function BbaBusinessAdminHeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-zinc-950/20" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-[15px] w-full flex flex-col items-start text-left">
         
         {/* BREADCRUMB */}
         <div className="hero-fade-item flex items-center gap-2 text-sm text-zinc-400 mb-6 font-sans">
@@ -120,24 +120,22 @@ export default function BbaBusinessAdminHeroSection() {
         </div>
 
         {/* HERO CONTENT */}
-        <div className="max-w-4xl">
+        <div className="max-w-4xl w-full flex flex-col items-start text-left">
           
           {/* LEFT CONTENT COLUMN */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
             
-
-
             {/* MAIN TITLE */}
             <h1
               ref={headingRef}
-              className="font-display font-medium text-[32px] sm:text-[48px] tracking-tight leading-[40px] sm:leading-[48px] text-white"
+              className="font-display font-medium text-[32px] sm:text-[48px] tracking-tight leading-[45px] text-white text-left mb-6"
             >
               <SplitText text="B.B.A. (Hons.) In" />
               <br className="hidden sm:inline" />
               <span
                 className="font-medium inline-block pb-1 italic font-serif fade-up-scroll pr-3 opacity-0"
                 style={{
-                  background: "linear-gradient(135deg, rgb(66, 211, 146), rgb(0, 98, 159))",
+                  background: "linear-gradient(135deg, rgb(66, 211, 146), rgb(0, 188, 218))",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -148,8 +146,8 @@ export default function BbaBusinessAdminHeroSection() {
             </h1>
 
             {/* DESCRIPTION */}
-            <p className="hero-fade-item text-zinc-300 font-sans font-light text-[18px] leading-relaxed max-w-2xl">
-              Acquire high-level competencies in commercial analysis, financial strategy, corporate management, and global market execution. Designed to build visionary business leaders and corporate executives.
+            <p className="hero-fade-item text-zinc-300 font-sans font-light text-[18px] leading-relaxed max-w-3xl mb-4 text-left">
+              Develop strong capabilities in business strategy, finance, corporate management, and market execution. Designed to prepare ambitious minds for leadership roles and dynamic careers in business.
             </p>
 
 
@@ -158,16 +156,16 @@ export default function BbaBusinessAdminHeroSection() {
             <div className="hero-fade-item flex flex-wrap items-center gap-4 pt-4">
               <Link
                 href="#apply"
-                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#00629f] to-[#00bcda] text-white font-semibold text-base hover:opacity-95 transition-all duration-300 shadow-lg shadow-[#00629f]/25 flex items-center gap-2 group"
+                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#00629f] to-[#00bcda] text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px] hover:opacity-95 transition-all duration-300 shadow-lg shadow-[#00629f]/25 flex items-center gap-2 group"
               >
-                Apply Now For 2026
+                APPLY NOW FOR 2026
                 <ArrowUpRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
               <Link
                 href="#curriculum"
-                className="px-7 py-3.5 rounded-full bg-white hover:bg-zinc-100 text-zinc-950 font-semibold text-base transition-all duration-300 shadow-md flex items-center gap-2 group"
+                className="px-7 py-3.5 rounded-full bg-white hover:bg-zinc-100 text-zinc-950 font-kanit font-medium text-[15px] uppercase tracking-[0.4px] transition-all duration-300 shadow-md flex items-center gap-2 group"
               >
-                Download Brochure
+                DOWNLOAD BROCHURE
                 <ArrowUpRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-zinc-950" />
               </Link>
             </div>

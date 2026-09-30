@@ -13,9 +13,7 @@ if (typeof window !== "undefined") {
 export default function AboutStickyStorySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const leftColRef = useRef<HTMLDivElement>(null);
   const leftImageRef = useRef<HTMLDivElement>(null);
-  const rightColRef = useRef<HTMLDivElement>(null);
   const rightImg1Ref = useRef<HTMLDivElement>(null);
   const rightImg2Ref = useRef<HTMLDivElement>(null);
 
@@ -82,18 +80,6 @@ export default function AboutStickyStorySection() {
           );
         }
       });
-
-      if (window.innerWidth >= 1024 && rightColRef.current && leftColRef.current) {
-        ScrollTrigger.create({
-          trigger: rightColRef.current,
-          start: "top 90px",
-          endTrigger: leftColRef.current,
-          end: "bottom bottom",
-          pin: true,
-          pinSpacing: false,
-          invalidateOnRefresh: true,
-        });
-      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -102,19 +88,70 @@ export default function AboutStickyStorySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white text-zinc-900 pt-16 pb-24 md:pt-24 md:pb-36 border-t border-zinc-100"
+      className="relative bg-white text-zinc-900 pt-16 pb-20 md:pt-24 md:pb-28 border-t border-zinc-100 font-sans select-none"
     >
       <div className="max-w-7xl mx-auto px-6 w-full">
         {/* 2-COLUMN MAIN GRID MATCHING DESIGN REFERENCE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        {/* 2-COLUMN MAIN GRID: IMAGES LEFT, CONTENT RIGHT */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* LEFT COLUMN: HEADING + PARAGRAPH + MAIN TALL IMAGE */}
-          <div ref={leftColRef} className="lg:col-span-6 flex flex-col gap-6">
-            
-            <h2 className="font-display text-3xl sm:text-4xl md:text-[53px] font-medium text-zinc-950 leading-[48px]">
+          {/* LEFT SIDE: 3-IMAGE MOSAIC GRID */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch min-h-[460px]">
+            {/* Left Column of Image Grid: 1 Tall Vertical Image */}
+            <div
+              ref={leftImageRef}
+              className="relative w-full h-[320px] sm:h-full rounded-[12px] overflow-hidden border border-zinc-100 group shadow-xs"
+            >
+              <Image
+                src="/images/about-us/about-us.jpeg"
+                alt="IMSR Campus Experience"
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-30" />
+            </div>
+
+            {/* Right Column of Image Grid: 2 Stacked Images */}
+            <div className="flex flex-col gap-4 sm:gap-5 h-full">
+              {/* Top Image Card */}
+              <div
+                ref={rightImg1Ref}
+                className="relative w-full h-[150px] sm:h-[180px] rounded-[12px] overflow-hidden border border-zinc-100 group shadow-xs"
+              >
+                <Image
+                  src="/images/about-us/right-2.webp"
+                  alt="IMSR Students Group"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Bottom Image Card */}
+              <div
+                ref={rightImg2Ref}
+                className="relative w-full h-[220px] sm:h-[260px] sm:flex-1 rounded-[12px] overflow-hidden border border-zinc-100 group shadow-xs"
+              >
+                <Image
+                  src="/images/about-us/right-1.jpg"
+                  alt="IMSR Campus Activity"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE: HEADING & ALL PARAGRAPHS */}
+          <div className="lg:col-span-6 flex flex-col gap-6">
+            <h2
+              ref={headingRef}
+              className="font-display text-3xl sm:text-4xl md:text-[50px] font-medium text-zinc-950 leading-[40px]"
+              style={{ lineHeight: "40px" }}
+            >
               <SplitText text="Institute of Management" />
               <span 
-                className="font-medium block pb-1 fade-up-scroll"
+                className="font-serif italic font-medium block pb-1 fade-up-scroll"
                 style={{
                   background: "linear-gradient(135deg, #42d392, #00629f)",
                   WebkitBackgroundClip: "text",
@@ -125,75 +162,16 @@ export default function AboutStickyStorySection() {
                 Studies &amp; Research
               </span>
             </h2>
-            
 
-            {/* Paragraph matching existing homepage typography */}
-            <p className="font-sans font-light text-[#333] text-[18px] leading-relaxed max-w-xl">
-              Crafting compelling academic and leadership experiences that captivate ambitious minds and drive meaningful connections across management, business strategy, and research fields.
+            {/* Paragraph 1 */}
+            <p className="font-sans font-light text-[#333] text-[18px] leading-relaxed">
+              Shaping transformative academic and leadership experiences that inspire ambitious minds and foster meaningful connections across business, management, strategy, and innovation.
             </p>
 
-            {/* Left Main Tall Image (Border Radius 10px) */}
-            <div
-              ref={leftImageRef}
-              className="relative w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] max-w-full rounded-[10px] overflow-hidden border border-zinc-100 group mt-2"
-            >
-              <Image
-                src="/images/about-us/about-us.jpeg"
-                alt="IMSR Campus Event"
-                fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-40" />
-            </div>
-
-          </div>
-
-          {/* RIGHT COLUMN: STICKY ON DESKTOP SCROLL */}
-          <div
-            ref={rightColRef}
-            className="lg:col-span-6 lg:sticky lg:top-[90px] self-start flex flex-col gap-8"
-          >
-            {/* Top Image Grid: Right 2 (Middle Left Offset) + Right 1 (Top Right) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-              {/* Middle Left Offset Image */}
-              <div
-                ref={rightImg2Ref}
-                className="relative w-full aspect-[4/3] sm:aspect-[3/4] rounded-[10px] overflow-hidden border border-zinc-100 group sm:translate-y-10"
-              >
-                <Image
-                  src="/images/about-us/right-1.jpg"
-                  alt="IMSR Campus Activity"
-                  fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-
-              {/* Top Right Image */}
-              <div
-                ref={rightImg1Ref}
-                className="relative w-full aspect-[4/3] sm:aspect-[3/4] rounded-[10px] overflow-hidden border border-zinc-100 group"
-              >
-                <Image
-                  src="/images/about-us/right-2.webp"
-                  alt="IMSR Students Group"
-                  fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </div>
-
-            {/* Two Paragraphs Below Images */}
-            <div className="flex flex-col gap-5 pt-8 sm:pt-14 pb-16 sm:pb-24">
-              <p className="font-sans font-light text-[#333] text-[18px] leading-relaxed">
-                Our unique academic approach merges deep theoretical principles with active experiential learning, providing students access to world-class faculty, professional research labs, and corporate brand partners.
-              </p>
-
-              <p className="font-sans font-light text-[#333] text-[18px] leading-relaxed">
-                Through comprehensive industry immersions, mentorship programs, and career placement support, we empower our graduates to lead with integrity, innovation, and global perspective.
-              </p>
-            </div>
-
+            {/* Paragraph 2 */}
+            <p className="font-sans font-light text-[#333] text-[18px] leading-relaxed">
+              Our academic approach brings together strong theoretical foundations and experiential learning, enabling students to learn from experienced faculty, engage with industry professionals, and gain practical exposure through projects, workshops, and real-world business experiences. Through comprehensive industry immersions, mentorship programs, and career placement support, we empower our graduates to lead with integrity, innovation, and global perspective.
+            </p>
           </div>
 
         </div>

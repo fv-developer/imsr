@@ -15,7 +15,7 @@ import MaskedHeading from "@/components/ui/MaskedHeading";
 import ExperientialLearning from "@/components/home/ExperientialLearning";
 import StatsOverview from "@/components/home/StatsOverview";
 import PlacementPartners from "@/components/home/PlacementPartners";
-import StudentSuccessStories from "@/components/home/StudentSuccessStories";
+import BbaPlacementSection from "@/components/programs/bba-business-administration/BbaPlacementSection";
 import StudentTestimonials from "@/components/home/StudentTestimonials";
 import FAQs from "@/components/ui/text-reveal-faqs";
 import CampusActivity from "@/components/home/CampusActivity";
@@ -34,7 +34,8 @@ if (typeof window !== "undefined") {
 const TOP_NAV_LINKS = [
   { name: "Industry Placement", href: "#industry-relations" },
   { name: "Campus Tour", href: "#campus-tour" },
-  { name: "Blog & Events", href: "#blog" },
+  { name: "News & Blog", href: "/news-blog" },
+  { name: "Events", href: "#events" },
   { name: "Contact Us", href: "#contact" },
 ];
 
@@ -501,13 +502,13 @@ export default function Home2() {
               {activeSlide === 0 && (
                 <Link
                   href="#download-brochure"
-                  className="btn-fill-effect group flex items-center justify-center gap-2.5 px-6 h-[52px] rounded-full border border-white/20 bg-white/10 text-white font-sans text-base font-medium shadow-lg transition-all duration-300 select-none active:scale-[0.98]"
-                  style={{ "--btn-hover-bg": "#00bcda", height: "52px" } as React.CSSProperties}
+                  className="btn-fill-effect group flex items-center justify-center gap-2.5 px-6.5 h-[50px] rounded-full border border-white/20 bg-white/10 text-white font-kanit text-[15px] font-medium uppercase tracking-[0.4px] shadow-lg transition-all duration-300 select-none active:scale-[0.98]"
+                  style={{ "--btn-hover-bg": "#00bcda", height: "50px" } as React.CSSProperties}
                 >
                   <div className="relative z-10 flex items-center gap-2.5">
-                    <span>Download Brochure</span>
+                    <span>DOWNLOAD BROCHURE</span>
                     <svg
-                      className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300"
+                      className="w-4.5 h-4.5 group-hover:translate-y-0.5 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2.5"
@@ -522,13 +523,13 @@ export default function Home2() {
               {activeSlide === 1 && (
                 <Link
                   href="#campus-tour"
-                  className="btn-fill-effect group flex items-center justify-center gap-2.5 px-6 h-[52px] rounded-full border border-white/20 bg-white/10 text-white font-sans text-base font-medium shadow-lg transition-all duration-300 select-none active:scale-[0.98]"
-                  style={{ "--btn-hover-bg": "#00bcda", height: "52px" } as React.CSSProperties}
+                  className="btn-fill-effect group flex items-center justify-center gap-2.5 px-6.5 h-[50px] rounded-full border border-white/20 bg-white/10 text-white font-kanit text-[15px] font-medium uppercase tracking-[0.4px] shadow-lg transition-all duration-300 select-none active:scale-[0.98]"
+                  style={{ "--btn-hover-bg": "#00bcda", height: "50px" } as React.CSSProperties}
                 >
                   <div className="relative z-10 flex items-center gap-2.5">
-                    <span>Visit Campus</span>
+                    <span>VISIT CAMPUS</span>
                     <svg
-                      className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
+                      className="w-4.5 h-4.5 group-hover:scale-110 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2.5"
@@ -544,13 +545,13 @@ export default function Home2() {
               {activeSlide === 2 && (
                 <Link
                   href="#programs"
-                  className="btn-fill-effect group flex items-center justify-center gap-2.5 px-6 h-[52px] rounded-full border border-white/20 bg-white/10 text-white font-sans text-base font-medium shadow-lg transition-all duration-300 select-none active:scale-[0.98]"
-                  style={{ "--btn-hover-bg": "#00bcda", height: "52px" } as React.CSSProperties}
+                  className="btn-fill-effect group flex items-center justify-center gap-2.5 px-6.5 h-[50px] rounded-full border border-white/20 bg-white/10 text-white font-kanit text-[15px] font-medium uppercase tracking-[0.4px] shadow-lg transition-all duration-300 select-none active:scale-[0.98]"
+                  style={{ "--btn-hover-bg": "#00bcda", height: "50px" } as React.CSSProperties}
                 >
                   <div className="relative z-10 flex items-center gap-2.5">
-                    <span>View Program</span>
+                    <span>VIEW PROGRAM</span>
                     <svg
-                      className="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300"
+                      className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform duration-300"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2.5"
@@ -625,8 +626,8 @@ export default function Home2() {
       {/* 6.5. CAMPUS ACTIVITY MASONRY GALLERY */}
       <CampusActivity />
 
-      {/* 7. STUDENT PLACEMENT SUCCESS STORIES */}
-      <StudentSuccessStories />
+      {/* 7. INDUSTRY PLACEMENT */}
+      <BbaPlacementSection />
 
       {/* 8. STUDENT TESTIMONIAL VIDEO SLIDER */}
       <StudentTestimonials />

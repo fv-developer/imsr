@@ -8,7 +8,8 @@ import BbaOverviewSection from "@/components/programs/bba-business-administratio
 import BbaCareerStatsSection from "@/components/programs/bba-business-administration/BbaCareerStatsSection";
 import BbaCurriculumSection from "@/components/programs/bba-business-administration/BbaCurriculumSection";
 import BbaExperienceLearningSection from "@/components/programs/bba-business-administration/BbaExperienceLearningSection";
-import BbaPlacementSection from "@/components/programs/bba-business-administration/BbaPlacementSection";
+import MasterClassSection from "@/components/student-life/MasterClassSection";
+import StudentSuccessStories from "@/components/home/StudentSuccessStories";
 import PlacementPartners from "@/components/home/PlacementPartners";
 import BookingSection from "@/components/home/BookingSection";
 import FAQs from "@/components/ui/text-reveal-faqs";
@@ -39,8 +40,16 @@ export default function BbaBusinessAdminPage() {
       {/* SECTION 5: EXPERIENTIAL LEARNING */}
       <BbaExperienceLearningSection />
 
-      {/* SECTION 6: INDUSTRY PLACEMENT & CAREER OUTCOMES */}
-      <BbaPlacementSection />
+      {/* INDUSTRY IMMERSION MASTERCLASSES */}
+      <MasterClassSection
+        title="Industry Immersion &"
+        gradientTitle="Masterclasses."
+        description="Specialized executive sessions led by Fortune 500 leaders, growth founders, and enterprise consultants tailored to equip BBA students with real-world strategic frameworks."
+        theme="dark"
+      />
+
+      {/* SECTION 6: STUDENT SUCCESS STORIES */}
+      <StudentSuccessStories />
 
       {/* SECTION 7: OUR INDUSTRY PLACEMENT PARTNERS */}
       <PlacementPartners />

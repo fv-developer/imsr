@@ -328,7 +328,7 @@ export default function BbaCurriculumSection() {
           </h2>
 
           <p className="mt-6 text-zinc-200 text-[18px] font-light leading-relaxed max-w-3xl">
-            Designed in accordance with NEP 2020 guidelines, combining core managerial skills, data analytics, corporate internships, and 4th-year research honors thesis.
+            Aligned with NEP 2020 guidelines, combining management fundamentals, business analytics, practical projects, industry internships, and advanced research opportunities.
           </p>
         </div>
 

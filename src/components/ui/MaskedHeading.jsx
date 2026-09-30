@@ -259,7 +259,7 @@ const MaskedHeading = ({
   return (
     <Tag
       ref={rootRef}
-      className={`relative w-full m-0 p-0 antialiased [text-wrap:balance] ${className}`.trim()}
+      className={`relative w-full text-center m-0 p-0 antialiased [text-wrap:balance] ${className}`.trim()}
       style={{
         textAlign: align,
         fontWeight: weight,
@@ -269,14 +269,14 @@ const MaskedHeading = ({
       }}
       {...rest}
     >
-      <span ref={measureRef} className="text-transparent" style={{ color: 'transparent' }}>
+      <span ref={measureRef} className="flex flex-wrap items-center justify-center w-full text-center text-transparent" style={{ color: 'transparent', textAlign: align }}>
         {words.map((word, i) => (
           <span
             key={`${word}-${i}`}
             ref={el => {
               wordRefs.current[i] = el;
             }}
-            className="inline-block whitespace-pre [&:not(:last-child)]:after:content-['\\00a0']"
+            className="inline-block whitespace-nowrap text-center mx-[0.15em]"
             style={{ color: 'transparent' }}
           >
             {word}
