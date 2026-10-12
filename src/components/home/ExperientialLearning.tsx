@@ -84,20 +84,22 @@ export default function ExperientialLearning() {
         });
       }
 
-      // Loop over cards and attach GSAP ScrollTrigger pin & shrink stacking effect
+      // Loop over cards and attach GSAP ScrollTrigger pin & shrink stacking effect (all viewports)
+      const cardStartOffset = window.innerWidth < 768 ? "top 80px" : "top 140px";
+
       cards.forEach((card, index) => {
         if (index < cards.length - 1) {
           const nextCard = cards[index + 1];
           gsap.to(card, {
-            scale: 0.88,
+            scale: 0.9,
             opacity: 0,
             transformOrigin: "center top",
             ease: "none",
             scrollTrigger: {
               trigger: card,
-              start: "top 140px",
+              start: cardStartOffset,
               endTrigger: nextCard,
-              end: "top 140px",
+              end: cardStartOffset,
               scrub: true,
               pin: true,
               pinSpacing: false,
@@ -107,7 +109,7 @@ export default function ExperientialLearning() {
           // Last card pins until the container bottom finishes
           ScrollTrigger.create({
             trigger: card,
-            start: "top 140px",
+            start: cardStartOffset,
             endTrigger: container,
             end: "bottom bottom",
             pin: true,
@@ -131,8 +133,7 @@ export default function ExperientialLearning() {
         
         <div className="lg:col-span-5 experiential-left w-full">
           <h2 
-            className="font-display font-medium text-[45px] sm:text-[65px] tracking-tight pb-2"
-            style={{ lineHeight: "62px" }}
+            className="font-display font-medium text-[45px] sm:text-[65px] tracking-tight pb-2 leading-[45px] sm:leading-[62px]"
           >
             <span className="block text-white">
               Experiential
@@ -153,7 +154,7 @@ export default function ExperientialLearning() {
             Gain practical knowledge through hands-on projects, industry exposure, internships, and real-world experiences that help students develop essential skills and confidently prepare for successful careers.
           </p>
           <button 
-            className="btn-fill-effect mt-10 flex items-center justify-center gap-3 w-[150px] !h-[150px] rounded-full border border-white/60 bg-transparent text-white hover:text-zinc-950 transition-all duration-[350ms] group cursor-pointer shadow-lg" 
+            className="hidden lg:flex btn-fill-effect mt-10 items-center justify-center gap-3 w-[150px] !h-[150px] rounded-full border border-white/60 bg-transparent text-white hover:text-zinc-950 transition-all duration-[350ms] group cursor-pointer shadow-lg" 
             style={{ "--btn-hover-bg": "#ffffff" } as React.CSSProperties}
             aria-label="Explore Us More"
           >
@@ -203,6 +204,19 @@ export default function ExperientialLearning() {
               </div>
             </div>
           ))}
+
+          {/* Mobile Simple Button (below cards) */}
+          <div className="mt-8 flex lg:hidden justify-start w-full pt-2">
+            <a
+              href="/about-us"
+              className="px-7 py-3 rounded-full bg-white text-zinc-950 font-kanit font-medium text-[14px] uppercase tracking-wider flex items-center gap-3 shadow-md hover:bg-zinc-100 transition-colors"
+            >
+              <span>Explore Us More</span>
+              <svg className="w-4 h-4 text-zinc-950" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </div>
         </div>
 
       </div>

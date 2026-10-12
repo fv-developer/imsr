@@ -74,7 +74,7 @@ export default function CampusActivity() {
               <span className="text-[11px] font-sans font-medium uppercase tracking-wider text-zinc-100">Lively Culture</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-white tracking-tight leading-[40px] md:leading-[50px]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-white tracking-tight leading-[30px] sm:leading-[40px] md:leading-[50px]">
               Campus <span 
                 className="font-serif italic font-light"
                 style={{

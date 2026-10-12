@@ -146,8 +146,7 @@ export default function AboutStickyStorySection() {
           <div className="lg:col-span-6 flex flex-col gap-6">
             <h2
               ref={headingRef}
-              className="font-display text-3xl sm:text-4xl md:text-[50px] font-medium text-zinc-950 leading-[40px]"
-              style={{ lineHeight: "40px" }}
+              className="font-display text-3xl sm:text-4xl md:text-[50px] font-medium text-zinc-950 leading-[30px] sm:leading-[40px]"
             >
               <SplitText text="Institute of Management" />
               <span 

@@ -184,7 +184,7 @@ export default function StatsOverview() {
           {/* Left Column: Heading, MU Recognition & Inquire Button */}
           <div className="lg:col-span-5 flex flex-col items-start">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-zinc-950 leading-[45px] tracking-tight max-w-lg font-display">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-zinc-950 leading-[30px] sm:leading-[45px] tracking-tight max-w-lg font-display">
                 <span className="block stat-anim-item text-zinc-950 pb-1">
                   Empowering Students
                 </span>
@@ -216,8 +216,8 @@ export default function StatsOverview() {
                 Our placement support helps students connect their academic learning with real-world career opportunities. Through industry exposure, internships, expert guidance, and placement assistance, we prepare students to confidently take their first step into the professional world.
               </p>
               
-              {/* Recognition Badge with Compact Clean Spacing */}
-              <div className="mt-5 sm:mt-6 flex items-center gap-5">
+              {/* Recognition Badge (Desktop view) */}
+              <div className="hidden lg:flex mt-5 sm:mt-6 items-center gap-5">
                 <div className="flex flex-col">
                   <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
                   <span className="text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
@@ -234,9 +234,9 @@ export default function StatsOverview() {
               </div>
             </div>
 
-            {/* Inquire Button (with standard basic spacing) */}
+            {/* Inquire Button (Desktop view) */}
             <button 
-              className="group btn-bubble-fill relative overflow-hidden flex items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-[#5a234f] text-[#5a234f] font-kanit font-medium text-[14px] uppercase tracking-wider select-none cursor-pointer mt-4 sm:mt-5 transition-colors duration-300 shadow-sm"
+              className="hidden lg:flex group btn-bubble-fill relative overflow-hidden items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-[#5a234f] text-[#5a234f] font-kanit font-medium text-[14px] uppercase tracking-wider select-none cursor-pointer mt-4 sm:mt-5 transition-colors duration-300 shadow-sm"
               onMouseEnter={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -371,7 +371,7 @@ export default function StatsOverview() {
                     <span className="text-4xl sm:text-5xl ml-1 font-light">+</span>
                   </div>
                   <div className="mt-3 text-[14px] font-display font-medium uppercase tracking-wider text-white/95">
-                    INDUSTRY EXPERTS TEAM
+                    INDUSTRY EXPERTS
                   </div>
                 </div>
 
@@ -395,6 +395,53 @@ export default function StatsOverview() {
 
           </div>
 
+        </div>
+
+        {/* Mobile View - Recognition Badge & Inquire Button (below section grid) */}
+        <div className="mt-10 flex flex-col gap-6 lg:hidden items-start">
+          {/* Recognition Badge */}
+          <div className="flex items-center gap-5">
+            <div className="flex flex-col">
+              <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
+              <span className="text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+            </div>
+            <div className="relative w-28 h-20 sm:w-32 sm:h-24 flex-shrink-0">
+              <Image
+                src="/images/home/mumbai-unersity.png"
+                alt="Mumbai University Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Inquire Button */}
+          <button 
+            className="group btn-bubble-fill relative overflow-hidden flex items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-[#5a234f] text-[#5a234f] font-kanit font-medium text-[14px] uppercase tracking-wider select-none cursor-pointer transition-colors duration-300 shadow-sm"
+            onMouseEnter={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty('--x', `${x}px`);
+              e.currentTarget.style.setProperty('--y', `${y}px`);
+            }}
+          >
+            {/* Bubble bg */}
+            <span className="absolute block w-0 h-0 rounded-full bg-[#5a234f] transition-all duration-500 ease-out -translate-x-1/2 -translate-y-1/2 left-[var(--x)] top-[var(--y)] group-hover:w-[320px] group-hover:h-[320px] pointer-events-none z-0" />
+            
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-white">Inquire Now</span>
+            <span className="relative z-10 w-7 h-7 rounded-full bg-[#5a234f] group-hover:bg-white flex items-center justify-center transition-colors duration-300">
+              <svg
+                className="w-4.5 h-4.5 text-white group-hover:text-[#5a234f] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </span>
+          </button>
         </div>
       </div>
     </section>

@@ -52,7 +52,7 @@ export default function PlacementPartners() {
       className="py-20 md:py-28 bg-[#faf6f3] relative z-20 overflow-hidden font-display select-none"
     >
       <div className="max-w-7xl mx-auto px-[15px] mb-10 sm:mb-14">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[40px] text-zinc-950 font-display">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[30px] sm:leading-[40px] text-zinc-950 font-display">
           <SplitText text="Our Industry" /> <br />
           <span className="text-[#00bcda]">
             <SplitText text="Placement Partner" />

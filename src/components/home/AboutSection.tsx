@@ -98,10 +98,10 @@ export default function AboutSection() {
           {/* Right Column: Content and Landscape Image */}
           <div className="lg:col-span-8 flex flex-col justify-between h-full">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-[48px] font-medium text-zinc-950 leading-[40px]">
+              <h2 className="text-3xl sm:text-4xl md:text-[48px] font-medium text-zinc-950 leading-[30px] sm:leading-[40px]">
                 <SplitText text="Transform Your Future with" />
                 <span 
-                  className="font-medium mt-2 block pb-1 fade-up-scroll"
+                  className="font-medium block pb-1 fade-up-scroll"
                   style={{
                     background: "linear-gradient(135deg, #42d392, #00629f)",
                     WebkitBackgroundClip: "text",
@@ -129,10 +129,10 @@ export default function AboutSection() {
             </div>
 
             {/* Bottom Row: Badge & Right Image */}
-            <div className="mt-10 flex flex-col sm:flex-row items-center gap-8 lg:gap-12 w-full">
+            <div className="mt-10 flex flex-col-reverse sm:flex-row items-start sm:items-center gap-8 lg:gap-12 w-full">
               {/* Circular Badge */}
               <Link
-                href="/about"
+                href="/about-us"
                 className="relative overflow-hidden group w-[150px] h-[150px] rounded-full border border-zinc-400 hover:border-brand-primary flex flex-col items-center justify-center select-none cursor-pointer flex-shrink-0 transition-colors duration-300"
                 onMouseEnter={(e) => {
                   const rect = e.currentTarget.getBoundingClientRect();

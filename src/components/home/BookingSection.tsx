@@ -35,7 +35,7 @@ export default function BookingSection() {
       <div className="max-w-7xl mx-auto px-[15px]">
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-zinc-950 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-zinc-950 tracking-tight leading-[30px] sm:leading-tight">
             Let's <span className="text-[#00bcda] font-serif italic">Get Started</span>
           </h2>
           <p className="text-zinc-500 mt-4 text-[16px] sm:text-[17px] font-sans font-light leading-relaxed">

@@ -147,7 +147,7 @@ export default function BbaBusinessAdminHeroSection() {
 
             {/* DESCRIPTION */}
             <p className="hero-fade-item text-zinc-300 font-sans font-light text-[18px] leading-relaxed max-w-3xl mb-4 text-left">
-              Develop strong capabilities in business strategy, finance, corporate management, and market execution. Designed to prepare ambitious minds for leadership roles and dynamic careers in business.
+              A comprehensive business management programme designed to develop strong foundations in management, strategy, finance, marketing, operations and leadership while preparing students for diverse business careers.
             </p>
 
 
@@ -158,7 +158,7 @@ export default function BbaBusinessAdminHeroSection() {
                 href="#apply"
                 className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#00629f] to-[#00bcda] text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px] hover:opacity-95 transition-all duration-300 shadow-lg shadow-[#00629f]/25 flex items-center gap-2 group"
               >
-                APPLY NOW FOR 2026
+                APPLY NOW FOR 2027
                 <ArrowUpRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
               <Link

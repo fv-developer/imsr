@@ -267,7 +267,7 @@ export default function StudentTestimonials() {
             </div>
 
             {/* Main Section Header */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-white tracking-tight leading-[40px] md:leading-[50px] lg:leading-[55px]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-white tracking-tight leading-[30px] sm:leading-[40px] md:leading-[50px] lg:leading-[55px]">
               Learn from <span className="text-zinc-200 font-serif italic font-light">Achievers</span>, Inspired by Real Journeys
             </h2>
 

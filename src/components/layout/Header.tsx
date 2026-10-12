@@ -25,17 +25,19 @@ const MAIN_NAV_LINKS = [
 const MEGA_MENU_DATA: Record<string, { title: string; href: string }[]> = {
   "B.B.A.": [
     { title: "B.B.A. (Hons.) In Business Administration", href: "/programs/bba-business-administration" },
-    { title: "B.B.A.(Hons.) in Business Administration (Entrepreneurship)", href: "/#programs" },
-    { title: "B.B.A. (Hons.) in Digital Marketing", href: "/#programs" },
+    { title: "B.B.A. (Hons.) in Business Administration (Marketing Management)", href: "/programs/bba-marketing-management" },
+    { title: "B.B.A. (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bba-entrepreneurship" },
+    { title: "B.B.A. (Hons.) in Artificial Intelligence", href: "/programs/bba-artificial-intelligence" },
   ],
   "B.Com.": [
-    { title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)", href: "/#programs" },
-    { title: "B.Com. (Hons.) in Business Administration", href: "/#programs" },
+    { title: "B.Com. (Hons.) in Business Administration", href: "/programs/bcom-business-administration" },
+    { title: "B.Com. (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-marketing-management" },
+    { title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-entrepreneurship" },
+    { title: "B.Com. Hons. in Business Administration (Artificial Intelligence)", href: "/programs/bcom-artificial-intelligence" },
   ],
   "Digital Media & AI": [
-    { title: "B.Sc. (Hons.) in Digital Media & Growth Marketing", href: "/#programs" },
-    { title: "Diploma in Digital Media and Growth Marketing", href: "/#programs" },
-    { title: "B.B.A. (Hons.)* in Artificial Intelligence", href: "/#programs" },
+    { title: "B.Sc. (Hons.) in Digital Media & Growth Marketing", href: "/programs/bsc-digital-media-growth-marketing" },
+    { title: "Diploma in Digital Media and Growth Marketing", href: "/programs/diploma-digital-media-growth-marketing" },
   ],
 };
 
@@ -58,6 +60,8 @@ export default function Header({ activeNav }: HeaderProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 40) {
@@ -70,6 +74,27 @@ export default function Header({ activeNav }: HeaderProps) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll and pause Lenis when mobile menu drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      if (typeof window !== "undefined" && (window as any).lenis) {
+        (window as any).lenis.stop();
+      }
+    } else {
+      document.body.style.overflow = "";
+      if (typeof window !== "undefined" && (window as any).lenis) {
+        (window as any).lenis.start();
+      }
+    }
+    return () => {
+      document.body.style.overflow = "";
+      if (typeof window !== "undefined" && (window as any).lenis) {
+        (window as any).lenis.start();
+      }
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
@@ -99,7 +124,7 @@ export default function Header({ activeNav }: HeaderProps) {
         {/* Main Nav level bar */}
         <div className="max-w-7xl mx-auto px-[15px] flex items-center justify-between relative">
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-12 w-48 md:w-56">
+            <div className="relative h-10 sm:h-12 w-40 sm:w-48 md:w-56">
               <Image
                 src="/images/logo.png"
                 alt="IMSR Logo"
@@ -135,7 +160,7 @@ export default function Header({ activeNav }: HeaderProps) {
                       } ${isActive ? "text-brand-secondary font-semibold" : ""}`}
                     >
                       <span>{link.name}</span>
-                      {(link.hasMega || link.hasDropdown) && (
+                      {(link.hasMega || (link as any).hasDropdown) && (
                         <svg
                           className={`w-3 h-3 transition-transform duration-250 ${
                             isMegaMenuOpen && link.hasMega
@@ -153,33 +178,17 @@ export default function Header({ activeNav }: HeaderProps) {
                         </svg>
                       )}
                     </Link>
-
-                    {/* CLUBS SUB-DROPDOWN */}
-                    {link.hasDropdown && link.subItems && (
-                      <div className="absolute top-full left-0 pt-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                        <div className="w-56 bg-white text-zinc-900 rounded-2xl shadow-xl border border-zinc-200/90 py-2.5 px-2">
-                          {link.subItems.map((sub, sIdx) => (
-                            <Link
-                              key={sIdx}
-                              href={sub.href}
-                              className="block px-4 py-2.5 text-sm font-kanit font-medium text-zinc-800 hover:text-brand-primary hover:bg-zinc-50 rounded-xl transition-colors"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 );
               })}
             </nav>
 
-            <div className="hidden sm:flex items-center gap-6">
+            <div className="flex items-center gap-2 sm:gap-6">
+              {/* Search Icon (Visible on mobile & desktop) */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className={`p-1 hover:text-brand-secondary transition-colors duration-200 ${
-                  isScrolled ? "text-zinc-800" : "text-zinc-200"
+                className={`p-2 hover:text-brand-secondary transition-colors duration-200 rounded-full ${
+                  isScrolled ? "text-zinc-800 hover:bg-zinc-100" : "text-zinc-100 hover:bg-white/10"
                 }`}
                 aria-label="Search"
               >
@@ -188,32 +197,30 @@ export default function Header({ activeNav }: HeaderProps) {
                 </svg>
               </button>
 
+              {/* Apply Now Button (Desktop) */}
               <Link
                 href="/#apply"
-                className="btn-fill-effect px-[30px] py-[10px] rounded-full bg-brand-secondary text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px] border border-transparent shadow-sm select-none active:scale-[0.98] transition-all duration-[350ms] flex items-center justify-center"
+                className="hidden sm:flex btn-fill-effect px-[30px] py-[10px] rounded-full bg-brand-secondary text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px] border border-transparent shadow-sm select-none active:scale-[0.98] transition-all duration-[350ms] items-center justify-center"
                 style={{ "--btn-hover-bg": "#00937e", height: "auto" } as React.CSSProperties}
               >
                 <span className="relative z-10">Apply Now</span>
               </Link>
+
+              {/* Mobile Drawer Hamburger Trigger */}
+              <button
+                onClick={() => setMobileMenuOpen(true)}
+                className={`lg:hidden p-2 hover:text-brand-secondary transition-colors duration-200 rounded-lg ${
+                  isScrolled ? "text-zinc-900 hover:bg-zinc-100" : "text-white hover:bg-white/10"
+                }`}
+                aria-label="Open Menu"
+              >
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </button>
             </div>
 
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden p-2 hover:text-brand-secondary transition-colors duration-200 ${
-                isScrolled ? "text-zinc-900" : "text-white"
-              }`}
-              aria-label="Toggle Menu"
-            >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                )}
-              </svg>
-            </button>
-
-            {/* DYNAMIC MEGA MENU DROPDOWN */}
+            {/* DYNAMIC MEGA MENU DROPDOWN (DESKTOP) */}
             <div
               className={`absolute top-full left-0 right-0 max-w-[1100px] mx-auto bg-white text-zinc-900 border border-zinc-200/80 rounded-2xl shadow-2xl transition-all duration-355 ease-in-out z-50 ${
                 isMegaMenuOpen
@@ -287,32 +294,219 @@ export default function Header({ activeNav }: HeaderProps) {
           </div>
         </div>
 
-        {/* Mobile menu overlay */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-zinc-950 border-t border-zinc-800 py-6 px-6 shadow-xl flex flex-col gap-5 z-50">
-            <div className="flex flex-col gap-4">
-              {MAIN_NAV_LINKS.map((link, idx) => (
-                <div key={idx}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="font-kanit font-medium text-sm tracking-widest text-zinc-300 hover:text-brand-secondary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </div>
-              ))}
+        {/* MOBILE FULL-WIDTH SLIDE-IN MENU DRAWER */}
+        <div
+          className={`fixed inset-0 h-dvh w-full max-w-full bg-white text-zinc-900 z-[9999] lg:hidden flex flex-col transition-all duration-300 ${
+            mobileMenuOpen
+              ? "translate-x-0 opacity-100 pointer-events-auto"
+              : "translate-x-full opacity-0 pointer-events-none"
+          }`}
+        >
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-200/90 bg-white flex-shrink-0">
+            <div className="relative h-10 w-44">
+              <Image
+                src="/images/logo.png"
+                alt="IMSR Logo"
+                fill
+                className="object-contain object-left"
+                priority
+              />
             </div>
-            <div className="h-px bg-zinc-800 my-2" />
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-2.5 text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 rounded-full transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Drawer Content (Unified single menu list with natural height scroll) */}
+          <div
+            data-lenis-prevent
+            className="flex-1 min-h-0 overflow-y-auto px-6 py-4 space-y-1 bg-white overscroll-contain no-scrollbar"
+            style={{ touchAction: "pan-y", WebkitOverflowScrolling: "touch" }}
+          >
+            
+            {/* Home */}
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Home"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* About Us */}
+            <Link
+              href="/about-us"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "About Us"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              About Us
+            </Link>
+
+            {/* Programs Expandable Section */}
+            <div className="rounded-xl">
+              <button
+                onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+                className={`w-full flex items-center justify-between py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                  activeNav === "Programs" || mobileProgramsOpen
+                    ? "text-brand-secondary bg-zinc-50 font-medium"
+                    : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+                }`}
+              >
+                <span>Programs</span>
+                <svg
+                  className={`w-4.5 h-4.5 transition-transform duration-200 ${
+                    mobileProgramsOpen ? "rotate-180 text-brand-secondary" : "text-zinc-400"
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+
+              {/* Submenu with 100% natural auto height */}
+              {mobileProgramsOpen && (
+                <div 
+                  className="ml-4 pl-3.5 border-l-2 border-brand-secondary/30 my-3 space-y-4"
+                  style={{ height: "auto", maxHeight: "none" }}
+                >
+                  {Object.entries(MEGA_MENU_DATA).map(([category, progs]) => (
+                    <div key={category} className="space-y-2">
+                      <span className="text-[17px] font-medium text-brand-secondary uppercase tracking-wider block !font-medium">
+                        {category}
+                      </span>
+                      <div className="space-y-1.5">
+                        {progs.map((p, pIdx) => (
+                          <Link
+                            key={pIdx}
+                            href={p.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block text-[16px] font-sans font-normal tracking-normal text-zinc-700 hover:text-brand-primary py-1 transition-colors leading-snug"
+                          >
+                            {p.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Student Life */}
+            <Link
+              href="/student-life"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Student Life"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Student Life
+            </Link>
+
+            {/* Faculty */}
+            <Link
+              href="/faculty"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Faculty"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Faculty
+            </Link>
+
+            {/* Industry Placement */}
+            <Link
+              href="/industry-placement"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Industry Placement"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Industry Placement
+            </Link>
+
+            {/* Campus Tour */}
+            <Link
+              href="/#campus-tour"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary transition-colors"
+            >
+              Campus Tour
+            </Link>
+
+            {/* News & Blog */}
+            <Link
+              href="/news-blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "News & Blog"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              News & Blog
+            </Link>
+
+            {/* Events */}
+            <Link
+              href="/events"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Events"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Events
+            </Link>
+
+            {/* Contact Us */}
+            <Link
+              href="/#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Contact Us"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          {/* Drawer Bottom Action CTA */}
+          <div className="p-5 border-t border-zinc-200/90 bg-white flex-shrink-0">
             <Link
               href="/#apply"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-[10px] px-[30px] rounded-full bg-brand-secondary text-white font-kanit font-medium text-[15px] uppercase tracking-[0.4px]"
+              className="w-full block text-center py-3.5 px-6 rounded-full bg-brand-secondary hover:bg-[#00937e] text-white font-kanit font-medium text-base uppercase tracking-wider transition-colors shadow-md active:scale-[0.98]"
             >
               Apply Now
             </Link>
           </div>
-        )}
+        </div>
       </header>
 
       {/* SEARCH DRAWER */}

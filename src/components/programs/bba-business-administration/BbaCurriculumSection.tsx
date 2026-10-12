@@ -54,11 +54,9 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <BarChart3 className="w-5 h-5" />,
     accentColor: "#00bcda",
     learnBadges: [
-      "Management Principles",
-      "Financial Accounting",
-      "Managerial Economics",
-      "Business Mathematics",
-      "Executive Communication",
+      "Business Management",
+      "Finance",
+      "Data-Driven Decision Making",
     ],
     keyOutcomes: [
       "Analyze corporate balance sheets & income statements",
@@ -83,11 +81,9 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <Globe className="w-5 h-5" />,
     accentColor: "#42d392",
     learnBadges: [
-      "Marketing Management",
-      "Cost Accounting",
-      "Macroeconomics",
-      "Commercial Law",
-      "Excel Analytics Lab",
+      "Marketing",
+      "Operations",
+      "Finance",
     ],
     keyOutcomes: [
       "Design digital marketing funnels & brand strategies",
@@ -112,11 +108,10 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <Cpu className="w-5 h-5" />,
     accentColor: "#00629f",
     learnBadges: [
-      "Corporate Finance",
-      "HRM & Talent",
-      "Supply Chain Management",
-      "PowerBI / Tableau Lab",
-      "Design Thinking",
+      "Finance",
+      "Human Resources",
+      "Operations",
+      "Data-Driven Decision Making",
     ],
     keyOutcomes: [
       "Optimize capital budgeting & working capital",
@@ -141,11 +136,9 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <Briefcase className="w-5 h-5" />,
     accentColor: "#f59e0b",
     learnBadges: [
-      "SAP / Oracle ERP Lab",
-      "Financial Risk",
-      "International Trade",
-      "Corporate Tax",
-      "8-Wk Corporate Internship",
+      "Operations",
+      "Project Management",
+      "Finance",
     ],
     keyOutcomes: [
       "Complete 8-week full-time corporate summer internship",
@@ -170,11 +163,9 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <Lightbulb className="w-5 h-5" />,
     accentColor: "#a855f7",
     learnBadges: [
-      "Strategic Management",
-      "Specialization Elective I",
-      "Specialization Elective II",
-      "Venture Creation",
-      "Harvard Case Lab",
+      "Business Strategy",
+      "Entrepreneurship",
+      "Leadership",
     ],
     keyOutcomes: [
       "Conduct competitive industry positioning & SWOT analysis",
@@ -199,10 +190,10 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <Sparkles className="w-5 h-5" />,
     accentColor: "#ec4899",
     learnBadges: [
-      "Global Environment",
-      "Specialization Elective III",
-      "Brand Leadership",
-      "Live Consultancy Capstone",
+      "Marketing",
+      "Business Strategy",
+      "Project Management",
+      "Leadership",
     ],
     keyOutcomes: [
       "Deliver live corporate consultancy capstone project",
@@ -227,10 +218,9 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <FileText className="w-5 h-5" />,
     accentColor: "#3b82f6",
     learnBadges: [
-      "Advanced Business Research",
-      "Honors Track I",
-      "Honors Track II",
-      "C-Suite Mentorship Lab",
+      "Data-Driven Decision Making",
+      "Business Strategy",
+      "Leadership",
     ],
     keyOutcomes: [
       "Formulate empirical quantitative research hypotheses",
@@ -255,10 +245,10 @@ const STREAMS_DATA: StreamSemester[] = [
     icon: <GraduationCap className="w-5 h-5" />,
     accentColor: "#10b981",
     learnBadges: [
-      "Guided Research Thesis",
-      "Global Governance",
-      "Thesis Viva Defense",
-      "Honors Degree Award",
+      "Leadership",
+      "Business Strategy",
+      "Project Management",
+      "Entrepreneurship",
     ],
     keyOutcomes: [
       "Author & defend full-length Honors research thesis",
@@ -417,19 +407,6 @@ export default function BbaCurriculumSection() {
                       </div>
                     </div>
 
-                    {/* BOTTOM ACTION BUTTON */}
-                    <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
-                      <span className="text-[11px] font-mono tracking-wider text-zinc-400">
-                        {stream.categoryTags}
-                      </span>
-                      <a
-                        href="tel:+918508173333"
-                        className="px-5 py-2.5 rounded-full bg-white hover:bg-zinc-100 text-zinc-950 font-semibold text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 shadow-md hover:scale-[1.02] shrink-0"
-                      >
-                        <span>Download Syllabus PDF</span>
-                        <ArrowUpRight className="w-4 h-4 text-[#00629f]" />
-                      </a>
-                    </div>
                   </div>
                 ) : (
                   /* -------------------------------------------------------- */
@@ -530,6 +507,8 @@ export default function BbaCurriculumSection() {
             ))}
           </div>
         </div>
+
+
 
       </div>
     </section>

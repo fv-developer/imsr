@@ -3,8 +3,8 @@ import { Kanit } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import FloatingSupport from "@/components/ui/FloatingSupport";
 import { cn } from "@/lib/utils";
-import Script from "next/script";
 
 const kanit = Kanit({
   variable: "--font-sans",
@@ -32,53 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </SmoothScroll>
 
-        {/* ChatBot (www.chatbot.com) Integration */}
-        <Script id="chatbot-widget-script" strategy="afterInteractive">
-          {`
-            window.__ow = window.__ow || {};
-            window.__ow.organizationId = "c135509f-89bf-4e5d-9a53-501af1df6dcc";
-            window.__ow.template_id = "467cf751-7b37-4781-955d-db10d3d2f47c";
-            window.__ow.integration_name = "manual_settings";
-            window.__ow.product_name = "chatbot";   
-            ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[OpenWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.openwidget.com/openwidget.js",t.head.appendChild(n)}};!n.__ow.asyncInit&&e.init(),n.OpenWidget=n.OpenWidget||e}(window,document,[].slice));
-
-            // MutationObserver to scale chatbot launcher button to 48px when closed (prevents infinite loop recursion)
-            if (typeof window !== "undefined") {
-              const startObserver = () => {
-                const container = document.getElementById('openwidget-container') || document.getElementById('chat-widget-container');
-                if (container) {
-                  const widgetObserver = new MutationObserver(() => {
-                    const isLarge = container.offsetHeight > 100 || container.offsetWidth > 100;
-                    const hasClass = container.classList.contains('chatbot-small-launcher');
-                    if (isLarge && hasClass) {
-                      container.classList.remove('chatbot-small-launcher');
-                    } else if (!isLarge && !hasClass) {
-                      container.classList.add('chatbot-small-launcher');
-                    }
-                  });
-                  widgetObserver.observe(container, { attributes: true, attributeFilter: ['style', 'class'] });
-
-                  const isLarge = container.offsetHeight > 100 || container.offsetWidth > 100;
-                  if (!isLarge) {
-                    container.classList.add('chatbot-small-launcher');
-                  }
-                  return true;
-                }
-                return false;
-              };
-
-              const bodyObserver = new MutationObserver(() => {
-                if (startObserver()) {
-                  bodyObserver.disconnect();
-                }
-              });
-              bodyObserver.observe(document.body, { childList: true, subtree: true });
-            }
-          `}
-        </Script>
-        <noscript>
-          You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a>
-        </noscript>
+        {/* FLOATING WHATSAPP & SUPPORT CHAT WIDGET */}
+        <FloatingSupport />
       </body>
     </html>
   );

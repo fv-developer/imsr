@@ -51,13 +51,14 @@ interface ProgramItem {
 
 const ROW_1_PROGRAMS: ProgramItem[] = [
   {
-    title: "B.B.A.(Hons.) in Business Administration (Entrepreneurship)",
+    title: "B.B.A. (Hons.) in Business Administration (Entrepreneurship)",
     category: "B.B.A.",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#fefce8]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bba-entrepreneurship",
   },
   {
     title: "B.B.A. (Hons.) In Business Administration",
@@ -67,7 +68,7 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bba-business-administration"
+    slug: "/programs/bba-business-administration",
   },
   {
     title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)",
@@ -76,7 +77,8 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
     bg: "bg-[#fefce8]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bcom-entrepreneurship",
   },
   {
     title: "B.Com. (Hons.) in Business Administration",
@@ -85,7 +87,8 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
     bg: "bg-[#f0fdf4]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bcom-business-administration",
   },
   {
     title: "B.Sc. (Hons.) in Digital Media & Growth Marketing",
@@ -94,28 +97,31 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "3 Years"
-  }
+    duration: "3 Years",
+    slug: "/programs/bsc-digital-media-growth-marketing",
+  },
 ];
 
 const ROW_2_PROGRAMS: ProgramItem[] = [
   {
-    title: "B.B.A.(Hons.) in Business Administration (Marketing Management)",
+    title: "B.B.A. (Hons.) in Business Administration (Marketing Management)",
     category: "B.B.A.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bba-marketing-management",
   },
   {
-    title: "B.B.A. (Hons.)* in Artificial Intelligence",
+    title: "B.B.A. (Hons.) in Artificial Intelligence",
     category: "B.B.A.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f7fee7]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bba-artificial-intelligence",
   },
   {
     title: "B.Com. (Hons.) in Business Administration (Marketing Management)",
@@ -124,16 +130,18 @@ const ROW_2_PROGRAMS: ProgramItem[] = [
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bcom-marketing-management",
   },
   {
-    title: "B.Com. Hons. in BA (Artificial Intelligence)",
+    title: "B.Com. Hons. in Business Administration (Artificial Intelligence)",
     category: "B.Com.",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f7fee7]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years"
+    duration: "4 Years",
+    slug: "/programs/bcom-artificial-intelligence",
   },
   {
     title: "Diploma in Digital Media and Growth Marketing",
@@ -142,8 +150,9 @@ const ROW_2_PROGRAMS: ProgramItem[] = [
     bg: "bg-[#f0fdf4]",
     format: "Online / Hybrid",
     eligibility: "12th Pass-outs",
-    duration: "1 Year"
-  }
+    duration: "1 Year",
+    slug: "/programs/diploma-digital-media-growth-marketing",
+  },
 ];
 
 export default function Programs() {
@@ -179,7 +188,7 @@ export default function Programs() {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-[30px] relative z-10">
+        <div className="max-w-7xl mx-auto px-[15px] relative z-10">
           <div className="relative z-10 max-w-2xl text-left">
             <h2 className="font-display font-medium text-4xl sm:text-5xl text-white tracking-tight">
               <SplitText text="Our Programs" active={true} />
@@ -202,7 +211,7 @@ export default function Programs() {
                   <a
                     key={`r1-${idx}`}
                     href={program.slug || "#admissions-booking"}
-                    className="program-card flex-shrink-0 w-[50vw] sm:w-[33.33vw] md:w-[25vw] lg:w-[20vw] h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden relative group cursor-pointer transition-all duration-300 shadow-lg select-none block hover:z-30 hover:relative"
+                    className="program-card flex-shrink-0 w-[60vw] sm:w-[45vw] md:w-[33.33vw] lg:w-[20vw] h-[315px] sm:h-[350px] lg:h-[400px] overflow-hidden relative group cursor-pointer transition-all duration-300 shadow-lg select-none block hover:z-30 hover:relative"
                   >
                     {/* Background Image with Zoom */}
                     <div 
@@ -213,22 +222,22 @@ export default function Programs() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 via-[30%] to-transparent z-10" />
 
                     {/* Icon & Details */}
-                    <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col items-start gap-3">
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20 flex flex-col items-start gap-2.5 sm:gap-3">
                       {/* Round White Circle Badge */}
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-lg">
-                        <Icon className={`w-5 h-5 ${iconColor}`} />
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-lg">
+                        <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${iconColor}`} />
                       </div>
 
-                      <div className="flex flex-col text-left gap-1.5">
+                      <div className="flex flex-col text-left gap-1 sm:gap-1.5">
                         <h3 
-                          className="font-display text-[16px] sm:text-[18px] text-white leading-tight"
+                          className="font-display text-[15px] sm:text-[18px] text-white leading-tight"
                           style={{ fontWeight: 500, letterSpacing: "0.4px" }}
                         >
                           {program.title}
                         </h3>
                         <span 
                           className="font-sans uppercase tracking-wider text-zinc-300/80 font-light mt-0.5"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "11px" }}
                         >
                           {program.category === "B.B.A." ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
                         </span>
@@ -248,8 +257,8 @@ export default function Programs() {
                 return (
                   <a
                     key={`r2-${idx}`}
-                    href="#admissions-booking"
-                    className="program-card flex-shrink-0 w-[50vw] sm:w-[33.33vw] md:w-[25vw] lg:w-[20vw] h-[300px] sm:h-[350px] lg:h-[400px] overflow-hidden relative group cursor-pointer transition-all duration-300 shadow-lg select-none block hover:z-30 hover:relative"
+                    href={program.slug || "#admissions-booking"}
+                    className="program-card flex-shrink-0 w-[60vw] sm:w-[45vw] md:w-[33.33vw] lg:w-[20vw] h-[315px] sm:h-[350px] lg:h-[400px] overflow-hidden relative group cursor-pointer transition-all duration-300 shadow-lg select-none block hover:z-30 hover:relative"
                   >
                     {/* Background Image with Zoom */}
                     <div 
@@ -260,22 +269,22 @@ export default function Programs() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 via-[30%] to-transparent z-10" />
 
                     {/* Icon & Details */}
-                    <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col items-start gap-3">
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20 flex flex-col items-start gap-2.5 sm:gap-3">
                       {/* Round White Circle Badge */}
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-lg">
-                        <Icon className={`w-5 h-5 ${iconColor}`} />
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-lg">
+                        <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${iconColor}`} />
                       </div>
 
-                      <div className="flex flex-col text-left gap-1.5">
+                      <div className="flex flex-col text-left gap-1 sm:gap-1.5">
                         <h3 
-                          className="font-display text-[16px] sm:text-[18px] text-white leading-tight"
+                          className="font-display text-[15px] sm:text-[18px] text-white leading-tight"
                           style={{ fontWeight: 500, letterSpacing: "0.4px" }}
                         >
                           {program.title}
                         </h3>
                         <span 
                           className="font-sans uppercase tracking-wider text-zinc-300/80 font-light mt-0.5"
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "11px" }}
                         >
                           {program.category === "B.B.A." ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
                         </span>

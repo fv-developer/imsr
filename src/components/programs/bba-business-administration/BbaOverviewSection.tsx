@@ -28,8 +28,8 @@ const HIGHLIGHT_CARDS = [
   {
     icon: <Clock className="w-6 h-6 text-[#00629f]" />,
     label: "DURATION",
-    value: "3/4 Years (6/8 Semesters)",
-    subtext: "Includes mandatory internship & research project",
+    value: "3 years (Bachelor’s) / 4 years",
+    subtext: "(Honours, as per NEP 2020)",
     accentBg: "bg-[#00629f]/10 border-[#00629f]/20",
   },
   {
@@ -95,7 +95,7 @@ export default function BbaOverviewSection() {
         
         {/* SECTION HEADER */}
         <div className="overview-fade max-w-3xl mb-14">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-zinc-950 leading-[1.15]">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-zinc-950 leading-[30px] sm:leading-[1.15]">
             Building Visionary{" "}
             <span
               className="italic font-serif pr-2 inline-block"
@@ -110,7 +110,7 @@ export default function BbaOverviewSection() {
             </span>
           </h2>
           <p className="mt-4 text-zinc-600 text-[18px] font-light leading-relaxed">
-            The Bachelor of Business Administration (Hons.) at IMSR offers a future focused education designed to develop strategic thinking, managerial expertise, global awareness, and an entrepreneurial mindset.
+            A comprehensive business management programme designed to develop strong foundations in management, strategy, finance, marketing, operations and leadership while preparing students for diverse business careers.
           </p>
         </div>
 

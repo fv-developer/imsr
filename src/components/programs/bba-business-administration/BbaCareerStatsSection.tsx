@@ -269,20 +269,20 @@ export default function BbaCareerStatsSection() {
           {PLACEMENT_STATS_DATA.map((card) => (
             <div
               key={card.id}
-              className={`group ${card.bgStyle} ${card.shadowStyle} rounded-2xl sm:rounded-3xl p-6 md:p-7 text-left transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between min-h-[190px] md:min-h-[200px] relative overflow-hidden select-none`}
+              className={`group ${card.bgStyle} ${card.shadowStyle} rounded-2xl sm:rounded-3xl p-6 md:p-7 text-center items-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between min-h-[190px] md:min-h-[200px] relative overflow-hidden select-none`}
             >
               {/* BACKGROUND PATTERN */}
               <CardPattern type={card.patternType} id={card.id} />
 
               {/* TOP LABEL */}
-              <div className="relative z-10">
+              <div className="relative z-10 w-full text-center">
                 <p className="text-[12px] md:text-[13px] font-bold uppercase tracking-wider text-white/90">
                   {card.label}
                 </p>
               </div>
 
               {/* CENTER BIG STAT NUMBER WITH GSAP COUNTER */}
-              <div className="relative z-10 my-2">
+              <div className="relative z-10 my-2 w-full text-center">
                 <h3 className="font-display font-medium text-3xl sm:text-3xl md:text-4xl lg:text-[38px] tracking-tight text-white leading-none">
                   <StatCounter
                     target={card.target}
@@ -294,7 +294,7 @@ export default function BbaCareerStatsSection() {
               </div>
 
               {/* BOTTOM SUBTEXT */}
-              <div className="relative z-10">
+              <div className="relative z-10 w-full text-center">
                 <p className="text-[11px] md:text-[12px] text-white/80 font-normal leading-tight">
                   {card.subtextPrefix}{" "}
                   <span className="font-semibold text-white">{card.subtextValue}</span>
@@ -302,6 +302,41 @@ export default function BbaCareerStatsSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* ============================================================ */}
+        {/* CAREER OPPORTUNITIES CAPSULE PILLS */}
+        {/* ============================================================ */}
+        <div className="stats-fade mt-14 sm:mt-16 text-center">
+          <div className="mb-6">
+            <h3 className="font-display font-medium text-2xl sm:text-3xl text-zinc-950 tracking-tight">
+              Career Opportunities
+            </h3>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-5xl mx-auto">
+            {[
+              "Business Analyst",
+              "HR Executive/Manager",
+              "Finance Executive/Analyst",
+              "Operations Manager",
+              "Project Coordinator/Manager",
+              "Business Development Manager",
+              "Business Consultant",
+              "Customer Relationship Manager",
+              "Market Research Analyst",
+            ].map((role, idx) => (
+              <span
+                key={idx}
+                className="px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium text-white transition-all duration-200 shadow-md hover:scale-[1.03] cursor-default"
+                style={{
+                  background:
+                    "linear-gradient(123deg, rgb(6 153 176) 0%, rgb(40 123 175) 100%)",
+                }}
+              >
+                {role}
+              </span>
+            ))}
+          </div>
         </div>
 
       </div>
