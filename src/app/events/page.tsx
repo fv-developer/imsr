@@ -24,6 +24,8 @@ import {
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
+import FAQs from "@/components/ui/text-reveal-faqs";
+import { BLOG_NEWS_EVENTS_FAQS } from "@/data/faqsData";
 import {
   EVENTS_DATA,
   EVENT_CATEGORIES,
@@ -613,6 +615,12 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+      <FAQs
+        items={BLOG_NEWS_EVENTS_FAQS}
+        subtitle="Frequently asked questions regarding FV - IMSR masterclasses, workshops, and flagship business events."
+      />
 
       {/* FOOTER */}
       <Footer />

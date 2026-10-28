@@ -10,54 +10,84 @@ if (typeof window !== "undefined") {
 }
 
 const cardsData = [
+  // 1. MASTERCLASS (2 items, single image)
   {
-    title: "Entrepreneurship In Event Industry",
-    speaker: "Ms. Pooja Vaidya",
+    title: "Digital Marketing Careers In The AI Era",
+    speaker: "Mr. Viken Shah",
     category: "Masterclass",
-    description: "An intensive masterclass on developing leadership, innovation, and key entrepreneurial ventures across the global event management space.",
-    image: "/images/new-folder/Pooja.webp"
+    description: "IMSR hosted an insightful masterclass on Digital Marketing Careers in the AI Era, exploring essential digital skills, freelancing opportunities, and real-world marketing challenges.",
+    image: "/images/experiential-learning/masterclass/viken-shah-1.jpg"
   },
   {
-    title: "Fashion Communication & Fashion Entrepreneurship",
-    speaker: "Ms. Suvidha Joshi Patil",
+    title: "AI & Digital Transformation: Shaping Customer Experience",
+    speaker: "Mr. Unnat Khetan",
     category: "Masterclass",
-    description: "Insights into luxury fashion media, brand positioning, creative direction, and establishing sustainable business models in luxury retail.",
-    image: "/images/new-folder/Suvidha.webp"
+    description: "An inspiring masterclass bridging classroom learning with practical applications in digital transformation, consulting careers, and AI-enabled customer experiences.",
+    image: "/images/experiential-learning/masterclass/unnat-khetan-1.jpg"
+  },
+
+  // 2. SPORTS CLUB (2 items, single image)
+  {
+    title: "Apex Badminton League 2026",
+    speaker: "FitFuture Sports Club",
+    category: "Sports Club",
+    description: "Students showcased their athletic skills and competitive spirit at the Apex Badminton Tournament, creating an exciting experience filled with teamwork, agility, and sportsmanship.",
+    image: "/images/experiential-learning/sports-club/badminton-league-1.jpg"
   },
   {
-    title: "Business Etiquette For The Modern Workplace",
-    speaker: "Mr. James Fernandes",
-    category: "Workshop",
-    description: "Hands-on corporate workshop focusing on executive communications, cross-cultural ethics, professional presence, and boardroom conduct.",
-    image: "/images/new-folder/James.webp"
+    title: "Elite Kho-Kho Premier League",
+    speaker: "FitFuture Sports Club",
+    category: "Sports Club",
+    description: "A thrilling sporting tournament at the Elite Kho-Kho Premier League, bringing together teamwork, competitive energy, tactical agility, and sports excellence.",
+    image: "/images/experiential-learning/sports-club/kho-kho-league-1.jpg"
+  },
+
+  // 3. CULTURAL CLUB (2 items, single image)
+  {
+    title: "Teachers Day Celebration & Cultural Showcase",
+    speaker: "Vibrance Cultural Club",
+    category: "Cultural Club",
+    description: "Students celebrated Teachers' Day with heartfelt appreciation, enjoying choreographed dance, musical tributes, engaging activities, and memorable celebrations.",
+    image: "/images/experiential-learning/cultural-club/teachers-day-1.jpg"
   },
   {
-    title: "Stress Management & Executive Resilience",
-    speaker: "Ms. Gunjan Sidhu",
-    category: "Workshop",
-    description: "Practical mindfulness techniques, mental resilience building, and emotional intelligence strategies for high-performance corporate careers.",
-    image: "/images/new-folder/Gunjan.webp"
+    title: "Youth Talent & Performing Arts Showcase",
+    speaker: "Vibrance Cultural Club",
+    category: "Cultural Club",
+    description: "An energetic campus cultural gathering spotlighting musical ensembles, creative performances, and artistic expression among IMSR undergraduates.",
+    image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg"
+  },
+
+  // 4. COMMUNITY SERVICE / SAHYOG CLUB (2 items, single image)
+  {
+    title: "Beach Cleaning & Marine Conservation Drive",
+    speaker: "Sahyog Club (CSR Initiative)",
+    category: "Community Service",
+    description: "As part of its CSR initiative, IMSR organized a Beach Cleaning Drive at Marve Beach to promote environmental sustainability, civic action, and community responsibility.",
+    image: "/images/experiential-learning/sahyog-club/beach-cleaning-1.jpg"
   },
   {
-    title: "Visit To Parle & Jayesh Industries",
+    title: "Environmental Sustainability & Clean Shoreline Action",
+    speaker: "Sahyog Club (CSR Initiative)",
+    category: "Community Service",
+    description: "Students actively engaged with local environmental stakeholders to foster awareness and sustainable coastal conservation practices.",
+    image: "/images/experiential-learning/sahyog-club/beach-cleaning-2.jpg"
+  },
+
+  // 5. EDUCATIONAL / INDUSTRY VISIT (2 items, single image)
+  {
+    title: "Educational Visit - Radio Mirchi Studio",
+    speaker: "Ms. Rashmi Raja",
+    category: "Industry Visit",
+    description: "Students gained real-world industry exposure through an educational visit to the Radio Mirchi Studio, exploring broadcasting workflows, live audio production, and mass media operations.",
+    image: "/images/experiential-learning/educational-visit/radio-mirchi-1.jpg"
+  },
+  {
+    title: "Industrial Visit To Parle & Jayesh Industries",
     speaker: "Industrial Experience Mandates",
     category: "Industry Visit",
-    description: "Across global business hubs and plant floors, experience how companies build, scale, and operate in different commercial markets.",
+    description: "Across global business hubs and plant floors, experience how corporate enterprises build, scale, and manage supply chains and distribution across commercial markets.",
     image: "/images/new-folder/PARLE.jpg"
-  },
-  {
-    title: "Beach Yoga & Holistic Vitality Retreat",
-    speaker: "Wellness & Life Skills Division",
-    category: "In-House Events",
-    description: "Morning wellness retreats promoting holistic health, team building, and physical vitality amidst open seaside surroundings.",
-    image: "/images/new-folder/Beach.webp"
-  },
-  {
-    title: "Case Study Competition & Hackathon",
-    speaker: "Academic Excellence Board",
-    category: "Students' Club Activity",
-    description: "Competitive hackathons and case study challenges where students analyze real-world corporate dilemmas and present strategic solutions.",
-    image: "/images/new-folder/CASE-STUDY.webp"
   }
 ];
 

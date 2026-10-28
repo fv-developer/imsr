@@ -51,97 +51,97 @@ interface ProgramItem {
 
 const ROW_1_PROGRAMS: ProgramItem[] = [
   {
-    title: "B.B.A. (Hons.) in Business Administration (Entrepreneurship)",
-    category: "B.B.A.",
+    title: "BBA (Hons.) in Business Administration (Entrepreneurship)",
+    category: "BBA",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#fefce8]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bba-entrepreneurship",
+    slug: "/programs/bba-in-business-administration-entrepreneurship",
   },
   {
-    title: "B.B.A. (Hons.) In Business Administration",
-    category: "B.B.A.",
+    title: "BBA (Hons.) in Business Administration",
+    category: "BBA",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f0fdf4]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bba-business-administration",
+    slug: "/programs/bba-in-business-administration",
   },
   {
-    title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)",
-    category: "B.Com.",
+    title: "B.Com (Hons.) in Business Administration (Entrepreneurship)",
+    category: "B.Com",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#fefce8]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bcom-entrepreneurship",
+    slug: "/programs/bcom-in-business-administration-entrepreneurship",
   },
   {
-    title: "B.Com. (Hons.) in Business Administration",
-    category: "B.Com.",
+    title: "B.Com (Hons.) in Business Administration",
+    category: "B.Com",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f0fdf4]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bcom-business-administration",
+    slug: "/programs/bcom-in-business-administration",
   },
   {
-    title: "B.Sc. (Hons.) in Digital Media & Growth Marketing",
+    title: "B.Sc (Hons.) in Digital Media & Growth Marketing",
     category: "Digital Media & AI",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "3 Years",
-    slug: "/programs/bsc-digital-media-growth-marketing",
+    slug: "/programs/bsc-in-digital-media-growth-marketing",
   },
 ];
 
 const ROW_2_PROGRAMS: ProgramItem[] = [
   {
-    title: "B.B.A. (Hons.) in Business Administration (Marketing Management)",
-    category: "B.B.A.",
+    title: "BBA (Hons.) in Business Administration (Marketing Management)",
+    category: "BBA",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bba-marketing-management",
+    slug: "/programs/bba-in-business-administration-marketing-management",
   },
   {
-    title: "B.B.A. (Hons.) in Artificial Intelligence",
-    category: "B.B.A.",
+    title: "BBA (Hons.) in Artificial Intelligence",
+    category: "BBA",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f7fee7]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bba-artificial-intelligence",
+    slug: "/programs/bba-in-artificial-intelligence",
   },
   {
-    title: "B.Com. (Hons.) in Business Administration (Marketing Management)",
-    category: "B.Com.",
+    title: "B.Com (Hons.) in Business Administration (Marketing Management)",
+    category: "B.Com",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bcom-marketing-management",
+    slug: "/programs/bcom-in-business-administration-marketing-management",
   },
   {
-    title: "B.Com. Hons. in Business Administration (Artificial Intelligence)",
-    category: "B.Com.",
+    title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)",
+    category: "B.Com",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f7fee7]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
     duration: "4 Years",
-    slug: "/programs/bcom-artificial-intelligence",
+    slug: "/programs/bcom-in-business-administration-artificial-intelligence",
   },
   {
     title: "Diploma in Digital Media and Growth Marketing",
@@ -151,7 +151,7 @@ const ROW_2_PROGRAMS: ProgramItem[] = [
     format: "Online / Hybrid",
     eligibility: "12th Pass-outs",
     duration: "1 Year",
-    slug: "/programs/diploma-digital-media-growth-marketing",
+    slug: "/programs/diploma-in-digital-media-and-growth-marketing",
   },
 ];
 
@@ -239,7 +239,7 @@ export default function Programs() {
                           className="font-sans uppercase tracking-wider text-zinc-300/80 font-light mt-0.5"
                           style={{ fontSize: "11px" }}
                         >
-                          {program.category === "B.B.A." ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
+                          {program.category === "BBA" ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
                         </span>
                       </div>
                     </div>
@@ -286,7 +286,7 @@ export default function Programs() {
                           className="font-sans uppercase tracking-wider text-zinc-300/80 font-light mt-0.5"
                           style={{ fontSize: "11px" }}
                         >
-                          {program.category === "B.B.A." ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
+                          {program.category === "BBA" ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
                         </span>
                       </div>
                     </div>

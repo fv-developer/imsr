@@ -175,7 +175,7 @@ export default function MasterClassSection({
           className="w-full"
         >
           <AccordionGallery
-            items={items}
+            items={items.map((it) => ({ ...it, link: it.link || "#" }))}
             defaultIndex={defaultIndex}
             expandRatio={0.46}
             trigger="hover"

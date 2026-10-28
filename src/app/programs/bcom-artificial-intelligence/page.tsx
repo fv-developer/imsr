@@ -1,10 +1,5 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import React from "react";
-import ProgramPageTemplate from "@/components/programs/templates/ProgramPageTemplate";
-import { PROGRAMS_CONFIG } from "@/data/programsData";
-
-export default function BcomArtificialIntelligencePage() {
-  const config = PROGRAMS_CONFIG["bcom-artificial-intelligence"];
-  return <ProgramPageTemplate config={config} />;
+export default function Page() {
+  redirect("/programs/bcom-in-business-administration-artificial-intelligence");
 }

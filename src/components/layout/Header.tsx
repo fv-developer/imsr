@@ -23,29 +23,28 @@ const MAIN_NAV_LINKS = [
 ];
 
 const MEGA_MENU_DATA: Record<string, { title: string; href: string }[]> = {
-  "B.B.A.": [
-    { title: "B.B.A. (Hons.) In Business Administration", href: "/programs/bba-business-administration" },
-    { title: "B.B.A. (Hons.) in Business Administration (Marketing Management)", href: "/programs/bba-marketing-management" },
-    { title: "B.B.A. (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bba-entrepreneurship" },
-    { title: "B.B.A. (Hons.) in Artificial Intelligence", href: "/programs/bba-artificial-intelligence" },
+  "BBA": [
+    { title: "BBA (Hons.) in Business Administration", href: "/programs/bba-in-business-administration" },
+    { title: "BBA (Hons.) in Business Administration (Marketing Management)", href: "/programs/bba-in-business-administration-marketing-management" },
+    { title: "BBA (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bba-in-business-administration-entrepreneurship" },
+    { title: "BBA (Hons.) in Artificial Intelligence", href: "/programs/bba-in-artificial-intelligence" },
   ],
-  "B.Com.": [
-    { title: "B.Com. (Hons.) in Business Administration", href: "/programs/bcom-business-administration" },
-    { title: "B.Com. (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-marketing-management" },
-    { title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-entrepreneurship" },
-    { title: "B.Com. Hons. in Business Administration (Artificial Intelligence)", href: "/programs/bcom-artificial-intelligence" },
+  "B.Com": [
+    { title: "B.Com (Hons.) in Business Administration", href: "/programs/bcom-in-business-administration" },
+    { title: "B.Com (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
+    { title: "B.Com (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
+    { title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
   ],
   "Digital Media & AI": [
-    { title: "B.Sc. (Hons.) in Digital Media & Growth Marketing", href: "/programs/bsc-digital-media-growth-marketing" },
-    { title: "Diploma in Digital Media and Growth Marketing", href: "/programs/diploma-digital-media-growth-marketing" },
+    { title: "B.Sc (Hons.) in Digital Media & Growth Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
+    { title: "Diploma in Digital Media and Growth Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
   ],
 };
 
 const MEGA_MENU_OVERVIEW_LIST = [
-  "Industry Placement Cell",
-  "Experiential Learning Modules",
-  "Scholarships & Grants",
-  "Admissions Booking 2025",
+  { title: "Industry Placement Cell", href: "/industry-placement" },
+  { title: "Experiential Learning Modules", href: "#" },
+  { title: "Scholarships & Grants", href: "#" },
 ];
 
 interface HeaderProps {
@@ -56,7 +55,7 @@ export default function Header({ activeNav }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const [activeMegaCategory, setActiveMegaCategory] = useState<string>("B.B.A.");
+  const [activeMegaCategory, setActiveMegaCategory] = useState<string>("BBA");
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -281,9 +280,9 @@ export default function Header({ activeNav }: HeaderProps) {
                   </span>
                   <div className="flex flex-col gap-3 w-full">
                     {MEGA_MENU_OVERVIEW_LIST.map((item, idx) => (
-                      <Link key={idx} href="/#programs" className="w-full flex" onClick={() => setIsMegaMenuOpen(false)}>
+                      <Link key={idx} href={item.href} className="w-full flex" onClick={() => setIsMegaMenuOpen(false)}>
                         <span className="program-underline-effect font-kanit font-normal text-[14px] text-zinc-600 hover:text-brand-primary transition-all duration-200 cursor-pointer select-none">
-                          {item}
+                          {item.title}
                         </span>
                       </Link>
                     ))}

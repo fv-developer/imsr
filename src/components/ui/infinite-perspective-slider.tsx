@@ -733,9 +733,9 @@ function InfinitePerspectiveSliderComp({
       image: HTMLElement;
       handleImageEnter: () => void;
       handleImageLeave: () => void;
-      numberSplit: InstanceType<typeof SplitText>;
-      titleSplit: InstanceType<typeof SplitText>;
-      descriptionSplit: InstanceType<typeof SplitText>;
+      numberSplit?: InstanceType<typeof SplitText>;
+      titleSplit?: InstanceType<typeof SplitText>;
+      descriptionSplit?: InstanceType<typeof SplitText>;
     }
 
     const animations: AnimationEntry[] = [];

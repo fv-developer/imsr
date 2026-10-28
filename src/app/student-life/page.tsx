@@ -16,6 +16,8 @@ import RecentActivitiesSection from "@/components/student-life/RecentActivitiesS
 import MasterClassSection from "@/components/student-life/MasterClassSection";
 import WorkshopsSection from "@/components/student-life/WorkshopsSection";
 import StudentLifeStats from "@/components/student-life/StudentLifeStats";
+import FAQs from "@/components/ui/text-reveal-faqs";
+import { STUDENT_LIFE_FAQS, CAMPUS_LIFE_FAQS, EXPERIENTIAL_LEARNING_FAQS } from "@/data/faqsData";
 import { ChevronRight } from "lucide-react";
 
 const PARALLAX_IMAGES = [
@@ -247,6 +249,16 @@ export default function StudentLifePage() {
 
       {/* SPECIALIZED WORKSHOPS SECTION */}
       <WorkshopsSection />
+
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+      <FAQs
+        categories={[
+          { name: "Student Life & Events", items: STUDENT_LIFE_FAQS },
+          { name: "Campus Life & Campuses", items: CAMPUS_LIFE_FAQS },
+          { name: "Experiential Learning", items: EXPERIENTIAL_LEARNING_FAQS },
+        ]}
+        subtitle="Everything you need to know about student life, masterclasses, and campus experiences at FV - IMSR."
+      />
 
       {/* FOOTER */}
       <Footer />

@@ -14,7 +14,7 @@ const HIGHLIGHT_CARDS = [
   {
     icon: <Award className="w-6 h-6 text-[#42d392]" />,
     label: "DEGREE",
-    value: "B.B.A. (Hons.)",
+    value: "BBA (Hons.)",
     subtext: "Undergraduate Honors Degree",
     accentBg: "bg-[#42d392]/10 border-[#42d392]/20",
   },
@@ -110,7 +110,7 @@ export default function BbaOverviewSection() {
             </span>
           </h2>
           <p className="mt-4 text-zinc-600 text-[18px] font-light leading-relaxed">
-            A comprehensive business management programme designed to develop strong foundations in management, strategy, finance, marketing, operations and leadership while preparing students for diverse business careers.
+            A comprehensive business management programme designed to Develop strong Foundations in Management, Strategy, Finance, Marketing, Operations and Leadership while preparing students for diverse business careers.
           </p>
         </div>
 
@@ -145,11 +145,11 @@ export default function BbaOverviewSection() {
           {/* LEFT COLUMN: DESCRIPTION & KEY HIGHLIGHT POINTS */}
           <div className="overview-fade lg:col-span-7 flex flex-col gap-6">
             <h3 className="font-display text-2xl sm:text-3xl font-medium text-zinc-950">
-              Why Pursue B.B.A. (Hons.) at IMSR?
+              Why Pursue BBA (Hons.) at IMSR?
             </h3>
             
             <p className="text-zinc-600 font-light leading-relaxed text-[18px]">
-              The B.B.A. (Hons.) at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.
+              The BBA (Hons.) at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.
             </p>
 
             <ul className="space-y-3.5 pt-2">

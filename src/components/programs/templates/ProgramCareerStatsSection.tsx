@@ -40,12 +40,12 @@ const PLACEMENT_STATS_DATA: StatCardData[] = [
   {
     id: 2,
     label: "Average CTC",
-    target: 24.5,
+    target: 2.52,
     prefix: "₹",
     suffix: " L",
-    decimals: 1,
+    decimals: 2,
     subtextPrefix: "Vs last year:",
-    subtextValue: "₹21.2 L",
+    subtextValue: "₹2.21 L",
     bgStyle: "bg-[#00629f] text-white",
     shadowStyle: "shadow-xl shadow-[#00629f]/25",
     patternType: "stripes",
@@ -53,12 +53,12 @@ const PLACEMENT_STATS_DATA: StatCardData[] = [
   {
     id: 3,
     label: "Highest Offer",
-    target: 52,
+    target: 6.5,
     prefix: "₹",
     suffix: " LPA",
-    decimals: 0,
-    subtextPrefix: "Role:",
-    subtextValue: "US DeepTech Lead",
+    decimals: 2,
+    subtextPrefix: "From",
+    subtextValue: "Avocation Educational Services Pvt. Ltd. (Yocket)",
     bgStyle: "bg-[#00bcda] text-white",
     shadowStyle: "shadow-xl shadow-[#00bcda]/25",
     patternType: "circles",
@@ -66,12 +66,12 @@ const PLACEMENT_STATS_DATA: StatCardData[] = [
   {
     id: 4,
     label: "Recruiter Network",
-    target: 180,
+    target: 50,
     prefix: "",
     suffix: "+",
     decimals: 0,
-    subtextPrefix: "Partners:",
-    subtextValue: "Silicon Valley & India",
+    subtextPrefix: "",
+    subtextValue: "Top companies across industries",
     bgStyle: "bg-gradient-to-br from-[#00a876] via-[#00986a] to-[#007e58] text-white",
     shadowStyle: "shadow-xl shadow-emerald-600/25",
     patternType: "grid",
@@ -79,12 +79,12 @@ const PLACEMENT_STATS_DATA: StatCardData[] = [
   {
     id: 5,
     label: "Global Offers",
-    target: 350,
+    target: 10,
     prefix: "",
     suffix: "+",
     decimals: 0,
-    subtextPrefix: "Includes:",
-    subtextValue: "In-term Paid Co-ops",
+    subtextPrefix: "",
+    subtextValue: "Includes international opportunities",
     bgStyle: "bg-[#079db5] text-white",
     shadowStyle: "shadow-xl shadow-[#079db5]/25",
     patternType: "dots",
@@ -312,7 +312,7 @@ export default function ProgramCareerStatsSection({ config }: { config: ProgramC
               {/* BOTTOM SUBTEXT */}
               <div className="relative z-10 w-full text-center">
                 <p className="text-[11px] md:text-[12px] text-white/80 font-normal leading-tight">
-                  {card.subtextPrefix}{" "}
+                  {card.subtextPrefix ? `${card.subtextPrefix} ` : ""}
                   <span className="font-semibold text-white">{card.subtextValue}</span>
                 </p>
               </div>

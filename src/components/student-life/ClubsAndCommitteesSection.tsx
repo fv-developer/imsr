@@ -23,79 +23,120 @@ const CATEGORIES_DATA: Category[] = [
     name: "Master Class",
     items: [
       {
-        title: "IMSR Campus Masterclass & Executive Workshops",
-        video: "/images/campus-video.mp4",
+        title: "Digital Marketing Careers in AI Era - Mr. Viken Shah",
+        video: "/images/experiential-learning/masterclass/viken-shah-video.mp4",
         isVideo: true,
       },
       {
-        title: "Executive Leadership & Global Strategy",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200&auto=format&fit=crop",
+        title: "AI & Digital Transformation - Mr. Unnat Khetan",
+        video: "/images/experiential-learning/masterclass/unnat-khetan-video.mp4",
+        isVideo: true,
       },
       {
-        title: "Corporate Financial Governance",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop",
+        title: "Digital Marketing Careers in the AI Era",
+        image: "/images/experiential-learning/masterclass/viken-shah-1.jpg",
       },
       {
-        title: "AI & Digital Business Transformation",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+        title: "AI & Digital Transformation in Customer Experience",
+        image: "/images/experiential-learning/masterclass/unnat-khetan-1.jpg",
       },
       {
-        title: "Marketing Innovation & Consumer Insights",
-        image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200&auto=format&fit=crop",
+        title: "Resume Writing & Profile Building - Ms. Hemangi Manchekar",
+        image: "/images/experiential-learning/masterclass/hemangi-manchekar-1.jpg",
+      },
+      {
+        title: "Private Equity: Capital to Value Creation - Mr. Piyush Somani",
+        image: "/images/experiential-learning/masterclass/piyush-somani-1.jpg",
+      },
+      {
+        title: "Marketing Beyond Textbooks - Ms. Hamita T.",
+        image: "/images/experiential-learning/masterclass/hamita-t-1.jpg",
+      },
+      {
+        title: "AI to Accelerate Your Career - Mr. Aneesh Dighe",
+        image: "/images/experiential-learning/masterclass/aneesh-dighe-1.jpg",
+      },
+      {
+        title: "From Classroom to Career - Mr. Amiet Padam",
+        image: "/images/experiential-learning/masterclass/amiet-padam-1.jpg",
+      },
+      {
+        title: "Money in Motion: Asset Management - Mr. Yash Ajmera",
+        image: "/images/experiential-learning/masterclass/yash-ajmera-1.jpg",
+      },
+      {
+        title: "Investor's Blueprint: Securities & Wealth - Dr. Hiral Trivedi",
+        image: "/images/experiential-learning/masterclass/hiral-trivedi-1.jpg",
+      },
+      {
+        title: "Marketing Technology & AI Marketing - Mr. Manan Shah",
+        image: "/images/experiential-learning/masterclass/manan-shah-1.jpg",
       },
     ],
   },
   {
-    id: "workshop",
-    name: "Workshop",
+    id: "sahyog-club",
+    name: "Sahyog Club (CSR)",
     items: [
       {
-        title: "Interactive Hands-on Laboratory & Lab Sessions",
-        video: "/images/video.mp4",
-        isVideo: true,
+        title: "Beach Cleaning Drive at Marve Beach",
+        image: "/images/experiential-learning/sahyog-club/beach-cleaning-1.jpg",
       },
       {
-        title: "Executive Data Analytics & Power BI",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
+        title: "Environmental Sustainability & Clean Shoreline Action",
+        image: "/images/experiential-learning/sahyog-club/beach-cleaning-2.jpg",
       },
-      {
-        title: "Financial Modeling & Valuation",
-        image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200&auto=format&fit=crop",
-      },
-      {
-        title: "Design Thinking & Product Strategy",
-        image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop",
-      },
-      {
-        title: "Applied Generative AI for Managers",
-        image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=1200&auto=format&fit=crop",
-      },
-    ],
-  },
-  {
-    id: "community-service",
-    name: "Community Service Club",
-    items: [
       {
         title: "Social Impact & Volunteer Campus Action",
-        video: "/images/campus-video.mp4",
-        isVideo: true,
-      },
-      {
-        title: "Social Impact Drive & Youth Mentorship",
         image: "/images/student-life/activity/activity-left.jpg",
-      },
-      {
-        title: "Environmental Sustainability Campaign",
-        image: "/images/student-life/activity/activity-left-bottom.jpg",
       },
       {
         title: "Community Health & Welfare Outreach",
         image: "/images/student-life/activity/activity-center-bottom.jpg",
       },
+    ],
+  },
+  {
+    id: "sports-club",
+    name: "FitFuture Sports Club",
+    items: [
       {
-        title: "Educational Volunteer Program",
-        image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1200&auto=format&fit=crop",
+        title: "Apex Badminton League 2026",
+        image: "/images/experiential-learning/sports-club/badminton-league-1.jpg",
+      },
+      {
+        title: "Elite Kho-Kho Premier League",
+        image: "/images/experiential-learning/sports-club/kho-kho-league-1.jpg",
+      },
+      {
+        title: "Inter-College Sports & Athletics Meet",
+        image: "/images/student-life/activity/activity-right-bottom.png",
+      },
+      {
+        title: "Campus Badminton Tournament Showcase",
+        image: "/images/student-life/activity/activity-center.jpg",
+      },
+    ],
+  },
+  {
+    id: "cultural-club",
+    name: "Vibrance Cultural Club",
+    items: [
+      {
+        title: "Teachers Day Celebration & Cultural Tribute",
+        image: "/images/experiential-learning/cultural-club/teachers-day-1.jpg",
+      },
+      {
+        title: "Youth Talent & Performing Arts Showcase",
+        image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg",
+      },
+      {
+        title: "IMSR Campus Cultural Fest & Talent Showcase",
+        image: "/images/student-life/activity/activity-top.jpg",
+      },
+      {
+        title: "Performing Arts, Theater & Musical Ensemble",
+        image: "/images/student-life/activity/activity-left-bottom.jpg",
       },
     ],
   },
@@ -104,106 +145,43 @@ const CATEGORIES_DATA: Category[] = [
     name: "Industry Visit",
     items: [
       {
-        title: "Live Corporate Headquarters & Industry Interaction",
-        video: "/images/video.mp4",
-        isVideo: true,
+        title: "Educational Visit - Radio Mirchi Studio",
+        image: "/images/experiential-learning/educational-visit/radio-mirchi-1.jpg",
+      },
+      {
+        title: "Industrial Plant Visit to Parle & Jayesh Industries",
+        image: "/images/new-folder/PARLE.jpg",
+      },
+      {
+        title: "Corporate Headquarters & Media Interaction",
+        image: "/images/student-life/activity/activity-right.jpg",
       },
       {
         title: "Enterprise Operations & Logistics Tour",
-        image: "/images/student-life/activity/activity-right.jpg",
-      },
-      {
-        title: "Corporate Headquarters Interaction",
         image: "/images/student-life/activity/activity-right-bottom.png",
       },
-      {
-        title: "Financial District & Banking Hub Visit",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
-      },
-      {
-        title: "Tech Innovation & Startup Incubator Tour",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
-      },
     ],
   },
   {
-    id: "inhouse-events",
-    name: "Inhouse Events",
+    id: "workshop",
+    name: "Workshop",
     items: [
       {
-        title: "Annual IMSR Management Fest & Conclave Highlights",
-        video: "/images/campus-video.mp4",
-        isVideo: true,
-      },
-      {
-        title: "Annual Leadership & Strategy Conclave",
-        image: "/images/student-life/activity/activity-center.jpg",
-      },
-      {
-        title: "IMSR Campus Cultural Fest & Talent Showcase",
-        image: "/images/student-life/activity/activity-top.jpg",
-      },
-      {
-        title: "Inter-Department Management Case Challenge",
-        image: "/images/student-life/activity/activity-center-bottom.jpg",
-      },
-      {
-        title: "Entrepreneurship Pitch Night",
-        image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200&auto=format&fit=crop",
-      },
-    ],
-  },
-  {
-    id: "student-club",
-    name: "Students Club Activity",
-    items: [
-      {
-        title: "Student Forum & Toastmasters Debating Circle",
+        title: "Interactive Hands-on Laboratory & Workshop Sessions",
         video: "/images/video.mp4",
         isVideo: true,
       },
       {
-        title: "Debate & Toastmasters Public Speaking Forum",
-        image: "/images/student-life/activity/activity-left.jpg",
+        title: "Business Etiquette For Modern Workplace - Mr. James Fernandes",
+        image: "/images/new-folder/James.webp",
       },
       {
-        title: "Finance & Investment Student Circle",
-        image: "/images/student-life/activity/activity-right.jpg",
+        title: "Stress Management & Executive Resilience - Ms. Gunjan Sidhu",
+        image: "/images/new-folder/Gunjan.webp",
       },
       {
-        title: "Marketing & Brand Building Guild",
-        image: "/images/student-life/activity/activity-top.jpg",
-      },
-      {
-        title: "Product Design & Innovation Lab",
-        image: "/images/student-life/activity/activity-center.jpg",
-      },
-    ],
-  },
-  {
-    id: "extra-curricular",
-    name: "Extra Curricular Activities",
-    items: [
-      {
-        title: "Inter-College Sports & Cultural Campus Showcase",
-        video: "/images/campus-video.mp4",
-        isVideo: true,
-      },
-      {
-        title: "Inter-College Sports & Athletics Meet",
-        image: "/images/student-life/activity/activity-right-bottom.png",
-      },
-      {
-        title: "Performing Arts, Theater & Musical Ensemble",
-        image: "/images/student-life/activity/activity-left-bottom.jpg",
-      },
-      {
-        title: "Visual Arts & Campus Photography Club",
-        image: "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=1200&auto=format&fit=crop",
-      },
-      {
-        title: "Outdoor Leadership & Trekking Expeditions",
-        image: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?q=80&w=1200&auto=format&fit=crop",
+        title: "Design Thinking & Strategic Problem Solving",
+        image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop",
       },
     ],
   },

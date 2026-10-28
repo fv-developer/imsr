@@ -93,7 +93,7 @@ export default function BbaBusinessAdminHeroSection() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/programs/bba-In-business-administration/program-bg.jpg"
-          alt="B.B.A. Business Administration Background"
+          alt="BBA Business Administration Background"
           fill
           className="object-cover object-center opacity-85 brightness-95"
           priority
@@ -115,7 +115,7 @@ export default function BbaBusinessAdminHeroSection() {
           </Link>
           <ChevronRight className="w-4 h-4 text-zinc-600" />
           <span className="text-zinc-200 font-medium truncate">
-            B.B.A. (Hons.) In Business Administration
+            BBA (Hons.) in Business Administration
           </span>
         </div>
 
@@ -130,7 +130,7 @@ export default function BbaBusinessAdminHeroSection() {
               ref={headingRef}
               className="font-display font-medium text-[32px] sm:text-[48px] tracking-tight leading-[45px] text-white text-left mb-6"
             >
-              <SplitText text="B.B.A. (Hons.) In" />
+              <SplitText text="BBA (Hons.) in Business" />
               <br className="hidden sm:inline" />
               <span
                 className="font-medium inline-block pb-1 italic font-serif fade-up-scroll pr-3 opacity-0"
@@ -141,13 +141,13 @@ export default function BbaBusinessAdminHeroSection() {
                   backgroundClip: "text",
                 }}
               >
-                Business Administration
+                Administration
               </span>
             </h1>
 
             {/* DESCRIPTION */}
             <p className="hero-fade-item text-zinc-300 font-sans font-light text-[18px] leading-relaxed max-w-3xl mb-4 text-left">
-              A comprehensive business management programme designed to develop strong foundations in management, strategy, finance, marketing, operations and leadership while preparing students for diverse business careers.
+              A comprehensive business management programme designed to Develop strong Foundations in Management, Strategy, Finance, Marketing, Operations and Leadership while preparing students for diverse business careers.
             </p>
 
 

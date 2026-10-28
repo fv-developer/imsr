@@ -15,30 +15,32 @@ interface CampusCard {
   image: string;
   name: string;
   location: string;
-  badge?: string;
-  hasLogo?: boolean;
 }
 
 const CAMPUS_DATA: CampusCard[] = [
   {
     id: 1,
     image: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/Copy-of-DSC_0894.jpg",
-    name: "MKES College of Law",
+    name: "MKES",
     location: "Malad West",
-    badge: "MKES",
-    hasLogo: true,
   },
   {
     id: 2,
-    image: "/images/imsr_campus_building.jpg",
-    name: "IMSR Main Campus",
-    location: "Ghatkopar West",
+    image: "/images/campus_explore.jpg",
+    name: "TIMSR Thakur Institute of Management Studies & Research",
+    location: "Kandivali East",
   },
   {
     id: 3,
-    image: "/images/campus_explore.jpg",
-    name: "IMSR Executive Center",
-    location: "Kandivali East",
+    image: "/images/imsr_campus_building.jpg",
+    name: "RAV Laxmichand Golwala College",
+    location: "Ghatkopar East",
+  },
+  {
+    id: 4,
+    image: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/Copy-of-IMG20240108165343.jpg",
+    name: "RADAV Ramanand Arya D. A. V. College",
+    location: "Bhandup East",
   },
 ];
 
@@ -78,7 +80,7 @@ export default function ExploreCampusHorizontal() {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 100px",
-        end: "+=120%",
+        end: "+=150%",
         pin: true,
         scrub: 0.8,
         invalidateOnRefresh: true,
@@ -159,44 +161,26 @@ export default function ExploreCampusHorizontal() {
 
               {/* Overlays */}
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
-                <div className="flex flex-col gap-1 items-start">
-                  {campus.hasLogo && (
-                    <div className="bg-white px-2.5 py-0.5 rounded-[5px] shadow-sm mb-1">
-                      <span className="text-[#bf1e2e] font-sans font-extrabold text-[11px] tracking-wider uppercase">
-                        {campus.badge}
-                      </span>
-                    </div>
-                  )}
-                  
-                  {campus.hasLogo ? (
-                    <div className="bg-black/60 backdrop-blur-sm px-3 py-0.5 rounded-full border border-white/10 text-[11px] font-light text-zinc-200">
-                      {campus.location}
-                    </div>
-                  ) : (
-                    <>
-                      <h4 className="text-[17px] font-display font-medium leading-tight">
-                        {campus.name}
-                      </h4>
-                      <p className="text-[11px] font-sans font-light text-zinc-300">
-                        {campus.location}
-                      </p>
-                    </>
-                  )}
+                <div className="flex flex-col gap-1 items-start pr-2">
+                  <h4 className="text-[17px] font-display font-medium leading-tight">
+                    {campus.name}
+                  </h4>
+                  <p className="text-[12px] font-sans font-light text-zinc-300">
+                    {campus.location}
+                  </p>
                 </div>
 
-                {!campus.hasLogo && (
-                  <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm shrink-0">
-                    <svg 
-                      className="w-3.5 h-3.5 text-white" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2.5" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                    </svg>
-                  </div>
-                )}
+                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm shrink-0">
+                  <svg 
+                    className="w-3.5 h-3.5 text-white" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2.5" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}
@@ -275,44 +259,26 @@ export default function ExploreCampusHorizontal() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between text-white">
-                  <div className="flex flex-col gap-1.5 items-start">
-                    {campus.hasLogo && (
-                      <div className="bg-white px-3 py-1 rounded-[6px] shadow-sm mb-1">
-                        <span className="text-[#bf1e2e] font-sans font-extrabold text-[13px] tracking-wider uppercase">
-                          {campus.badge}
-                        </span>
-                      </div>
-                    )}
-                    
-                    {campus.hasLogo ? (
-                      <div className="bg-black/60 backdrop-blur-sm px-3.5 py-1 rounded-full border border-white/10 text-xs font-light text-zinc-200">
-                        {campus.location}
-                      </div>
-                    ) : (
-                      <>
-                        <h4 className="text-[20px] md:text-[24px] font-display font-medium leading-tight">
-                          {campus.name}
-                        </h4>
-                        <p className="text-sm font-sans font-light text-zinc-300">
-                          {campus.location}
-                        </p>
-                      </>
-                    )}
+                  <div className="flex flex-col gap-1.5 items-start pr-4 max-w-[80%]">
+                    <h4 className="text-[20px] md:text-[24px] font-display font-medium leading-tight">
+                      {campus.name}
+                    </h4>
+                    <p className="text-sm font-sans font-light text-zinc-300">
+                      {campus.location}
+                    </p>
                   </div>
 
-                  {!campus.hasLogo && (
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm group-hover:bg-white group-hover:text-zinc-950 transition-all duration-300">
-                      <svg 
-                        className="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2.5" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                      </svg>
-                    </div>
-                  )}
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm group-hover:bg-white group-hover:text-zinc-950 transition-all duration-300 shrink-0">
+                    <svg 
+                      className="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2.5" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             ))}

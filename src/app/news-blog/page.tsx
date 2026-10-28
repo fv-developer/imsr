@@ -10,6 +10,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
 import { ARTICLES_DATA, Article } from "@/data/articlesData";
+import FAQs from "@/components/ui/text-reveal-faqs";
+import { BLOG_NEWS_EVENTS_FAQS } from "@/data/faqsData";
 
 import SplitText from "@/components/ui/SplitText";
 
@@ -48,7 +50,8 @@ export default function NewsArticlesPage() {
   });
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
 
     const ctx = gsap.context(() => {
       // 1. Heading text reveal
@@ -98,7 +101,7 @@ export default function NewsArticlesPage() {
       );
 
       // 3. News & Articles Section Title Animation
-      if (containerRef.current.querySelectorAll(".news-heading-anim").length > 0) {
+      if (container.querySelectorAll(".news-heading-anim").length > 0) {
         gsap.fromTo(
           ".news-heading-anim",
           { y: 45, opacity: 0 },
@@ -117,7 +120,7 @@ export default function NewsArticlesPage() {
       }
 
       // 4. Featured Banner Scale Entrance
-      if (containerRef.current.querySelectorAll(".featured-banner-card").length > 0) {
+      if (container.querySelectorAll(".featured-banner-card").length > 0) {
         gsap.fromTo(
           ".featured-banner-card",
           { y: 50, opacity: 0, scale: 0.96 },
@@ -136,7 +139,7 @@ export default function NewsArticlesPage() {
       }
 
       // 5. Category Filter Buttons Stagger Entrance
-      if (containerRef.current.querySelectorAll(".category-tab-btn").length > 0) {
+      if (container.querySelectorAll(".category-tab-btn").length > 0) {
         gsap.fromTo(
           ".category-tab-btn",
           { y: 20, opacity: 0 },
@@ -155,7 +158,7 @@ export default function NewsArticlesPage() {
       }
 
       // 6. Card entrance animation
-      if (containerRef.current.querySelectorAll(".article-card").length > 0) {
+      if (container.querySelectorAll(".article-card").length > 0) {
         gsap.fromTo(
           ".article-card",
           { y: 45, opacity: 0, scale: 0.98 },
@@ -173,7 +176,7 @@ export default function NewsArticlesPage() {
           }
         );
       }
-    }, containerRef);
+    }, container);
 
     return () => ctx.revert();
   }, [selectedCategory]);
@@ -406,6 +409,12 @@ export default function NewsArticlesPage() {
           )}
         </div>
       </section>
+
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+      <FAQs
+        items={BLOG_NEWS_EVENTS_FAQS}
+        subtitle="Frequently asked questions about FV - IMSR insights, publications, and student event highlights."
+      />
 
       {/* FOOTER */}
       <Footer />

@@ -15,6 +15,7 @@ import OurRecruitersSection from "@/components/industry/OurRecruitersSection";
 import StudentSuccessStories from "@/components/home/StudentSuccessStories";
 import StudentPlacementsSection from "@/components/industry/StudentPlacementsSection";
 import FAQs from "@/components/ui/text-reveal-faqs";
+import { INTERNSHIP_PLACEMENTS_FAQS } from "@/data/faqsData";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -165,7 +166,10 @@ export default function IndustryPlacementPage() {
       <StudentPlacementsSection />
 
       {/* FREQUENTLY ASKED QUESTIONS SECTION */}
-      <FAQs />
+      <FAQs
+        items={INTERNSHIP_PLACEMENTS_FAQS}
+        subtitle="Everything you need to know about our corporate partnerships, internship pathways, and placement records."
+      />
 
       {/* FOOTER */}
       <Footer />

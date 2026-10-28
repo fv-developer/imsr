@@ -1,55 +1,80 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { motion } from "framer-motion"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { HOME_FAQS, FaqItem } from '@/data/faqsData'
 
-export default function FAQs() {
-  const faqItems = [
-    {
-      id: 'item-1',
-      question: 'What programs does IMSR offer?',
-      answer: 'IMSR offers premium specialized undergraduate and postgraduate courses, including the Bachelor of Business Administration (BBA) and Bachelor of Commerce (B.Com) in Sports Management, Business Analytics, and Global Leadership.',
-    },
-    {
-      id: 'item-2',
-      question: 'How does the placement assistance process work?',
-      answer: 'We have a dedicated Corporate Relations cell partnering with top-tier brands like Informa Markets, Panasonic, ABEC, BookMyShow, SFA Sports, and Wizcraft. We provide 100% placement support and pre-placement training.',
-    },
-    {
-      id: 'item-3',
-      question: 'What are the eligibility criteria for admission?',
-      answer: 'Admissions are based on academic performance in high school/secondary education followed by a personal counseling session. Candidates who demonstrate a passion for sports, leadership, or business analytics are highly preferred.',
-    },
-    {
-      id: 'item-4',
-      question: 'Does the institute offer scholarships?',
-      answer: 'Yes, IMSR offers merit-based scholarships to students with outstanding academic records, as well as sports-scholarships for state-level and national-level athletes.',
-    },
-    {
-      id: 'item-5',
-      question: 'Where can I contact the admissions helpdesk?',
-      answer: 'You can reach out to our helpdesk at info@futurevarsity.org or visit our contact page to speak directly with an admissions advisor.',
-    },
-  ];
+export interface FaqCategory {
+  name: string;
+  items: FaqItem[];
+}
+
+export interface FAQsProps {
+  items?: FaqItem[];
+  titlePrefix?: string;
+  titleHighlight?: string;
+  subtitle?: string;
+  categories?: FaqCategory[];
+  id?: string;
+}
+
+export default function FAQs({
+  items,
+  titlePrefix = "Frequently",
+  titleHighlight = "Asked Questions",
+  subtitle = "Everything you need to know about FV - IMSR Admissions, Programmes, and Career Pathways.",
+  categories,
+  id = "faqs",
+}: FAQsProps) {
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
+
+  // If categories are provided, use the currently selected category items
+  // Otherwise, use items prop, or default to HOME_FAQS
+  const activeItems: FaqItem[] = categories && categories.length > 0
+    ? categories[selectedCategoryIndex]?.items || []
+    : (items && items.length > 0 ? items : HOME_FAQS);
 
   return (
-    <section id="faqs" className="py-16 md:py-24 bg-white text-zinc-900 border-t border-zinc-100 relative z-20">
+    <section id={id} className="py-16 md:py-24 bg-white text-zinc-900 border-t border-zinc-100 relative z-20 font-sans">
       <div className="mx-auto max-w-7xl px-[15px]">
         <div className="grid gap-12 md:grid-cols-5 md:gap-16">
+          
+          {/* LEFT COLUMN: TITLE & CONTEXT */}
           <div className="md:col-span-2 text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-zinc-950 tracking-tight leading-tight">
-              Frequently <br />
-              <span className="text-[#00bcda] font-serif italic">Asked Questions</span>
+              {titlePrefix} <br />
+              <span className="text-[#00bcda] font-serif italic">{titleHighlight}</span>
             </h2>
+
             <p className="text-zinc-500 mt-5 text-balance text-[16px] sm:text-[17px] font-sans font-light leading-relaxed">
-              Everything you need to know about IMSR Admissions, Programs, and Placement Relations.
+              {subtitle}
             </p>
+
+            {/* CATEGORY TABS (IF MULTIPLE CATEGORIES EXIST) */}
+            {categories && categories.length > 1 && (
+              <div className="mt-8 flex flex-wrap gap-2">
+                {categories.map((cat, idx) => (
+                  <button
+                    key={cat.name}
+                    onClick={() => setSelectedCategoryIndex(idx)}
+                    className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer ${
+                      selectedCategoryIndex === idx
+                        ? "bg-[#00629f] text-white shadow-md shadow-[#00629f]/20"
+                        : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
+                    }`}
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+            )}
+
             <p className="text-zinc-400 mt-8 hidden md:block text-sm font-sans font-light">
               Can’t find what you’re looking for? Reach out to our{' '}
               <Link
-                href="#contact"
+                href="/#contact"
                 className="text-[#00bcda] font-medium hover:underline"
               >
                 admissions desk
@@ -58,42 +83,47 @@ export default function FAQs() {
             </p>
           </div>
 
+          {/* RIGHT COLUMN: ACCORDION ITEMS */}
           <div className="md:col-span-3">
             <Accordion
               type="single"
               collapsible
               className="w-full"
+              key={`cat-${selectedCategoryIndex}`}
             >
-              {faqItems.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  value={item.id}
-                  className="border-b border-zinc-200 dark:border-zinc-800"
-                >
-                  <AccordionTrigger className="cursor-pointer text-base sm:text-lg font-display font-medium text-zinc-900 hover:text-[#00bcda] hover:no-underline transition-colors py-4">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-zinc-600">
-                    <BlurredStagger text={item.answer} />
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+              {activeItems.map((item, idx) => {
+                const itemId = item.id || `faq-item-${idx}`;
+                return (
+                  <AccordionItem
+                    key={itemId}
+                    value={itemId}
+                    className="border-b border-zinc-200 dark:border-zinc-800"
+                  >
+                    <AccordionTrigger className="cursor-pointer text-left text-base sm:text-lg font-display font-medium text-zinc-900 hover:text-[#00bcda] hover:no-underline transition-colors py-4">
+                      <span className="pr-4">{item.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-zinc-600">
+                      <BlurredStagger text={item.answer} />
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
             </Accordion>
           </div>
 
           <p className="text-zinc-400 mt-6 md:hidden text-sm">
             Can&apos;t find what you&apos;re looking for? Contact our{' '}
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-[#00bcda] font-medium hover:underline"
             >
-              customer support team
+              counselling team
             </Link>
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export const BlurredStagger = ({
@@ -106,7 +136,7 @@ export const BlurredStagger = ({
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.008,
+        staggerChildren: 0.005,
       },
     },
   };
@@ -136,7 +166,7 @@ export const BlurredStagger = ({
           <motion.span
             key={index}
             variants={letterAnimation}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2 }}
             className="inline-block"
           >
             {char === " " ? "\u00A0" : char}

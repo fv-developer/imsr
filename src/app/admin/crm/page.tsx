@@ -65,7 +65,7 @@ const INITIAL_LEADS: Lead[] = [
     email: "majidmtv8686@gmail.com",
     status: "New Leads",
     assignee: { name: "Varsha Shah", initials: "VS", color: "bg-red-600" },
-    course: "B.B.A. (Hons.) Business Administration",
+    course: "BBA (Hons.) Business Administration",
     city: "Mumbai",
     state: "Maharashtra",
     programLevel: "Bachelor",
@@ -75,7 +75,7 @@ const INITIAL_LEADS: Lead[] = [
       {
         id: "act-1",
         type: "created",
-        text: "Lead created — Muhammad Sohel majid shaikh | 9699921586 | majidmtv8686@gmail.com | B.B.A. (Hons.)",
+        text: "Lead created — Muhammad Sohel majid shaikh | 9699921586 | majidmtv8686@gmail.com | BBA (Hons.)",
         timestamp: "03 SEPT 2026, 01:24 PM",
       },
     ],
@@ -89,7 +89,7 @@ const INITIAL_LEADS: Lead[] = [
     email: "rohanvishwakarma262@gmail.com",
     status: "Interested",
     assignee: { name: "Varsha Shah", initials: "VS", color: "bg-red-600" },
-    course: "B.B.A. (Hons.) Business Administration",
+    course: "BBA (Hons.) Business Administration",
     city: "Mumbai",
     state: "Maharashtra",
     programLevel: "Bachelor",
@@ -119,7 +119,7 @@ const INITIAL_LEADS: Lead[] = [
     email: "dhayalkarsoham@gmail.com",
     status: "Contacted",
     assignee: { name: "Santosh Tiwari", initials: "ST", color: "bg-red-600" },
-    course: "B.B.A. (Hons.) Business Administration",
+    course: "BBA (Hons.) Business Administration",
     city: "Mumbai",
     state: "Maharashtra",
     programLevel: "Bachelor",
@@ -143,7 +143,7 @@ const INITIAL_LEADS: Lead[] = [
     email: "metharriddhesh88@gmail.com",
     status: "Warm",
     assignee: { name: "Santosh Tiwari", initials: "ST", color: "bg-red-600" },
-    course: "B.B.A. (Hons.) Business Administration",
+    course: "BBA (Hons.) Business Administration",
     city: "Thane",
     state: "Maharashtra",
     programLevel: "Bachelor",
@@ -167,7 +167,7 @@ const INITIAL_LEADS: Lead[] = [
     email: "ananya.sharma@gmail.com",
     status: "Admitted",
     assignee: { name: "Varsha Shah", initials: "VS", color: "bg-red-600" },
-    course: "B.B.A. (Hons.) Business Administration",
+    course: "BBA (Hons.) Business Administration",
     city: "Navi Mumbai",
     state: "Maharashtra",
     programLevel: "Bachelor",
@@ -261,7 +261,7 @@ export default function CrmPortalPage() {
   // Note & WhatsApp inputs
   const [customNote, setCustomNote] = useState<string>("");
   const [customWhatsAppMsg, setCustomWhatsAppMsg] = useState<string>(
-    "Hello! Thank you for inquiring about B.B.A. (Hons.) Business Administration at IMSR. When would be a good time for a short academic guidance call?"
+    "Hello! Thank you for inquiring about BBA (Hons.) Business Administration at IMSR. When would be a good time for a short academic guidance call?"
   );
 
   // Get current active lead object

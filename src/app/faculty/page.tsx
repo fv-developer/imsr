@@ -11,6 +11,8 @@ import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
 import FacultyScholarsReferenceSection from "@/components/faculty/FacultyScholarsReferenceSection";
 import AboutAcademicCouncilSection from "@/components/about/AboutAcademicCouncilSection";
+import FAQs from "@/components/ui/text-reveal-faqs";
+import { FACULTY_MENTORS_FAQS } from "@/data/faqsData";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -153,6 +155,12 @@ export default function FacultyPage() {
 
       {/* FACULTY SECTION: MEET OUR FACULTY, MENTORS & COUNSELLORS (SAME AS ABOUT US PAGE) */}
       <AboutAcademicCouncilSection />
+
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+      <FAQs
+        items={FACULTY_MENTORS_FAQS}
+        subtitle="Everything you need to know about our distinguished faculty, expert scholars, and industry mentorship."
+      />
 
       {/* FOOTER */}
       <Footer />

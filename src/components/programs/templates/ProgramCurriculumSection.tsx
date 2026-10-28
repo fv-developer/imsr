@@ -12,253 +12,50 @@ import {
   Globe,
   Briefcase,
   Lightbulb,
-  FileText,
-  GraduationCap
+  Layers,
+  GraduationCap,
 } from "lucide-react";
 import { ProgramConfig } from "@/data/programsData";
+import { getCurriculumForProgram } from "@/data/curriculumData";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-interface StreamSemester {
-  id: number;
-  num: string;
-  yearLabel: string;
-  title: string;
-  quote: string;
-  description: string;
-  icon: React.ReactNode;
-  accentColor: string;
-  learnBadges: string[];
-  keyOutcomes: string[];
-  courses: { code: string; title: string; credits: number }[];
-  categoryTags: string;
-}
+const STREAM_ICONS = [
+  <BarChart3 className="w-5 h-5" key="1" />,
+  <Globe className="w-5 h-5" key="2" />,
+  <Briefcase className="w-5 h-5" key="3" />,
+  <Layers className="w-5 h-5" key="4" />,
+  <Lightbulb className="w-5 h-5" key="5" />,
+  <Sparkles className="w-5 h-5" key="6" />,
+  <Cpu className="w-5 h-5" key="7" />,
+  <GraduationCap className="w-5 h-5" key="8" />,
+];
 
-const STREAMS_DATA: StreamSemester[] = [
-  {
-    id: 1,
-    num: "01",
-    yearLabel: "YEAR 1 / SEMESTER 1",
-    title: "Business Foundations & Analytics",
-    quote: "Master core management principles, financial accounting, and data-driven managerial economics.",
-    description: "Build a strong groundwork in corporate management, financial reporting, and quantitative business mathematics.",
-    icon: <BarChart3 className="w-5 h-5" />,
-    accentColor: "#00bcda",
-    learnBadges: [
-      "Business Management",
-      "Finance",
-      "Data-Driven Decision Making",
-    ],
-    keyOutcomes: [
-      "Analyze corporate balance sheets & income statements",
-      "Apply microeconomic decision frameworks",
-      "Master professional business writing & presentation skills",
-    ],
-    courses: [
-      { code: "BBA101", title: "Principles of Management", credits: 4 },
-      { code: "BBA102", title: "Financial Accounting & Reporting", credits: 4 },
-      { code: "BBA103", title: "Managerial Economics", credits: 3 },
-      { code: "BBA104", title: "Business Mathematics & Stats", credits: 3 },
-    ],
-    categoryTags: "PRIMARY • FOUNDATION • CORE",
-  },
-  {
-    id: 2,
-    num: "02",
-    yearLabel: "YEAR 1 / SEMESTER 2",
-    title: "Marketing & Commercial Strategy",
-    quote: "Execute modern marketing campaigns, cost accounting models, and legal business frameworks.",
-    description: "Understand market dynamics, consumer behavior, macroeconomic trends, and commercial regulations.",
-    icon: <Globe className="w-5 h-5" />,
-    accentColor: "#42d392",
-    learnBadges: [
-      "Marketing",
-      "Operations",
-      "Finance",
-    ],
-    keyOutcomes: [
-      "Design digital marketing funnels & brand strategies",
-      "Perform cost-volume profit & variance analysis",
-      "Evaluate commercial contracts & regulatory compliance",
-    ],
-    courses: [
-      { code: "BBA201", title: "Marketing Management", credits: 4 },
-      { code: "BBA202", title: "Cost & Management Accounting", credits: 4 },
-      { code: "BBA203", title: "Macroeconomics & Global Markets", credits: 3 },
-      { code: "BBA204", title: "Business & Commercial Law", credits: 3 },
-    ],
-    categoryTags: "PRIMARY • MARKETING • FINANCE",
-  },
-  {
-    id: 3,
-    num: "03",
-    yearLabel: "YEAR 2 / SEMESTER 3",
-    title: "Corporate Finance & Analytics",
-    quote: "Integrate corporate finance, talent management, supply chain logistics, and BI dashboards.",
-    description: "Advance into capital structure planning, human resource strategy, and data visualization labs.",
-    icon: <Cpu className="w-5 h-5" />,
-    accentColor: "#00629f",
-    learnBadges: [
-      "Finance",
-      "Human Resources",
-      "Operations",
-      "Data-Driven Decision Making",
-    ],
-    keyOutcomes: [
-      "Optimize capital budgeting & working capital",
-      "Streamline supply chain & operations workflow",
-      "Build interactive business intelligence dashboards",
-    ],
-    courses: [
-      { code: "BBA301", title: "Corporate Financial Management", credits: 4 },
-      { code: "BBA302", title: "Human Resource Management", credits: 4 },
-      { code: "BBA303", title: "Supply Chain & Logistics", credits: 3 },
-      { code: "BBA304", title: "Data Visualization & BI Lab", credits: 3 },
-    ],
-    categoryTags: "MIDDLE • ANALYTICS • OPERATIONS",
-  },
-  {
-    id: 4,
-    num: "04",
-    yearLabel: "YEAR 2 / SEMESTER 4",
-    title: "ERP & Corporate Internship",
-    quote: "Mandatory 8-week corporate summer internship alongside enterprise SAP/Oracle ERP integration.",
-    description: "Gain hands-on corporate exposure, risk management insights, and enterprise software execution.",
-    icon: <Briefcase className="w-5 h-5" />,
-    accentColor: "#f59e0b",
-    learnBadges: [
-      "Operations",
-      "Project Management",
-      "Finance",
-    ],
-    keyOutcomes: [
-      "Complete 8-week full-time corporate summer internship",
-      "Operate enterprise resource planning (ERP) modules",
-      "Assess foreign exchange & international trade risk",
-    ],
-    courses: [
-      { code: "BBA401", title: "ERP Software Lab (SAP/Oracle)", credits: 4 },
-      { code: "BBA402", title: "Financial Risk & Banking", credits: 4 },
-      { code: "BBA403", title: "International Trade Policy", credits: 3 },
-      { code: "BBA404", title: "8-Week Corporate Internship", credits: 6 },
-    ],
-    categoryTags: "MIDDLE • INTERNSHIP • IMMERSION",
-  },
-  {
-    id: 5,
-    num: "05",
-    yearLabel: "YEAR 3 / SEMESTER 5",
-    title: "Strategic Leadership & Electives",
-    quote: "Specialized tracks in Finance, Marketing, or Analytics with Harvard Business Publishing case studies.",
-    description: "Formulate corporate strategy, evaluate new ventures, and solve executive business cases.",
-    icon: <Lightbulb className="w-5 h-5" />,
-    accentColor: "#a855f7",
-    learnBadges: [
-      "Business Strategy",
-      "Entrepreneurship",
-      "Leadership",
-    ],
-    keyOutcomes: [
-      "Conduct competitive industry positioning & SWOT analysis",
-      "Develop innovative venture business plans",
-      "Solve real-world C-suite case studies",
-    ],
-    courses: [
-      { code: "BBA501", title: "Strategic Management", credits: 4 },
-      { code: "BBA502", title: "Specialization Elective I", credits: 4 },
-      { code: "BBA503", title: "Specialization Elective II", credits: 4 },
-      { code: "BBA504", title: "Entrepreneurship & Innovation", credits: 3 },
-    ],
-    categoryTags: "SENIOR • STRATEGY • ELECTIVES",
-  },
-  {
-    id: 6,
-    num: "06",
-    yearLabel: "YEAR 3 / SEMESTER 6",
-    title: "Global Business & Capstone",
-    quote: "Global immersion modules, brand leadership, and live corporate consultancy capstone projects.",
-    description: "Synthesize management knowledge into live industry consulting assignments and brand growth strategies.",
-    icon: <Sparkles className="w-5 h-5" />,
-    accentColor: "#ec4899",
-    learnBadges: [
-      "Marketing",
-      "Business Strategy",
-      "Project Management",
-      "Leadership",
-    ],
-    keyOutcomes: [
-      "Deliver live corporate consultancy capstone project",
-      "Execute brand positioning & growth hacking",
-      "Formulate global market entry strategies",
-    ],
-    courses: [
-      { code: "BBA601", title: "Global Business & Ethics", credits: 4 },
-      { code: "BBA602", title: "Specialization Elective III", credits: 4 },
-      { code: "BBA603", title: "Brand Leadership & Strategy", credits: 3 },
-      { code: "BBA604", title: "Live Consultancy Capstone", credits: 4 },
-    ],
-    categoryTags: "SENIOR • CAPSTONE • CONSULTING",
-  },
-  {
-    id: 7,
-    num: "07",
-    yearLabel: "YEAR 4 / SEMESTER 7 (HONS.)",
-    title: "Research Methodology & Mentorship",
-    quote: "NEP 2020 4th Year Honors specialization with quantitative business research techniques.",
-    description: "Advanced research design, data collection, statistical modeling, and 1-on-1 C-suite executive coaching.",
-    icon: <FileText className="w-5 h-5" />,
-    accentColor: "#3b82f6",
-    learnBadges: [
-      "Data-Driven Decision Making",
-      "Business Strategy",
-      "Leadership",
-    ],
-    keyOutcomes: [
-      "Formulate empirical quantitative research hypotheses",
-      "Master SPSS / R statistical software for research",
-      "Participate in executive mentorship roundtables",
-    ],
-    courses: [
-      { code: "BBA701", title: "Advanced Research Methodology", credits: 4 },
-      { code: "BBA702", title: "Honors Specialization Track I", credits: 4 },
-      { code: "BBA703", title: "Honors Specialization Track II", credits: 4 },
-      { code: "BBA704", title: "C-Suite Executive Lab", credits: 3 },
-    ],
-    categoryTags: "HONORS • RESEARCH • MENTORSHIP",
-  },
-  {
-    id: 8,
-    num: "08",
-    yearLabel: "YEAR 4 / SEMESTER 8 (HONS.)",
-    title: "Honors Dissertation & Thesis",
-    quote: "Full-semester guided research thesis or major corporate innovation project for degree with Honors.",
-    description: "Produce a publishable academic thesis or major corporate strategy defense under senior faculty guidance.",
-    icon: <GraduationCap className="w-5 h-5" />,
-    accentColor: "#10b981",
-    learnBadges: [
-      "Leadership",
-      "Business Strategy",
-      "Project Management",
-      "Entrepreneurship",
-    ],
-    keyOutcomes: [
-      "Author & defend full-length Honors research thesis",
-      "Master corporate sustainability & ESG governance",
-      "Graduate with B.B.A. (Hons.) Degree from University of Mumbai",
-    ],
-    courses: [
-      { code: "BBA801", title: "Honors Research Dissertation", credits: 12 },
-      { code: "BBA802", title: "Corporate Governance & ESG", credits: 4 },
-    ],
-    categoryTags: "HONORS • THESIS • DEGREE",
-  },
+const STREAM_ACCENT_COLORS = [
+  "#00bcda",
+  "#42d392",
+  "#00629f",
+  "#f59e0b",
+  "#a855f7",
+  "#ec4899",
+  "#3b82f6",
+  "#10b981",
 ];
 
 export default function ProgramCurriculumSection({ config }: { config: ProgramConfig }) {
   const [activeStreamIndex, setActiveStreamIndex] = useState<number>(0);
   const containerRef = useRef<HTMLElement>(null);
+
+  const streamsData = getCurriculumForProgram(config.slug);
+  const totalStreamsCount = streamsData.length;
+  const totalStreamsPadded = String(totalStreamsCount).padStart(2, "0");
+
+  // Reset active stream index if config/slug changes
+  useEffect(() => {
+    setActiveStreamIndex(0);
+  }, [config.slug]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -317,26 +114,25 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
         {/* ============================================================ */}
         {/* DESKTOP & LAPTOP LAYOUT: IN-PLACE FLEX ACCORDION GALLERY (lg:flex) */}
         {/* ============================================================ */}
-        <div className="curr-anim hidden lg:flex flex-row w-full h-[580px] gap-2.5 overflow-hidden rounded-[28px] bg-[#090d16]/95 backdrop-blur-xl border border-white/15 p-3 shadow-2xl">
-          {STREAMS_DATA.map((stream, idx) => {
+        <div className="curr-anim hidden lg:flex flex-row w-full h-[620px] xl:h-[640px] gap-2.5 overflow-hidden rounded-[28px] bg-[#090d16]/95 backdrop-blur-xl border border-white/15 p-3 shadow-2xl">
+          {streamsData.map((stream, idx) => {
             const isActive = idx === activeStreamIndex;
-            const learnBadges =
-              config.semesterBadges && config.semesterBadges[idx] && config.semesterBadges[idx].length > 0
-                ? config.semesterBadges[idx]
-                : stream.learnBadges;
+            const icon = STREAM_ICONS[idx % STREAM_ICONS.length];
+            const accentColor = STREAM_ACCENT_COLORS[idx % STREAM_ACCENT_COLORS.length];
+            const learnBadges = stream.learnBadges;
 
             return (
               <div
                 key={stream.id}
                 onClick={() => setActiveStreamIndex(idx)}
                 onMouseEnter={() => setActiveStreamIndex(idx)}
-                className={`relative rounded-2xl cursor-pointer transition-all duration-500 overflow-hidden flex flex-col justify-between border ${
+                className={`relative rounded-2xl cursor-pointer transition-all duration-500 overflow-hidden flex flex-col border ${
                   isActive
-                    ? "flex-[12] bg-[#0d1424] border-cyan-400/50 shadow-2xl p-6 md:p-8"
-                    : "flex-1 bg-white/5 hover:bg-white/10 border-white/10 p-3"
+                    ? "flex-[12] bg-[#0d1424] border-cyan-400/50 shadow-2xl p-6 md:p-8 justify-start"
+                    : "flex-1 bg-white/5 hover:bg-white/10 border-white/10 p-3 justify-between"
                 }`}
                 style={{
-                  borderTopColor: stream.accentColor,
+                  borderTopColor: accentColor,
                   borderTopWidth: "4px",
                 }}
               >
@@ -344,66 +140,70 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                 {/* EXPANDED CONTENT (WHEN THIS CARD IS ACTIVE) */}
                 {/* -------------------------------------------------------- */}
                 {isActive ? (
-                  <div className="flex flex-col justify-between h-full overflow-y-auto pr-1 no-scrollbar animate-in fade-in duration-300">
-                    <div>
-                      {/* HEADER TAG & ICON */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs font-mono font-semibold tracking-widest text-cyan-300 uppercase">
-                          STREAM {stream.num} / 08 • {stream.yearLabel}
-                        </span>
-                        <div className="p-2 rounded-xl bg-white/10 border border-white/15 text-white">
-                          {stream.icon}
-                        </div>
-                      </div>
-
-                      {/* MAIN TITLE */}
-                      <h3 className="font-display font-medium text-[25px] text-white leading-snug mb-3">
-                        {stream.title}
-                      </h3>
-
-                      {/* QUOTE */}
-                      <p className="italic font-serif text-cyan-200 text-base xl:text-lg leading-relaxed mb-4">
-                        &ldquo;{stream.quote}&rdquo;
-                      </p>
-
-                      {/* DESCRIPTION */}
-                      <p className="text-zinc-300 text-sm xl:text-base font-light leading-relaxed mb-6">
-                        {stream.description}
-                      </p>
-
-                      {/* WHAT YOU LEARN */}
-                      <div className="mb-6">
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400 mb-2.5">
-                          WHAT YOU LEARN
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {learnBadges.map((badge, bIdx) => (
-                            <span
-                              key={bIdx}
-                              className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/15"
-                            >
-                              {badge}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* KEY OUTCOMES */}
-                      <div className="mb-6">
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400 mb-2.5">
-                          KEY OUTCOMES
-                        </p>
-                        <div className="space-y-2">
-                          {stream.keyOutcomes.map((outcome, oIdx) => (
-                            <div key={oIdx} className="flex items-center gap-2.5 text-sm text-zinc-200 font-light">
-                              <CircleCheckBig className="w-4 h-4 text-cyan-300 shrink-0" />
-                              <span>{outcome}</span>
-                            </div>
-                          ))}
-                        </div>
+                  <div className="flex flex-col justify-start h-full overflow-y-auto pr-3 space-y-5 animate-in fade-in duration-300 [scrollbar-width:thin] [scrollbar-color:rgba(0,188,218,0.4)_rgba(255,255,255,0.05)] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-cyan-400/40 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-cyan-400/70">
+                    {/* HEADER TAG & ICON */}
+                    <div className="flex items-center justify-between shrink-0">
+                      <span className="text-xs font-mono font-semibold tracking-widest text-cyan-300 uppercase">
+                        STREAM {stream.num} / {totalStreamsPadded} • {stream.yearLabel}
+                      </span>
+                      <div className="p-2 rounded-xl bg-white/10 border border-white/15 text-white">
+                        {icon}
                       </div>
                     </div>
 
+                    {/* MAIN TITLE */}
+                    <h3 className="font-display font-medium text-[24px] xl:text-[26px] text-white leading-snug shrink-0">
+                      {stream.title}
+                    </h3>
+
+                    {/* QUOTE */}
+                    <p className="italic font-serif text-cyan-200 text-base xl:text-lg leading-relaxed shrink-0">
+                      &ldquo;{stream.quote}&rdquo;
+                    </p>
+
+                    {/* DESCRIPTION */}
+                    <p className="text-zinc-300 text-sm xl:text-base font-light leading-relaxed shrink-0">
+                      {stream.description}
+                    </p>
+
+                    {/* CORE SUBJECTS (IF PRESENT) */}
+                    {stream.coreSubjects && (
+                      <div className="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-xs text-cyan-200/90 leading-relaxed font-normal shrink-0">
+                        {stream.coreSubjects}
+                      </div>
+                    )}
+
+                    {/* WHAT YOU LEARN */}
+                    <div className="shrink-0">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400 mb-2.5">
+                        WHAT YOU LEARN
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {learnBadges.map((badge, bIdx) => (
+                          <span
+                            key={bIdx}
+                            className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white border border-white/15"
+                          >
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* KEY OUTCOMES */}
+                    <div className="shrink-0 pb-2">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400 mb-2.5">
+                        KEY OUTCOMES
+                      </p>
+                      <div className="space-y-2">
+                        {stream.keyOutcomes.map((outcome, oIdx) => (
+                          <div key={oIdx} className="flex items-start gap-2.5 text-sm text-zinc-200 font-light">
+                            <CircleCheckBig className="w-4 h-4 text-cyan-300 shrink-0 mt-0.5" />
+                            <span>{outcome}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   /* -------------------------------------------------------- */
@@ -412,12 +212,12 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                   <div className="flex flex-col items-center justify-between h-full py-2">
                     {/* TOP ICON */}
                     <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white shrink-0">
-                      {stream.icon}
+                      {icon}
                     </div>
 
                     {/* VERTICAL ROTATED TEXT LABEL */}
-                    <div className="flex-1 flex items-center justify-center my-4 overflow-hidden">
-                      <span className="text-[18px] font-medium uppercase tracking-wider text-zinc-200 group-hover:text-white whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
+                    <div className="flex-1 flex items-center justify-center my-3 overflow-hidden">
+                      <span className="text-[12px] xl:text-[13px] font-medium uppercase tracking-wide text-zinc-200 group-hover:text-white whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
                         {stream.title}
                       </span>
                     </div>
@@ -438,15 +238,14 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
         {/* ============================================================ */}
         <div className="curr-anim block lg:hidden space-y-6">
           <p className="text-xs uppercase tracking-widest text-cyan-300 font-semibold mb-4 text-center">
-            SWIPE / SCROLL TO EXPLORE 8 SEMESTERS
+            SWIPE / SCROLL TO EXPLORE {totalStreamsCount} SEMESTERS
           </p>
 
           <div className="relative space-y-6">
-            {STREAMS_DATA.map((stream, idx) => {
-              const learnBadges =
-                config.semesterBadges && config.semesterBadges[idx] && config.semesterBadges[idx].length > 0
-                  ? config.semesterBadges[idx]
-                  : stream.learnBadges;
+            {streamsData.map((stream, idx) => {
+              const icon = STREAM_ICONS[idx % STREAM_ICONS.length];
+              const accentColor = STREAM_ACCENT_COLORS[idx % STREAM_ACCENT_COLORS.length];
+              const learnBadges = stream.learnBadges;
 
               return (
                 <div
@@ -455,16 +254,16 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                   style={{
                     top: `${125 + idx * 12}px`,
                     zIndex: idx + 1,
-                    borderLeftColor: stream.accentColor,
+                    borderLeftColor: accentColor,
                     borderLeftWidth: "6px",
                   }}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-mono font-semibold tracking-widest text-cyan-300 uppercase">
-                      SEMESTER {stream.num} / 08 • {stream.yearLabel}
+                      SEMESTER {stream.num} / {totalStreamsPadded} • {stream.yearLabel}
                     </span>
                     <div className="p-2 rounded-xl bg-white/10 border border-white/15 text-white">
-                      {stream.icon}
+                      {icon}
                     </div>
                   </div>
 
@@ -479,6 +278,13 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                   <p className="text-zinc-300 text-xs sm:text-sm font-light leading-relaxed mb-4">
                     {stream.description}
                   </p>
+
+                  {/* CORE SUBJECTS (IF PRESENT) */}
+                  {stream.coreSubjects && (
+                    <div className="p-3 mb-4 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-xs text-cyan-200/90 leading-relaxed font-normal">
+                      {stream.coreSubjects}
+                    </div>
+                  )}
 
                   {/* LEARN BADGES */}
                   <div className="mb-4">

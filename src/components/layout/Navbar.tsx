@@ -312,20 +312,20 @@ export default function Navbar() {
               {/* Scrollable program list */}
               <div className="flex flex-col pr-2 divide-y divide-zinc-100">
                 {[
-                  "B.B.A.(Hons.) in Business Administration (Entrepreneurship)",
-                  "B.B.A.(Hons.) in Business Administration (Marketing Management)",
-                  "B.B.A. (Hons.) In Business Administration",
-                  "B.Com. (Hons.) in Business Administration (Entrepreneurship)",
-                  "B.Com. (Hons.) in Business Administration (Marketing Management)",
-                  "B.Com. (Hons.) in Business Administration",
-                  "B.Sc. (Hons.) in Digital Media & Growth Marketing",
-                  "Diploma in Digital Media and Growth Marketing",
-                  "B.B.A. (Hons.)* in Artificial Intelligence",
-                  "B.Com. Hons. in BA (Artificial Intelligence)"
-                ].map((progName, idx) => (
+                  { name: "BBA (Hons.) in Business Administration", href: "/programs/bba-in-business-administration" },
+                  { name: "BBA (Hons.) in Business Administration (Marketing Management)", href: "/programs/bba-in-business-administration-marketing-management" },
+                  { name: "BBA (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bba-in-business-administration-entrepreneurship" },
+                  { name: "BBA (Hons.) in Artificial Intelligence", href: "/programs/bba-in-artificial-intelligence" },
+                  { name: "B.Com (Hons.) in Business Administration", href: "/programs/bcom-in-business-administration" },
+                  { name: "B.Com (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
+                  { name: "B.Com (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
+                  { name: "B.Com (Hons.) in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
+                  { name: "B.Sc (Hons.) in Digital Media & Growth Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
+                  { name: "Diploma in Digital Media and Growth Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
+                ].map((prog, idx) => (
                   <Link
                     key={idx}
-                    href="#programs"
+                    href={prog.href}
                     onClick={() => {
                       setMenuOpen(false);
                     }}
@@ -333,10 +333,10 @@ export default function Navbar() {
                   >
                     <span className="relative inline-block overflow-hidden h-[1.25em] flex-grow pr-4">
                       <span className="block transition-transform duration-[400ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover/roll:-translate-y-full leading-tight truncate max-w-[280px] sm:max-w-none">
-                        {progName}
+                        {prog.name}
                       </span>
                       <span className="block absolute top-full left-0 text-brand-secondary transition-transform duration-[400ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover/roll:-translate-y-full leading-tight truncate max-w-[280px] sm:max-w-none">
-                        {progName}
+                        {prog.name}
                       </span>
                     </span>
                   </Link>

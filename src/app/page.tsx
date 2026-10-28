@@ -18,6 +18,13 @@ import PlacementPartners from "@/components/home/PlacementPartners";
 import BbaPlacementSection from "@/components/programs/bba-business-administration/BbaPlacementSection";
 import StudentTestimonials from "@/components/home/StudentTestimonials";
 import FAQs from "@/components/ui/text-reveal-faqs";
+import {
+  HOME_FAQS,
+  ADMISSIONS_FAQS,
+  CAMPUS_LIFE_FAQS,
+  EXPERIENTIAL_LEARNING_FAQS,
+  CONTACT_US_FAQS,
+} from "@/data/faqsData";
 import CampusActivity from "@/components/home/CampusActivity";
 import BackToTop from "@/components/layout/BackToTop";
 import BookingSection from "@/components/home/BookingSection";
@@ -48,11 +55,11 @@ const MAIN_NAV_LINKS = [
 ];
 
 const MEGA_MENU_DATA: Record<string, string[]> = {
-  "B.B.A.": [
-    "B.B.A. (Hons.) In Business Administration",
-    "B.B.A.(Hons.) in Business Administration (Entrepreneurship)",
-    "B.B.A.(Hons.) in Business Administration (Marketing Management)",
-    "B.B.A. (Hons.)* in Artificial Intelligence",
+  "BBA": [
+    "BBA (Hons.) In Business Administration",
+    "BBA (Hons.) in Business Administration (Entrepreneurship)",
+    "BBA (Hons.) in Business Administration (Marketing Management)",
+    "BBA (Hons.)* in Artificial Intelligence",
   ],
   "B.Com.": [
     "B.Com. (Hons.) in Business Administration",
@@ -96,20 +103,20 @@ const HERO_SLIDES = [
 
 const PROGRAMS_DATA = [
   {
-    title: "B.B.A.(Hons.) in Business Administration (Entrepreneurship)",
-    category: "B.B.A.",
+    title: "BBA (Hons.) in Business Administration (Entrepreneurship)",
+    category: "BBA",
     duration: "4 Years",
     desc: "Develop foundational business acumen with specialized training in product launch, venture scale, and corporate innovation.",
   },
   {
-    title: "B.B.A.(Hons.) in Business Administration (Marketing Management)",
-    category: "B.B.A.",
+    title: "BBA (Hons.) in Business Administration (Marketing Management)",
+    category: "BBA",
     duration: "4 Years",
     desc: "Learn brand positioning, consumer psychology, market analytics, and digital engagement strategies.",
   },
   {
-    title: "B.B.A. (Hons.) In Business Administration",
-    category: "B.B.A.",
+    title: "BBA (Hons.) In Business Administration",
+    category: "BBA",
     duration: "4 Years",
     desc: "A comprehensive foundation in corporate management, organizational leadership, and international trade.",
   },
@@ -144,7 +151,7 @@ const PROGRAMS_DATA = [
     desc: "A fast-track program focused on digital growth tools, social branding, visual content creation, and copywriting.",
   },
   {
-    title: "B.B.A. (Hons.)* in Artificial Intelligence",
+    title: "BBA (Hons.)* in Artificial Intelligence",
     category: "Digital Media & AI",
     duration: "4 Years",
     desc: "Understand high-level business intelligence, machine learning strategies, predictive statistics, and cognitive workflow design.",
@@ -191,7 +198,7 @@ export default function Home2() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const [activeMegaCategory, setActiveMegaCategory] = useState("B.B.A.");
+  const [activeMegaCategory, setActiveMegaCategory] = useState("BBA");
   const [hoveredProgram, setHoveredProgram] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -639,7 +646,16 @@ export default function Home2() {
       <BookingSection />
 
       {/* 10. FREQUENTLY ASKED QUESTIONS */}
-      <FAQs />
+      <FAQs
+        categories={[
+          { name: "General", items: HOME_FAQS },
+          { name: "Admissions", items: ADMISSIONS_FAQS },
+          { name: "Campus Life", items: CAMPUS_LIFE_FAQS },
+          { name: "Experiential Learning", items: EXPERIENTIAL_LEARNING_FAQS },
+          { name: "Contact & Campuses", items: CONTACT_US_FAQS },
+        ]}
+        subtitle="Everything you need to know about FV - IMSR Admissions, Programmes, and Campus Life."
+      />
 
       {/* 11. GLOBAL FOOTER */}
       <Footer />
@@ -695,8 +711,8 @@ export default function Home2() {
 
                 <div className="w-full flex flex-col">
                   {[
-                    "B.B.A. (Hons.) In Business Administration",
-                    "B.B.A. (Hons.)* in Artificial Intelligence",
+                    "BBA (Hons.) In Business Administration",
+                    "BBA (Hons.)* in Artificial Intelligence",
                     "B.Sc. (Hons.) in Digital Media & Growth Marketing",
                     "B.Com. Hons. in BA (Artificial Intelligence)",
                     "Diploma in Digital Media and Growth Marketing"

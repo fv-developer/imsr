@@ -8,8 +8,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a1c33] text-zinc-300 font-sans border-t border-zinc-950/20 pt-16 pb-8 select-none">
       
-      {/* CAMPUSES SECTION - 3 COLUMNS GRID */}
-      <div className="max-w-7xl mx-auto px-[15px] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      {/* CAMPUSES SECTION - 4 COLUMNS GRID */}
+      <div className="max-w-7xl mx-auto px-[15px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
         
         {/* MALAD CAMPUS */}
         <div className="flex flex-col">
@@ -17,7 +17,7 @@ export default function Footer() {
             <MapPin className="w-4.5 h-4.5 text-[#00bcda]" />
             Malad
           </h4>
-          <ul className="flex flex-col gap-4 text-[13.5px] leading-relaxed text-zinc-300">
+          <ul className="flex flex-col gap-3 text-[15px] font-light leading-relaxed text-zinc-300">
             <li className="flex items-start gap-3">
               <Building2 className="w-4.5 h-4.5 text-[#00bcda] mt-1 flex-shrink-0" />
               <span className="text-zinc-300">Orlem, Marve Road, Opp. HDFC Bank, Malad (W) Mumbai - 400064</span>
@@ -35,13 +35,35 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* KANDIVALI EAST CAMPUS */}
+        <div className="flex flex-col">
+          <h4 className="font-display font-semibold text-[15px] tracking-wider text-white uppercase mb-5 flex items-center gap-2">
+            <MapPin className="w-4.5 h-4.5 text-[#00bcda]" />
+            Kandivali East
+          </h4>
+          <ul className="flex flex-col gap-3 text-[15px] font-light leading-relaxed text-zinc-300">
+            <li className="flex items-start gap-3">
+              <Building2 className="w-4.5 h-4.5 text-[#00bcda] mt-1 flex-shrink-0" />
+              <span className="text-zinc-300">Thakur Institute of Management Studies &amp; Research, C- Block, Thakur Educational Campus, Shyamnarayan Thakur Marg, Thakur Village, Kandivali East, Mumbai - 400101</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Phone className="w-4.5 h-4.5 text-[#00bcda] mt-0.5 flex-shrink-0" />
+              <span className="text-zinc-300">-</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Mail className="w-4.5 h-4.5 text-[#00bcda] mt-0.5 flex-shrink-0" />
+              <span className="text-zinc-300">-</span>
+            </li>
+          </ul>
+        </div>
+
         {/* BHANDUP CAMPUS */}
         <div className="flex flex-col">
           <h4 className="font-display font-semibold text-[15px] tracking-wider text-white uppercase mb-5 flex items-center gap-2">
             <MapPin className="w-4.5 h-4.5 text-[#00bcda]" />
             Bhandup
           </h4>
-          <ul className="flex flex-col gap-4 text-[13.5px] leading-relaxed text-zinc-300">
+          <ul className="flex flex-col gap-3 text-[15px] font-light leading-relaxed text-zinc-300">
             <li className="flex items-start gap-3">
               <Building2 className="w-4.5 h-4.5 text-[#00bcda] mt-1 flex-shrink-0" />
               <span className="text-zinc-300">Ramanand Arya D. A. V. College, Station Road, Bhandup, C.G.S. Colony, Bhandup East, Mumbai - 400 042</span>
@@ -65,7 +87,7 @@ export default function Footer() {
             <MapPin className="w-4.5 h-4.5 text-[#00bcda]" />
             Ghatkopar
           </h4>
-          <ul className="flex flex-col gap-4 text-[13.5px] leading-relaxed text-zinc-300">
+          <ul className="flex flex-col gap-3 text-[15px] font-light leading-relaxed text-zinc-300">
             <li className="flex items-start gap-3">
               <Building2 className="w-4.5 h-4.5 text-[#00bcda] mt-1 flex-shrink-0" />
               <span className="text-zinc-300">Ramji Asar Vidyalaya Wadi Trust's Laxmichand Golwala College, M.G. Road, Rajawadi Colony, Ghatkopar East, Mumbai - 400077</span>
@@ -93,7 +115,7 @@ export default function Footer() {
           <h4 className="font-display font-semibold text-[15px] tracking-wider text-white uppercase mb-5">
             Page Links
           </h4>
-          <ul className="flex flex-col gap-3 text-[14px] text-zinc-350 mb-6">
+          <ul className="flex flex-col gap-3 text-[15px] font-light text-zinc-350 mb-6">
             <li>
               <Link href="/" className="hover:text-[#00bcda] transition-colors">Home</Link>
             </li>
@@ -165,54 +187,54 @@ export default function Footer() {
           <h4 className="font-display font-semibold text-[15px] tracking-wider text-white uppercase mb-5">
             Our Programs
           </h4>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-[13.5px] text-zinc-350">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-[15px] font-light text-zinc-350">
             <li>
-              <Link href="/programs/bba-business-administration" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.B.A. (Hons.) In Business Administration
+              <Link href="/programs/bba-in-business-administration" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                BBA (Hons.) in Business Administration
               </Link>
             </li>
             <li>
-              <Link href="/programs/bcom-business-administration" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com. (Hons.) in Business Administration
+              <Link href="/programs/bcom-in-business-administration" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                B.Com (Hons.) in Business Administration
               </Link>
             </li>
             <li>
-              <Link href="/programs/bba-marketing-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.B.A. (Hons.) in Business Administration (Marketing Management)
+              <Link href="/programs/bba-in-business-administration-marketing-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                BBA (Hons.) in Business Administration (Marketing Management)
               </Link>
             </li>
             <li>
-              <Link href="/programs/bcom-marketing-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com. (Hons.) in Business Administration (Marketing Management)
+              <Link href="/programs/bcom-in-business-administration-marketing-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                B.Com (Hons.) in Business Administration (Marketing Management)
               </Link>
             </li>
             <li>
-              <Link href="/programs/bba-entrepreneurship" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.B.A. (Hons.) in Business Administration (Entrepreneurship)
+              <Link href="/programs/bba-in-business-administration-entrepreneurship" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                BBA (Hons.) in Business Administration (Entrepreneurship)
               </Link>
             </li>
             <li>
-              <Link href="/programs/bcom-entrepreneurship" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com. (Hons.) in Business Administration (Entrepreneurship)
+              <Link href="/programs/bcom-in-business-administration-entrepreneurship" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                B.Com (Hons.) in Business Administration (Entrepreneurship)
               </Link>
             </li>
             <li>
-              <Link href="/programs/bba-artificial-intelligence" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.B.A. (Hons.) in Artificial Intelligence
+              <Link href="/programs/bba-in-artificial-intelligence" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                BBA (Hons.) in Artificial Intelligence
               </Link>
             </li>
             <li>
-              <Link href="/programs/bcom-artificial-intelligence" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com. Hons. in Business Administration (Artificial Intelligence)
+              <Link href="/programs/bcom-in-business-administration-artificial-intelligence" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                B.Com (Hons.) in Business Administration (Artificial Intelligence)
               </Link>
             </li>
             <li>
-              <Link href="/programs/bsc-digital-media-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Sc. (Hons.) in Digital Media &amp; Growth Marketing
+              <Link href="/programs/bsc-in-digital-media-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                B.Sc (Hons.) in Digital Media &amp; Growth Marketing
               </Link>
             </li>
             <li>
-              <Link href="/programs/diploma-digital-media-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+              <Link href="/programs/diploma-in-digital-media-and-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
                 Diploma in Digital Media and Growth Marketing
               </Link>
             </li>
@@ -224,7 +246,7 @@ export default function Footer() {
       {/* BOTTOM LEGAL BAR */}
       <div className="max-w-7xl mx-auto px-[15px] border-t border-white/10 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-zinc-400 font-medium">
         <div>
-          <Link href="#policies" className="hover:text-white transition-colors">
+          <Link href="#policies" className="text-[15px] font-light hover:text-white transition-colors">
             Policies and documents
           </Link>
         </div>

@@ -83,7 +83,7 @@ export default function FloatingSupport() {
                   Welcome to IMSR! <Sparkles className="w-3.5 h-3.5 text-cyan-300 inline" />
                 </p>
                 <p className="text-zinc-300 text-xs sm:text-[13px] font-light">
-                  How can we help you today? Inquire about B.B.A., B.Com., Digital Media programs, or admissions.
+                  How can we help you today? Inquire about BBA, B.Com., Digital Media programs, or admissions.
                 </p>
               </div>
             </div>

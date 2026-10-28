@@ -38,66 +38,107 @@ interface StackCardData {
 // Data sourced from Home Page Experiential Learning section
 // 1 Video Card, 1 Swiper Slider Card, remaining cards use Single Images
 const STACK_CARDS_DATA: StackCardData[] = [
+  // 1. MASTERCLASS (2 items: 1 Video, 1 Swiper Slider)
   {
     id: 1,
     type: "video",
-    title: "Entrepreneurship In Event Industry",
-    speaker: "Ms. Pooja Vaidya",
-    description: "An intensive masterclass on developing leadership, innovation, and key entrepreneurial ventures across the global event management space.",
-    image: "/images/new-folder/Pooja.webp",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "Digital Marketing Careers In The AI Era",
+    speaker: "Mr. Viken Shah (Founder, Jaybee Digital)",
+    description: "IMSR hosted an insightful masterclass on Digital Marketing Careers in the AI Era, exploring essential digital skills, freelancing opportunities, and real-world marketing challenges.",
+    image: "/images/experiential-learning/masterclass/viken-shah-1.jpg",
+    videoUrl: "/images/experiential-learning/masterclass/viken-shah-video.mp4",
   },
   {
     id: 2,
     type: "slider",
-    title: "Visit To Parle & Jayesh Industries",
-    speaker: "Industrial Experience Mandates",
-    description: "Across global business hubs and plant floors, experience how companies build, scale, and operate in different commercial markets.",
+    title: "AI & Digital Transformation: Shaping Customer Experience",
+    speaker: "Mr. Unnat Khetan",
+    description: "An inspiring masterclass bridging classroom learning with practical applications in digital transformation, consulting careers, and AI-enabled customer experiences.",
     slides: [
-      { image: "/images/new-folder/PARLE.jpg" },
-      { image: "/images/hero-slider/hero-slider1.jpg" },
-      { image: "/images/hero-slider/hero-slider2.jpg" },
+      { image: "/images/experiential-learning/masterclass/unnat-khetan-1.jpg" },
+      { image: "/images/experiential-learning/masterclass/unnat-khetan-2.jpg" },
     ],
   },
+
+  // 2. SPORTS CLUB (2 items, single images)
   {
     id: 3,
     type: "image",
-    title: "Fashion Communication & Fashion Entrepreneurship",
-    speaker: "Ms. Suvidha Joshi Patil",
-    description: "Insights into luxury fashion media, brand positioning, creative direction, and establishing sustainable business models in luxury retail.",
-    image: "/images/new-folder/Suvidha.webp",
+    title: "Apex Badminton League 2026",
+    speaker: "FitFuture Sports Club",
+    description: "Students showcased their athletic skills and competitive spirit at the Apex Badminton Tournament, creating an exciting experience filled with teamwork, agility, and sportsmanship.",
+    image: "/images/experiential-learning/sports-club/badminton-league-1.jpg",
   },
   {
     id: 4,
     type: "image",
-    title: "Business Etiquette For The Modern Workplace",
-    speaker: "Mr. James Fernandes",
-    description: "Hands-on corporate workshop focusing on executive communications, cross-cultural ethics, professional presence, and boardroom conduct.",
-    image: "/images/new-folder/James.webp",
+    title: "Elite Kho-Kho Premier League",
+    speaker: "FitFuture Sports Club",
+    description: "A thrilling sporting tournament at the Elite Kho-Kho Premier League, bringing together teamwork, competitive energy, tactical agility, and sports excellence.",
+    image: "/images/experiential-learning/sports-club/kho-kho-league-1.jpg",
   },
+
+  // 3. CULTURAL CLUB (2 items: 1 Swiper Slider, 1 Single Image)
   {
     id: 5,
-    type: "image",
-    title: "Stress Management & Executive Resilience",
-    speaker: "Ms. Gunjan Sidhu",
-    description: "Practical mindfulness techniques, mental resilience building, and emotional intelligence strategies for high-performance corporate careers.",
-    image: "/images/new-folder/Gunjan.webp",
+    type: "slider",
+    title: "Teachers Day Celebration & Cultural Showcase",
+    speaker: "Vibrance Cultural Club",
+    description: "Students celebrated Teachers' Day with heartfelt appreciation, enjoying choreographed dance, musical tributes, engaging activities, and memorable celebrations.",
+    slides: [
+      { image: "/images/experiential-learning/cultural-club/teachers-day-1.jpg" },
+      { image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg" },
+    ],
   },
   {
     id: 6,
     type: "image",
-    title: "Beach Yoga & Holistic Vitality Retreat",
-    speaker: "Wellness & Life Skills Division",
-    description: "Morning wellness retreats promoting holistic health, team building, and physical vitality amidst open seaside surroundings.",
-    image: "/images/new-folder/Beach.webp",
+    title: "Youth Talent & Performing Arts Showcase",
+    speaker: "Vibrance Cultural Club",
+    description: "An energetic campus cultural gathering spotlighting musical ensembles, creative performances, and artistic expression among IMSR undergraduates.",
+    image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg",
   },
+
+  // 4. COMMUNITY SERVICE / SAHYOG CLUB (2 items: 1 Swiper Slider, 1 Single Image)
   {
     id: 7,
+    type: "slider",
+    title: "Beach Cleaning & Marine Conservation Drive",
+    speaker: "Sahyog Club (CSR Initiative)",
+    description: "As part of its CSR initiative, IMSR organized a Beach Cleaning Drive at Marve Beach to promote environmental sustainability, civic action, and community responsibility.",
+    slides: [
+      { image: "/images/experiential-learning/sahyog-club/beach-cleaning-1.jpg" },
+      { image: "/images/experiential-learning/sahyog-club/beach-cleaning-2.jpg" },
+    ],
+  },
+  {
+    id: 8,
     type: "image",
-    title: "Case Study Competition & Hackathon",
-    speaker: "Academic Excellence Board",
-    description: "Competitive hackathons and case study challenges where students analyze real-world corporate dilemmas and present strategic solutions.",
-    image: "/images/new-folder/CASE-STUDY.webp",
+    title: "Environmental Sustainability & Clean Shoreline Action",
+    speaker: "Sahyog Club (CSR Initiative)",
+    description: "Students actively engaged with local environmental stakeholders to foster awareness and sustainable coastal conservation practices.",
+    image: "/images/experiential-learning/sahyog-club/beach-cleaning-2.jpg",
+  },
+
+  // 5. EDUCATIONAL / INDUSTRY VISIT (2 items: 1 Single Image, 1 Swiper Slider)
+  {
+    id: 9,
+    type: "image",
+    title: "Educational Visit - Radio Mirchi Studio",
+    speaker: "Ms. Rashmi Raja",
+    description: "Students gained real-world industry exposure through an educational visit to the Radio Mirchi Studio, exploring broadcasting workflows, live audio production, and mass media operations.",
+    image: "/images/experiential-learning/educational-visit/radio-mirchi-1.jpg",
+  },
+  {
+    id: 10,
+    type: "slider",
+    title: "Industrial Visit To Parle & Jayesh Industries",
+    speaker: "Industrial Experience Mandates",
+    description: "Across global business hubs and plant floors, experience how corporate enterprises build, scale, and manage supply chains and distribution across commercial markets.",
+    slides: [
+      { image: "/images/new-folder/PARLE.jpg" },
+      { image: "/images/hero-slider/hero-slider1.jpg" },
+    ],
   },
 ];
 
@@ -362,13 +403,22 @@ export default function BbaExperienceLearningSection() {
             >
               <X className="w-6 h-6" />
             </button>
-            <iframe
-              src={`${activeVideo}?autoplay=1`}
-              title="Experiential Masterclass Video"
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            {activeVideo.endsWith(".mp4") ? (
+              <video
+                src={activeVideo}
+                controls
+                autoPlay
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <iframe
+                src={`${activeVideo}?autoplay=1`}
+                title="Experiential Masterclass Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
           </div>
         </div>
       )}

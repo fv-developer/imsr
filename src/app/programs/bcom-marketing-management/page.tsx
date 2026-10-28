@@ -1,10 +1,5 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import React from "react";
-import ProgramPageTemplate from "@/components/programs/templates/ProgramPageTemplate";
-import { PROGRAMS_CONFIG } from "@/data/programsData";
-
-export default function BcomMarketingManagementPage() {
-  const config = PROGRAMS_CONFIG["bcom-marketing-management"];
-  return <ProgramPageTemplate config={config} />;
+export default function Page() {
+  redirect("/programs/bcom-in-business-administration-marketing-management");
 }

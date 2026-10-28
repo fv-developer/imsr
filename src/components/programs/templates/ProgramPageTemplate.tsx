@@ -8,11 +8,12 @@ import ProgramOverviewSection from "./ProgramOverviewSection";
 import ProgramCareerStatsSection from "./ProgramCareerStatsSection";
 import ProgramCurriculumSection from "./ProgramCurriculumSection";
 import BbaExperienceLearningSection from "@/components/programs/bba-business-administration/BbaExperienceLearningSection";
-import MasterClassSection from "@/components/student-life/MasterClassSection";
+import ScholarshipOffersSection from "./ScholarshipOffersSection";
 import StudentSuccessStories from "@/components/home/StudentSuccessStories";
 import PlacementPartners from "@/components/home/PlacementPartners";
 import BookingSection from "@/components/home/BookingSection";
 import FAQs from "@/components/ui/text-reveal-faqs";
+import { getProgramFaqs } from "@/data/faqsData";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
 import { ProgramConfig } from "@/data/programsData";
@@ -41,13 +42,8 @@ export default function ProgramPageTemplate({ config }: { config: ProgramConfig 
       {/* SECTION 5: EXPERIENTIAL LEARNING */}
       <BbaExperienceLearningSection />
 
-      {/* INDUSTRY IMMERSION MASTERCLASSES */}
-      <MasterClassSection
-        title="Industry Immersion &"
-        gradientTitle="Masterclasses."
-        description="Specialized executive sessions led by Fortune 500 leaders, growth founders, and enterprise consultants tailored to equip students with real-world strategic frameworks."
-        theme="dark"
-      />
+      {/* SCHOLARSHIPS & EARLY BIRD OFFERS */}
+      <ScholarshipOffersSection />
 
       {/* SECTION 6: STUDENT SUCCESS STORIES */}
       <StudentSuccessStories />
@@ -59,7 +55,10 @@ export default function ProgramPageTemplate({ config }: { config: ProgramConfig 
       <BookingSection />
 
       {/* SECTION 9: FREQUENTLY ASKED QUESTIONS */}
-      <FAQs />
+      <FAQs
+        items={getProgramFaqs(config?.slug || "")}
+        subtitle={`Frequently asked questions about the ${config?.title || "selected"} programme.`}
+      />
 
       {/* FOOTER */}
       <Footer />

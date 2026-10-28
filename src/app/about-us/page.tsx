@@ -11,6 +11,7 @@ import AboutBentoGridSection from "@/components/about/AboutBentoGridSection";
 import AboutVisionMissionParallax from "@/components/about/AboutVisionMissionParallax";
 import AboutAcademicCouncilSection from "@/components/about/AboutAcademicCouncilSection";
 import FAQs from "@/components/ui/text-reveal-faqs";
+import { ABOUT_US_FAQS } from "@/data/faqsData";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/layout/BackToTop";
@@ -165,7 +166,10 @@ export default function AboutUsPage() {
       <AboutImageTextRevealSection />
 
       {/* FREQUENTLY ASKED QUESTIONS (FAQS) SECTION */}
-      <FAQs />
+      <FAQs
+        items={ABOUT_US_FAQS}
+        subtitle="Everything you need to know about Future Varsity - IMSR's legacy, academic excellence, and campus infrastructure."
+      />
 
       {/* FOOTER */}
       <Footer />

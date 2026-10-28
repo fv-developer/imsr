@@ -93,8 +93,8 @@ export default function ProgramHeroSection({ config }: { config: ProgramConfig }
       {/* HERO BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src={config.heroImage || "/images/programs/bba-In-business-administration/program-bg.jpg"}
-          alt={`${config.title} Background`}
+          src={config?.heroImage || "/images/programs/bba-In-business-administration/program-bg.jpg"}
+          alt={`${config?.title || "Program"} Background`}
           fill
           className="object-cover object-center opacity-85 brightness-95"
           priority
@@ -116,7 +116,7 @@ export default function ProgramHeroSection({ config }: { config: ProgramConfig }
           </Link>
           <ChevronRight className="w-4 h-4 text-zinc-600" />
           <span className="text-zinc-200 font-medium truncate">
-            {config.breadcrumbTitle}
+            {config?.breadcrumbTitle || config?.title}
           </span>
         </div>
 
@@ -131,7 +131,7 @@ export default function ProgramHeroSection({ config }: { config: ProgramConfig }
               ref={headingRef}
               className="font-display font-medium text-[32px] sm:text-[48px] tracking-tight leading-[45px] text-white text-left mb-6"
             >
-              <SplitText text={config.heroPrefix} />
+              <SplitText text={config?.heroPrefix || ""} />
               <br className="hidden sm:inline" />
               <span
                 className="font-medium inline-block pb-1 italic font-serif fade-up-scroll pr-3 opacity-0"
@@ -142,13 +142,13 @@ export default function ProgramHeroSection({ config }: { config: ProgramConfig }
                   backgroundClip: "text",
                 }}
               >
-                {config.heroHighlight}
+                {config?.heroHighlight || ""}
               </span>
             </h1>
 
             {/* DESCRIPTION */}
             <p className="hero-fade-item text-zinc-300 font-sans font-light text-[18px] leading-relaxed max-w-3xl mb-4 text-left">
-              {config.heroDescription}
+              {config?.heroDescription || ""}
             </p>
 
             {/* CTA BUTTONS */}
