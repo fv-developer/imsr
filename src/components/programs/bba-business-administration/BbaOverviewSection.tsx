@@ -28,8 +28,8 @@ const HIGHLIGHT_CARDS = [
   {
     icon: <Clock className="w-6 h-6 text-[#00629f]" />,
     label: "DURATION",
-    value: "3 years (Bachelor’s) / 4 years",
-    subtext: "(Honours, as per NEP 2020)",
+    value: "3 years (Bachelor’s)",
+    subtext: "4 years (Honours, as per NEP 2020)",
     accentBg: "bg-[#00629f]/10 border-[#00629f]/20",
   },
   {

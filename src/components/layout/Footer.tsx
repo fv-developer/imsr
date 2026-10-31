@@ -131,6 +131,9 @@ export default function Footer() {
             <li>
               <Link href="/#admissions" className="hover:text-[#00bcda] transition-colors">Admission Procedure</Link>
             </li>
+            <li>
+              <Link href="/scholarships" className="hover:text-[#00bcda] transition-colors">Scholarships</Link>
+            </li>
           </ul>
 
           {/* Social Icons inside small outline-filled square boxes */}

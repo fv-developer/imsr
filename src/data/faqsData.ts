@@ -618,6 +618,46 @@ export const CONTACT_US_FAQS: FaqItem[] = [
   },
 ];
 
+// 16. Scholarships & Early Bird Offers FAQs
+export const SCHOLARSHIPS_FAQS: FaqItem[] = [
+  {
+    id: "scholarships-1",
+    question: "Does IMSR offer scholarships to students?",
+    answer:
+      "Students can enquire with the IMSR admissions team about currently available scholarship schemes, eligibility criteria, and application procedures.",
+  },
+  {
+    id: "scholarships-2",
+    question: "What is an early bird admission offer?",
+    answer:
+      "An early bird offer is a promotional admission benefit that may be available to eligible students who complete specified admission steps within a designated period. Availability and conditions must be confirmed with the admissions team.",
+  },
+  {
+    id: "scholarships-3",
+    question: "Can I apply for a scholarship while applying for admission?",
+    answer:
+      "Contact the admissions team to confirm the application process, required documents, and whether scholarship applications can be submitted alongside your admission application.",
+  },
+  {
+    id: "scholarships-4",
+    question: "Are scholarships available for all programmes?",
+    answer:
+      "Scholarship availability and eligibility may differ by programme and scheme. Students should confirm the applicable conditions before applying.",
+  },
+  {
+    id: "scholarships-5",
+    question: "How can I find out about scholarship amounts and early bird deadlines?",
+    answer:
+      "Contact the IMSR admissions team for the latest approved details regarding scholarship benefits, early bird offers, deadlines, eligibility, and terms and conditions.",
+  },
+  {
+    id: "scholarships-6",
+    question: "Are scholarships and early bird offers guaranteed?",
+    answer:
+      "No. Benefits depend on the applicable scheme, eligibility requirements, availability, and approval conditions. Students should obtain confirmation from the admissions team before making financial decisions.",
+  },
+];
+
 // Helper to resolve FAQs for any program slug
 export function getProgramFaqs(slug: string): FaqItem[] {
   switch (slug) {

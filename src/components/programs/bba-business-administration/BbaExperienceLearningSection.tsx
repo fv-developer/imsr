@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextScrollAnimation } from "@/components/ui/text-scroll-animation";
@@ -33,6 +34,7 @@ interface StackCardData {
   image?: string;
   videoUrl?: string;
   slides?: SlideItem[];
+  categoryId?: string;
 }
 
 // Data sourced from Home Page Experiential Learning section
@@ -44,6 +46,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "video",
     title: "Digital Marketing Careers In The AI Era",
     speaker: "Mr. Viken Shah (Founder, Jaybee Digital)",
+    categoryId: "master-class",
     description: "IMSR hosted an insightful masterclass on Digital Marketing Careers in the AI Era, exploring essential digital skills, freelancing opportunities, and real-world marketing challenges.",
     image: "/images/experiential-learning/masterclass/viken-shah-1.jpg",
     videoUrl: "/images/experiential-learning/masterclass/viken-shah-video.mp4",
@@ -53,6 +56,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "slider",
     title: "AI & Digital Transformation: Shaping Customer Experience",
     speaker: "Mr. Unnat Khetan",
+    categoryId: "master-class",
     description: "An inspiring masterclass bridging classroom learning with practical applications in digital transformation, consulting careers, and AI-enabled customer experiences.",
     slides: [
       { image: "/images/experiential-learning/masterclass/unnat-khetan-1.jpg" },
@@ -66,6 +70,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "image",
     title: "Apex Badminton League 2026",
     speaker: "FitFuture Sports Club",
+    categoryId: "sports-club",
     description: "Students showcased their athletic skills and competitive spirit at the Apex Badminton Tournament, creating an exciting experience filled with teamwork, agility, and sportsmanship.",
     image: "/images/experiential-learning/sports-club/badminton-league-1.jpg",
   },
@@ -74,6 +79,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "image",
     title: "Elite Kho-Kho Premier League",
     speaker: "FitFuture Sports Club",
+    categoryId: "sports-club",
     description: "A thrilling sporting tournament at the Elite Kho-Kho Premier League, bringing together teamwork, competitive energy, tactical agility, and sports excellence.",
     image: "/images/experiential-learning/sports-club/kho-kho-league-1.jpg",
   },
@@ -84,6 +90,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "slider",
     title: "Teachers Day Celebration & Cultural Showcase",
     speaker: "Vibrance Cultural Club",
+    categoryId: "cultural-club",
     description: "Students celebrated Teachers' Day with heartfelt appreciation, enjoying choreographed dance, musical tributes, engaging activities, and memorable celebrations.",
     slides: [
       { image: "/images/experiential-learning/cultural-club/teachers-day-1.jpg" },
@@ -95,8 +102,9 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "image",
     title: "Youth Talent & Performing Arts Showcase",
     speaker: "Vibrance Cultural Club",
+    categoryId: "cultural-club",
     description: "An energetic campus cultural gathering spotlighting musical ensembles, creative performances, and artistic expression among IMSR undergraduates.",
-    image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg",
+    image: "/images/student-life/activity/activity-top.jpg",
   },
 
   // 4. COMMUNITY SERVICE / SAHYOG CLUB (2 items: 1 Swiper Slider, 1 Single Image)
@@ -105,6 +113,7 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "slider",
     title: "Beach Cleaning & Marine Conservation Drive",
     speaker: "Sahyog Club (CSR Initiative)",
+    categoryId: "sahyog-club",
     description: "As part of its CSR initiative, IMSR organized a Beach Cleaning Drive at Marve Beach to promote environmental sustainability, civic action, and community responsibility.",
     slides: [
       { image: "/images/experiential-learning/sahyog-club/beach-cleaning-1.jpg" },
@@ -116,29 +125,29 @@ const STACK_CARDS_DATA: StackCardData[] = [
     type: "image",
     title: "Environmental Sustainability & Clean Shoreline Action",
     speaker: "Sahyog Club (CSR Initiative)",
+    categoryId: "sahyog-club",
     description: "Students actively engaged with local environmental stakeholders to foster awareness and sustainable coastal conservation practices.",
     image: "/images/experiential-learning/sahyog-club/beach-cleaning-2.jpg",
   },
 
-  // 5. EDUCATIONAL / INDUSTRY VISIT (2 items: 1 Single Image, 1 Swiper Slider)
+  // 5. EDUCATIONAL / INDUSTRY VISIT (2 items: 2 Single Images)
   {
     id: 9,
     type: "image",
     title: "Educational Visit - Radio Mirchi Studio",
     speaker: "Ms. Rashmi Raja",
+    categoryId: "industry-visit",
     description: "Students gained real-world industry exposure through an educational visit to the Radio Mirchi Studio, exploring broadcasting workflows, live audio production, and mass media operations.",
     image: "/images/experiential-learning/educational-visit/radio-mirchi-1.jpg",
   },
   {
     id: 10,
-    type: "slider",
+    type: "image",
     title: "Industrial Visit To Parle & Jayesh Industries",
     speaker: "Industrial Experience Mandates",
+    categoryId: "industry-visit",
     description: "Across global business hubs and plant floors, experience how corporate enterprises build, scale, and manage supply chains and distribution across commercial markets.",
-    slides: [
-      { image: "/images/new-folder/PARLE.jpg" },
-      { image: "/images/hero-slider/hero-slider1.jpg" },
-    ],
+    image: "/images/new-folder/PARLE.jpg",
   },
 ];
 
@@ -352,16 +361,13 @@ export default function BbaExperienceLearningSection() {
                 <div className="lg:col-span-6 flex flex-col justify-center items-start w-full">
                   
                   {/* TITLE / HEADING */}
-                  <h3
-                    className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-zinc-950 tracking-tight mb-2"
-                    style={{ lineHeight: "30px" }}
-                  >
+                  <h3 className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-zinc-950 tracking-tight leading-[1.2] sm:leading-[1.22] lg:leading-[1.25] mb-3">
                     {card.title}
                   </h3>
 
                   {/* SPEAKER / SUBTITLE */}
                   {card.speaker && (
-                    <p className="text-xs sm:text-sm font-sans font-semibold text-[#00629f] italic uppercase tracking-wider mb-4">
+                    <p className="text-xs sm:text-sm font-sans font-semibold text-[#00629f] italic uppercase tracking-wider mb-4 leading-normal">
                       {card.speaker}
                     </p>
                   )}
@@ -373,15 +379,13 @@ export default function BbaExperienceLearningSection() {
 
                   {/* SINGLE EXPLORE MORE BUTTON */}
                   <div>
-                    <button
-                      onClick={() => {
-                        if (card.videoUrl) setActiveVideo(card.videoUrl);
-                      }}
+                    <Link
+                      href={`/student-life?category=${card.categoryId || "master-class"}#clubs-and-committees`}
                       className="bg-zinc-950 hover:bg-zinc-800 text-white font-medium text-xs sm:text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2.5 transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95 cursor-pointer group"
                     >
                       <span>Explore More</span>
                       <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
 
                 </div>

@@ -7,6 +7,7 @@ import { Search, X } from "lucide-react";
 import SearchDrawer from "./SearchDrawer";
 
 const TOP_NAV_LINKS = [
+  { name: "Scholarships", href: "/scholarships" },
   { name: "Industry Placement", href: "/industry-placement" },
   { name: "Campus Tour", href: "/#campus-tour" },
   { name: "News & Blog", href: "/news-blog" },
@@ -406,6 +407,19 @@ export default function Header({ activeNav }: HeaderProps) {
                 </div>
               )}
             </div>
+
+            {/* Scholarships */}
+            <Link
+              href="/scholarships"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block py-3 px-3.5 rounded-xl text-[17px] font-kanit font-normal transition-colors ${
+                activeNav === "Scholarships"
+                  ? "bg-brand-secondary/10 text-brand-secondary font-medium"
+                  : "text-zinc-800 hover:bg-zinc-50 hover:text-brand-primary"
+              }`}
+            >
+              Scholarships
+            </Link>
 
             {/* Student Life */}
             <Link

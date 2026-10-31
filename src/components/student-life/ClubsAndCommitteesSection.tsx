@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ChevronLeft, Play } from "lucide-react";
+import { ChevronRight, ChevronLeft, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 interface CategoryItem {
   title: string;
@@ -187,6 +187,91 @@ const CATEGORIES_DATA: Category[] = [
   },
 ];
 
+function ClubsVideoItem({
+  src,
+  title,
+}: {
+  src: string;
+  title: string;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(videoRef.current.muted);
+  };
+
+  return (
+    <div className="absolute inset-0 w-full h-full">
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
+
+      {/* TOP CONTROLS BADGES & ACTIONS */}
+      <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+        {/* Play / Pause Toggle Button */}
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={isPlaying ? `Pause ${title}` : `Play ${title}`}
+          className="w-8 h-8 rounded-full bg-black/75 hover:bg-black/95 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition-all shadow-lg hover:scale-110 active:scale-95 cursor-pointer"
+          title={isPlaying ? "Pause" : "Play"}
+        >
+          {isPlaying ? (
+            <Pause className="w-3.5 h-3.5 fill-white text-white" />
+          ) : (
+            <Play className="w-3.5 h-3.5 fill-white text-white translate-x-0.5" />
+          )}
+        </button>
+
+        {/* Mute / Unmute Toggle Button */}
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute audio" : "Mute audio"}
+          className="w-8 h-8 rounded-full bg-black/75 hover:bg-black/95 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition-all shadow-lg hover:scale-110 active:scale-95 cursor-pointer"
+          title={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? (
+            <VolumeX className="w-3.5 h-3.5 text-white" />
+          ) : (
+            <Volume2 className="w-3.5 h-3.5 text-white" />
+          )}
+        </button>
+
+        {/* Video Tag Indicator */}
+        <div className="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium tracking-wide">
+          <span>Video</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ClubsAndCommitteesSection() {
   const [activeCategoryId, setActiveCategoryId] = useState<string>("master-class");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -195,12 +280,64 @@ export default function ClubsAndCommitteesSection() {
   const activeCategory =
     CATEGORIES_DATA.find((c) => c.id === activeCategoryId) || CATEGORIES_DATA[0];
 
+  // Seamless infinite loop: duplicate items so container can wrap without visual jumps
+  const displayItems =
+    activeCategory.items.length >= 2
+      ? [...activeCategory.items, ...activeCategory.items]
+      : activeCategory.items;
+
+  // Handle URL category query params (?category=... or ?club=...) and smooth scroll to section
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const parseUrlCategory = () => {
+      try {
+        const url = new URL(window.location.href);
+        const catParam = url.searchParams.get("category") || url.searchParams.get("club");
+        if (catParam && CATEGORIES_DATA.some((c) => c.id === catParam)) {
+          setActiveCategoryId(catParam);
+        }
+        if (window.location.hash === "#clubs-and-committees") {
+          setTimeout(() => {
+            const el = document.getElementById("clubs-and-committees");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 150);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    parseUrlCategory();
+    window.addEventListener("hashchange", parseUrlCategory);
+    window.addEventListener("popstate", parseUrlCategory);
+
+    return () => {
+      window.removeEventListener("hashchange", parseUrlCategory);
+      window.removeEventListener("popstate", parseUrlCategory);
+    };
+  }, []);
+
   const handleScroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const containerWidth = scrollContainerRef.current.clientWidth;
+      const container = scrollContainerRef.current;
+      const containerWidth = container.clientWidth;
       const cardStep = (containerWidth + 16) / 3;
-      const scrollAmount = direction === "left" ? -cardStep : cardStep;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      const halfScroll = container.scrollWidth / 2;
+
+      if (direction === "left") {
+        if (halfScroll > 0 && container.scrollLeft <= 10) {
+          container.scrollLeft += halfScroll;
+        }
+        container.scrollBy({ left: -cardStep, behavior: "smooth" });
+      } else {
+        if (halfScroll > 0 && container.scrollLeft >= halfScroll - 10) {
+          container.scrollLeft -= halfScroll;
+        }
+        container.scrollBy({ left: cardStep, behavior: "smooth" });
+      }
     }
   };
 
@@ -209,14 +346,18 @@ export default function ClubsAndCommitteesSection() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    // Reset scrollLeft smoothly on category switch
+    container.scrollLeft = 0;
+
     let animationFrameId: number;
     const scrollSpeed = 0.8; // Smooth pixel step per frame
 
     const autoScrollLoop = () => {
       if (container && !isHoveredRef.current) {
-        if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 4) {
-          // Loop back smoothly to the beginning
-          container.scrollLeft = 0;
+        const halfScroll = container.scrollWidth / 2;
+        if (halfScroll > 0 && container.scrollLeft >= halfScroll) {
+          // Seamless loop back by exactly half without any jump
+          container.scrollLeft -= halfScroll;
         } else {
           container.scrollLeft += scrollSpeed;
         }
@@ -232,7 +373,10 @@ export default function ClubsAndCommitteesSection() {
   }, [activeCategoryId]);
 
   return (
-    <section className="bg-zinc-950 text-white py-[100px] relative overflow-hidden border-t border-zinc-900">
+    <section
+      id="clubs-and-committees"
+      className="bg-zinc-950 text-white py-[100px] relative overflow-hidden border-t border-zinc-900 scroll-mt-20"
+    >
       {/* BACKGROUND GLOW EFFECT */}
       <div
         className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] opacity-15"
@@ -371,21 +515,14 @@ export default function ClubsAndCommitteesSection() {
                     msOverflowStyle: "none",
                   }}
                 >
-                  {activeCategory.items.map((item, idx) => (
+                  {displayItems.map((item, idx) => (
                     <div
                       key={idx}
                       className="group flex-none w-[260px] sm:w-[280px] md:w-[calc((100%-32px)/3)] h-[440px] relative rounded-none overflow-hidden bg-zinc-900 border border-zinc-800/80 snap-start shadow-xl"
                     >
                       {/* CARD MEDIA (VIDEO OR IMAGE) */}
                       {item.isVideo && item.video ? (
-                        <video
-                          src={item.video}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
+                        <ClubsVideoItem src={item.video} title={item.title} />
                       ) : (
                         <img
                           src={item.image}
@@ -395,19 +532,11 @@ export default function ClubsAndCommitteesSection() {
                         />
                       )}
 
-                      {/* VIDEO TAG BADGE IF VIDEO */}
-                      {item.isVideo && (
-                        <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-xs font-medium">
-                          <Play className="w-3 h-3 fill-white text-white" />
-                          <span>Video</span>
-                        </div>
-                      )}
-
                       {/* BOTTOM GRADIENT OVERLAY */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
 
                       {/* TITLE TEXT OVERLAY */}
-                      <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                      <div className="absolute bottom-0 left-0 right-0 p-5 z-10 pointer-events-none">
                         <h3
                           className="text-[16px] capitalize leading-snug tracking-normal text-white opacity-100 font-normal"
                           style={{

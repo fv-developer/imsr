@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BadgeCheck } from "lucide-react";
 import SplitText from "@/components/ui/SplitText";
 
 if (typeof window !== "undefined") {
@@ -217,17 +218,25 @@ export default function StatsOverview() {
               </p>
               
               {/* Recognition Badge (Desktop view) */}
-              <div className="hidden lg:flex mt-5 sm:mt-6 items-center gap-5">
-                <div className="flex flex-col">
-                  <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
-                  <span className="text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+              <div className="hidden lg:flex mt-5 sm:mt-6 items-center gap-30">
+                <div className="flex flex-col items-start gap-2">
+                  <div>
+                    <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
+                    <span className="block text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+                  </div>
+                  {/* AICTE Approved Box */}
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200/90 text-emerald-900 text-xs sm:text-[13px] font-sans font-medium shadow-xs">
+                    <BadgeCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>AICTE Approved</span>
+                  </div>
                 </div>
                 {/* Mumbai University logo - clean fitted box without vertical empty space */}
-                <div className="relative w-28 h-20 sm:w-32 sm:h-24 flex-shrink-0">
+                <div className="relative w-21 h-21 flex-shrink-0">
                   <Image
-                    src="/images/home/mumbai-unersity.png"
+                    src="/images/home/mumbai-university.png"
                     alt="Mumbai University Logo"
                     fill
+                    sizes="84px"
                     className="object-contain"
                   />
                 </div>
@@ -400,16 +409,24 @@ export default function StatsOverview() {
         {/* Mobile View - Recognition Badge & Inquire Button (below section grid) */}
         <div className="mt-10 flex flex-col gap-6 lg:hidden items-start">
           {/* Recognition Badge */}
-          <div className="flex items-center gap-5">
-            <div className="flex flex-col">
-              <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
-              <span className="text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+          <div className="flex items-center gap-7 sm:gap-30">
+            <div className="flex flex-col items-start gap-2">
+              <div>
+                <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
+                <span className="block text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+              </div>
+              {/* AICTE Approved Box */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200/90 text-emerald-900 text-xs sm:text-[13px] font-sans font-medium shadow-xs">
+                <BadgeCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>AICTE Approved</span>
+              </div>
             </div>
-            <div className="relative w-28 h-20 sm:w-32 sm:h-24 flex-shrink-0">
+            <div className="relative w-21 h-21 flex-shrink-0">
               <Image
-                src="/images/home/mumbai-unersity.png"
+                src="/images/home/mumbai-university.png"
                 alt="Mumbai University Logo"
                 fill
+                sizes="84px"
                 className="object-contain"
               />
             </div>

@@ -55,7 +55,7 @@ const cardsData = [
     speaker: "Vibrance Cultural Club",
     category: "Cultural Club",
     description: "An energetic campus cultural gathering spotlighting musical ensembles, creative performances, and artistic expression among IMSR undergraduates.",
-    image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg"
+    image: "/images/student-life/activity/activity-top.jpg"
   },
 
   // 4. COMMUNITY SERVICE / SAHYOG CLUB (2 items, single image)

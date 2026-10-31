@@ -13,7 +13,6 @@ import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import ClassroomSessions from "@/components/student-life/ClassroomSessions";
 import ClubsAndCommitteesSection from "@/components/student-life/ClubsAndCommitteesSection";
 import RecentActivitiesSection from "@/components/student-life/RecentActivitiesSection";
-import MasterClassSection from "@/components/student-life/MasterClassSection";
 import WorkshopsSection from "@/components/student-life/WorkshopsSection";
 import StudentLifeStats from "@/components/student-life/StudentLifeStats";
 import FAQs from "@/components/ui/text-reveal-faqs";
@@ -244,10 +243,7 @@ export default function StudentLifePage() {
       {/* CLASSROOM SESSIONS SECTION */}
       <ClassroomSessions />
 
-      {/* EXECUTIVE MASTERCLASS SESSIONS SECTION */}
-      <MasterClassSection />
-
-      {/* SPECIALIZED WORKSHOPS SECTION */}
+      {/* CAMPUS TOUR SECTION */}
       <WorkshopsSection />
 
       {/* FREQUENTLY ASKED QUESTIONS SECTION */}

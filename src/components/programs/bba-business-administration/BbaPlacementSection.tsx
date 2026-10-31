@@ -75,7 +75,7 @@ const STUDENTS_PLACED_DATA: StudentPlacementData[] = [
   {
     id: 6,
     name: "Utsavi Mehta",
-    photo: "/images/new-folder/Gunjan.webp",
+    photo: "/images/industry-placment/Utsavi-Mehta.webp",
     company: "Adapt Fintech Advisors Private Limited",
     companyLogoBg: "from-[#10b981] to-[#059669]",
     package: "3.6 LPA",

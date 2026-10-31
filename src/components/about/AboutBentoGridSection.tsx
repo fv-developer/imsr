@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,11 +16,15 @@ if (typeof window !== "undefined") {
 }
 
 const COLLABORATION_LOGOS = [
-  { name: "BKBC", logo: "/images/collaboration-partner/bkbc.png" },
   { name: "MKES", logo: "/images/collaboration-partner/mkes.png" },
   { name: "RADAV", logo: "/images/collaboration-partner/radav.png" },
   { name: "RAV", logo: "/images/collaboration-partner/rav.webp" },
-  { name: "TCSC", logo: "/images/collaboration-partner/tcsc.png" },
+  { name: "TSAP", logo: "/images/collaboration-partner/TSAP.png" },
+];
+
+const AWARD_LOGOS = [
+  { name: "IMSR Award", logo: "/images/award/award.avif" },
+  { name: "Education Excellence Award", logo: "/images/award/award.avif" },
 ];
 
 export default function AboutBentoGridSection() {
@@ -99,40 +104,45 @@ export default function AboutBentoGridSection() {
               </div>
             </div>
 
-            {/* Bottom Group: Logo boxes + Office Branch (Left) AND 20+ Team members (Right) */}
+            {/* Bottom Group: Logo boxes + Office Branch (Left) AND 70+ Team Members (Right) */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 flex-grow">
               
-              {/* Sub-col Left: Small Logo Cards + 2 Global Campuses */}
+              {/* Sub-col Left: Small Logo Cards + Awards */}
               <div className="sm:col-span-6 flex flex-col gap-5">
                 
-                {/* 2 Small Logo Boxes */}
-                <div className="flex items-center gap-4">
-                  {/* Blue Logo Box (Behance style) */}
-                  <div className="bento-card w-[105px] h-[105px] sm:w-[115px] sm:h-[115px] bg-[#0052ff] rounded-[24px] flex items-center justify-center shrink-0 shadow-sm hover:scale-105 transition-transform duration-300">
-                    <span className="font-display font-extrabold text-white text-3xl tracking-tighter">Bē</span>
-                  </div>
-                  {/* Light Gray Logo Box (Play/Media style) */}
-                  <div className="bento-card w-[105px] h-[105px] sm:w-[115px] sm:h-[115px] bg-[#f4f4f5] rounded-[24px] flex items-center justify-center shrink-0 shadow-sm hover:scale-105 transition-transform duration-300">
-                    <svg className="w-10 h-10 text-[#00629f]" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
-                    </svg>
+                {/* Awards Marquee (Shows 2 in a row) */}
+                <div className="bento-card w-[226px] sm:w-[246px] overflow-hidden rounded-[5px] select-none">
+                  <div
+                    className="flex items-center gap-4 w-max hover:[animation-play-state:paused]"
+                    style={{ animation: "marquee 16s linear infinite" }}
+                  >
+                    {[...AWARD_LOGOS, ...AWARD_LOGOS, ...AWARD_LOGOS, ...AWARD_LOGOS].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="w-[105px] h-[105px] sm:w-[115px] sm:h-[115px] bg-[#f4f4f5] rounded-[5px] flex items-center justify-center shrink-0 shadow-sm p-3 relative overflow-hidden transition-transform duration-300 hover:scale-105 border border-zinc-200/60"
+                      >
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={item.logo}
+                            alt={item.name}
+                            fill
+                            sizes="(max-width: 640px) 105px, 115px"
+                            className="object-contain"
+                          />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* 2 Global Campuses Card */}
-                <div className="bento-card bg-[#f4f4f5] rounded-[28px] p-7 flex flex-col justify-between flex-grow min-h-[220px]">
-                  <span className="font-display text-[48px] font-medium tracking-tight text-zinc-950">
-                    2
-                  </span>
-                  
-                  <div>
-                    <h3 className="font-display font-medium text-2xl text-black mb-1">
-                      Global Campuses
-                    </h3>
-                    <p className="text-zinc-600 text-[18px] leading-relaxed font-light">
-                      Fostering academic excellence and industry immersion across premiere educational hubs.
-                    </p>
-                  </div>
+                {/* Awards Card */}
+                <div className="bento-card bg-[#e5edff] rounded-[28px] p-6 sm:p-7 flex flex-col justify-center gap-3 flex-grow min-h-[220px]">
+                  <h3 className="font-display text-[28px] sm:text-[32px] font-medium tracking-tight text-zinc-950 leading-none">
+                    Awards
+                  </h3>
+                  <p className="text-zinc-700 text-[18px] leading-relaxed font-light">
+                    Ranked 1st by EducationWorld Grand Jury India in the Emerging Study Programmes category for the 2025–26 rankings.
+                  </p>
                 </div>
 
               </div>
@@ -140,11 +150,11 @@ export default function AboutBentoGridSection() {
               {/* Sub-col Right: Vivid Orange Card (20+ Team members) */}
               <div className="sm:col-span-6 bento-card bg-[#d97706] text-white rounded-[28px] p-8 flex flex-col justify-between min-h-[350px]">
                 <span className="font-display text-[48px] font-medium tracking-tight text-white">
-                  20+
+                  70+
                 </span>
                 <div>
                   <h3 className="font-display font-medium text-2xl text-white mb-3">
-                    Team members
+                    Team Members
                   </h3>
                   <p className="text-white/90 text-[18px] leading-relaxed font-light">
                     Our team is committed to delivering exceptional results with unwavering dedication. We collaborate closely to ensure every project exceeds expectations.
@@ -229,29 +239,50 @@ export default function AboutBentoGridSection() {
                   <div className="collaboration-pagination flex justify-center items-center mt-3 h-4" />
                 </div>
 
-                {/* Awards Card */}
-                <div className="bento-card bg-[#e5edff] rounded-[28px] p-6 sm:p-7 flex flex-col justify-center gap-3 flex-1 min-h-[185px]">
-                  <h3 className="font-display text-[28px] sm:text-[32px] font-medium tracking-tight text-zinc-950 leading-none">
-                    Awards
-                  </h3>
-                  <p className="text-zinc-700 text-[18px] leading-relaxed font-light">
-                    Ranked 1st by EducationWorld Grand Jury India in the Emerging Study Programmes category for the 2025–26 rankings.
-                  </p>
+                {/* 4 Campuses Card */}
+                <div className="bento-card bg-[#f4f4f5] rounded-[28px] p-6 sm:p-7 flex flex-col justify-between flex-1 min-h-[185px]">
+                  <span className="font-display text-[48px] font-medium tracking-tight text-zinc-950 leading-none">
+                    4
+                  </span>
+                  
+                  <div>
+                    <h3 className="font-display font-medium text-2xl text-black mb-1">
+                      Campuses
+                    </h3>
+                    <p className="text-zinc-600 text-[18px] leading-relaxed font-light">
+                      Fostering academic excellence and industry immersion across premiere educational hubs.
+                    </p>
+                  </div>
                 </div>
 
               </div>
 
             </div>
 
-            {/* Bottom Row Right: Workspace / Lounge Image Card */}
-            <div className="bento-card relative w-full h-[240px] sm:h-[270px] rounded-[28px] overflow-hidden group shadow-sm border border-zinc-100">
+            {/* Bottom Row Right: Femina Banner Image Card (Clickable with Apply Now Overlay Strip) */}
+            <Link
+              href="/#apply"
+              className="bento-card relative w-full h-[240px] sm:h-[270px] rounded-[28px] overflow-hidden group shadow-sm border border-zinc-100 block cursor-pointer bg-zinc-950"
+            >
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
-                alt="Modern Workspace Lounge"
+                src="/images/femina-banner.jpg"
+                alt="Femina Banner - Apply Now"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-            </div>
+              {/* Bottom Dark Overlay Strip - Image visible underneath with button pill */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent px-6 py-4 pt-14 flex items-end">
+                <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white text-zinc-950 font-kanit font-medium text-[14px] sm:text-[15px] uppercase tracking-wider shadow-lg transition-all duration-300 group-hover:bg-[#d4f000] group-hover:scale-[1.03]">
+                  <span>Apply Now</span>
+                  <div className="w-6 h-6 rounded-full bg-zinc-950 text-white flex items-center justify-center transition-colors">
+                    <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </Link>
 
           </div>
 

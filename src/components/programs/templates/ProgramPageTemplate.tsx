@@ -9,6 +9,7 @@ import ProgramCareerStatsSection from "./ProgramCareerStatsSection";
 import ProgramCurriculumSection from "./ProgramCurriculumSection";
 import BbaExperienceLearningSection from "@/components/programs/bba-business-administration/BbaExperienceLearningSection";
 import ScholarshipOffersSection from "./ScholarshipOffersSection";
+import BbaPlacementSection from "@/components/programs/bba-business-administration/BbaPlacementSection";
 import StudentSuccessStories from "@/components/home/StudentSuccessStories";
 import PlacementPartners from "@/components/home/PlacementPartners";
 import BookingSection from "@/components/home/BookingSection";
@@ -45,8 +46,11 @@ export default function ProgramPageTemplate({ config }: { config: ProgramConfig 
       {/* SCHOLARSHIPS & EARLY BIRD OFFERS */}
       <ScholarshipOffersSection />
 
-      {/* SECTION 6: STUDENT SUCCESS STORIES */}
-      <StudentSuccessStories />
+      {/* SECTION 6: INDUSTRY PLACEMENT */}
+      <BbaPlacementSection />
+
+      {/* STUDENT SUCCESS STORIES (Temporarily hidden as requested) */}
+      {/* <StudentSuccessStories /> */}
 
       {/* SECTION 7: OUR INDUSTRY PLACEMENT PARTNERS */}
       <PlacementPartners />
