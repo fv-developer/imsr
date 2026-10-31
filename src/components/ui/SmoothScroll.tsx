@@ -14,6 +14,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
   const pathname = usePathname();
 
   useEffect(() => {
+    // Disable automatic browser scroll restoration to prevent landing at previous scroll offsets
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.2,
@@ -45,8 +50,21 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     };
   }, []);
 
-  // Global GSAP ScrollTrigger reveal loop for design-system reveal classes on route changes
+  // Global GSAP ScrollTrigger reveal loop and scroll reset on route changes
   useEffect(() => {
+    // Reset scroll to the top of the new page immediately if no anchor hash is present
+    if (typeof window !== "undefined") {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+        (window as any).lenis?.scrollTo(0, { immediate: true });
+      } else {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          (window as any).lenis?.scrollTo(target, { offset: -80 });
+        }
+      }
+    }
+
     const timer = setTimeout(() => {
       // 1. Generic ScrollTrigger initializers for Design System reusable classes
       gsap.utils.toArray(".fade-up").forEach((el: any) => {

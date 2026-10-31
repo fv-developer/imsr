@@ -48,7 +48,7 @@ const TOP_NAV_LINKS = [
 
 const MAIN_NAV_LINKS = [
   { name: "Home", href: "#home" },
-  { name: "About Us", href: "/about" },
+  { name: "About Us", href: "/about-us" },
   { name: "Programs", href: "#programs", hasMega: true },
   { name: "Student Life", href: "#student-life" },
   { name: "Faculty", href: "#faculty" },
