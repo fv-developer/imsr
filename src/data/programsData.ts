@@ -569,19 +569,19 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bsc-in-digital-media-growth-marketing": {
     slug: "bsc-in-digital-media-growth-marketing",
-    title: "B.Sc (Hons.) in Digital Media & Growth Marketing",
-    breadcrumbTitle: "B.Sc (Hons.) in Digital Media & Growth Marketing",
+    title: "B.Sc (Hons.) in Digital Media & Marketing",
+    breadcrumbTitle: "B.Sc (Hons.) in Digital Media & Marketing",
     heroPrefix: "B.Sc (Hons.) in",
-    heroHighlight: "Digital Media & Growth Marketing",
+    heroHighlight: "Digital Media & Marketing",
     heroDescription:
       "Designed for students interested in the rapidly evolving digital economy, this programme develops skills across digital marketing, content, social media, SEO, performance marketing and growth strategies.",
     overviewHeadingPrefix: "Driving Digital",
     overviewHeadingHighlight: "Growth & Innovation",
     overviewDescription:
-      "The B.Sc (Hons.) in Digital Media & Growth Marketing at IMSR offers a future-focused education designed to develop digital marketing expertise, content strategy, data-driven insights, and growth-oriented thinking.",
-    whyPursueTitle: "Why Pursue B.Sc (Hons.) in Digital Media & Growth Marketing at IMSR?",
+      "The B.Sc (Hons.) in Digital Media & Marketing at IMSR offers a future-focused education designed to develop digital marketing expertise, content strategy, data-driven insights, and growth-oriented thinking.",
+    whyPursueTitle: "Why Pursue B.Sc (Hons.) in Digital Media & Marketing at IMSR?",
     whyPursueDescription:
-      "The B.Sc (Hons.) in Digital Media & Growth Marketing at IMSR combines digital media education with practical marketing exposure, helping students develop content creation skills, digital strategy expertise, analytical thinking, and growth-focused marketing capabilities.",
+      "The B.Sc (Hons.) in Digital Media & Marketing at IMSR combines digital media education with practical marketing exposure, helping students develop content creation skills, digital strategy expertise, analytical thinking, and growth-focused marketing capabilities.",
     overviewPoints: [
       "Comprehensive learning across Digital Marketing, Content Strategy, Social Media, Performance Marketing, and Growth Analytics.",
       "Practical exposure to digital campaigns, audience engagement, content development, and marketing performance measurement.",
@@ -631,19 +631,19 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "diploma-in-digital-media-and-growth-marketing": {
     slug: "diploma-in-digital-media-and-growth-marketing",
-    title: "Diploma in Digital Media and Growth Marketing",
-    breadcrumbTitle: "Diploma in Digital Media and Growth Marketing",
+    title: "Diploma in Digital Media and Marketing",
+    breadcrumbTitle: "Diploma in Digital Media and Marketing",
     heroPrefix: "Diploma in",
-    heroHighlight: "Digital Media and Growth Marketing",
+    heroHighlight: "Digital Media and Marketing",
     heroDescription:
       "A practical programme designed to build foundational skills in digital media, marketing and growth strategies for students and aspiring digital professionals.",
     overviewHeadingPrefix: "Mastering Digital",
     overviewHeadingHighlight: "Media & Growth",
     overviewDescription:
-      "The Diploma in Digital Media and Growth Marketing at IMSR offers a future-focused education designed to develop digital marketing skills, content creation expertise, campaign management, and growth strategies.",
-    whyPursueTitle: "Why Pursue Diploma in Digital Media and Growth Marketing at IMSR?",
+      "The Diploma in Digital Media and Marketing at IMSR offers a future-focused education designed to develop digital marketing skills, content creation expertise, campaign management, and growth strategies.",
+    whyPursueTitle: "Why Pursue Diploma in Digital Media and Marketing at IMSR?",
     whyPursueDescription:
-      "The Diploma in Digital Media and Growth Marketing at IMSR combines digital media education with practical marketing exposure, helping students develop content creation skills, digital strategy expertise, analytical thinking, and growth-focused marketing capabilities.",
+      "The Diploma in Digital Media and Marketing at IMSR combines digital media education with practical marketing exposure, helping students develop content creation skills, digital strategy expertise, analytical thinking, and growth-focused marketing capabilities.",
     overviewPoints: [
       "Comprehensive learning across Digital Marketing, Content Strategy, Social Media, Performance Marketing, and Growth Analytics.",
       "Practical exposure to digital campaigns, audience engagement, content development, and marketing performance measurement.",

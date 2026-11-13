@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -183,7 +184,8 @@ export default function ExperientialLearning() {
           <p className="mt-6 text-cyan-100 font-sans font-light leading-relaxed text-[18px] max-w-md">
             Gain practical knowledge through hands-on projects, industry exposure, internships, and real-world experiences that help students develop essential skills and confidently prepare for successful careers.
           </p>
-          <button 
+          <Link 
+            href="/student-life"
             className="hidden lg:flex btn-fill-effect mt-10 items-center justify-center gap-3 w-[150px] !h-[150px] rounded-full border border-white/60 bg-transparent text-white hover:text-zinc-950 transition-all duration-[350ms] group cursor-pointer shadow-lg" 
             style={{ "--btn-hover-bg": "#ffffff" } as React.CSSProperties}
             aria-label="Explore Us More"
@@ -195,7 +197,7 @@ export default function ExperientialLearning() {
             <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </button>
+          </Link>
         </div>
 
         {/* Right Column - Stacking Cards */}
@@ -237,15 +239,15 @@ export default function ExperientialLearning() {
 
           {/* Mobile Simple Button (below cards) */}
           <div className="mt-8 flex lg:hidden justify-start w-full pt-2">
-            <a
-              href="/about-us"
+            <Link
+              href="/student-life"
               className="px-7 py-3 rounded-full bg-white text-zinc-950 font-kanit font-medium text-[14px] uppercase tracking-wider flex items-center gap-3 shadow-md hover:bg-zinc-100 transition-colors"
             >
               <span>Explore Us More</span>
               <svg className="w-4 h-4 text-zinc-950" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
 

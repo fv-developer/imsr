@@ -160,17 +160,24 @@ export const BlurredStagger = ({
         variants={container}
         initial="hidden"
         animate="show"
-        className="text-[15px] sm:text-base leading-relaxed text-zinc-600 font-sans font-light break-words whitespace-normal py-2"
+        className="text-[15px] sm:text-base leading-relaxed text-zinc-600 font-sans font-light whitespace-normal py-2"
       >
-        {text.split("").map((char, index) => (
-          <motion.span
-            key={index}
-            variants={letterAnimation}
-            transition={{ duration: 0.2 }}
-            className="inline-block"
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
+        {text.split(" ").map((word, wordIndex, words) => (
+          <React.Fragment key={wordIndex}>
+            <span className="inline-block whitespace-nowrap">
+              {word.split("").map((char, charIndex) => (
+                <motion.span
+                  key={charIndex}
+                  variants={letterAnimation}
+                  transition={{ duration: 0.2 }}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+            {wordIndex < words.length - 1 ? " " : null}
+          </React.Fragment>
         ))}
       </motion.p>
     </div>

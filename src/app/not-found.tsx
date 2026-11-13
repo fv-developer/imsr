@@ -139,7 +139,7 @@ export default function NotFound() {
 
       {/* FOOTER BAR */}
       <footer className="w-full max-w-7xl mx-auto text-center text-xs text-zinc-500 font-sans z-10 pt-6 border-t border-zinc-900">
-        &copy; {new Date().getFullYear()} Institute of Management Studies and Research (IMSR). All rights reserved.
+        &copy; {new Date().getFullYear()} IMSR – Institute of Management Studies and Research. All rights reserved.
       </footer>
     </main>
   );

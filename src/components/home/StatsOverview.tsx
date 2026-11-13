@@ -145,6 +145,17 @@ export default function StatsOverview() {
     };
   }, []);
 
+  const scrollToBookingForm = () => {
+    const target = document.getElementById("admissions-booking");
+    if (!target) return;
+    const lenis = (window as unknown as { lenis?: { scrollTo: (el: HTMLElement, opts?: { offset?: number }) => void } }).lenis;
+    if (lenis) {
+      lenis.scrollTo(target, { offset: -80 });
+    } else {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   // 3D Magnetic Tilt Handler
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
@@ -218,11 +229,11 @@ export default function StatsOverview() {
               </p>
               
               {/* Recognition Badge (Desktop view) */}
-              <div className="hidden lg:flex mt-5 sm:mt-6 items-center gap-30">
+              <div className="hidden lg:flex mt-5 sm:mt-6 items-center gap-10 xl:gap-12">
                 <div className="flex flex-col items-start gap-2">
                   <div>
                     <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
-                    <span className="block text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+                    <span className="block text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">University of Mumbai</span>
                   </div>
                   {/* AICTE Approved Box */}
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200/90 text-emerald-900 text-xs sm:text-[13px] font-sans font-medium shadow-xs">
@@ -230,21 +241,34 @@ export default function StatsOverview() {
                     <span>AICTE Approved</span>
                   </div>
                 </div>
-                {/* Mumbai University logo - clean fitted box without vertical empty space */}
-                <div className="relative w-21 h-21 flex-shrink-0">
-                  <Image
-                    src="/images/home/mumbai-university.png"
-                    alt="Mumbai University Logo"
-                    fill
-                    sizes="84px"
-                    className="object-contain"
-                  />
+                {/* University of Mumbai & AICTE logos - clean fitted boxes without vertical empty space */}
+                <div className="flex items-center gap-4 flex-shrink-0">
+                  <div className="relative w-21 h-21 flex-shrink-0">
+                    <Image
+                      src="/images/home/mumbai-university.jpg"
+                      alt="University of Mumbai Logo"
+                      fill
+                      sizes="84px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="relative w-21 h-21 flex-shrink-0">
+                    <Image
+                      src="/images/home/AICTE.png"
+                      alt="AICTE Logo"
+                      fill
+                      sizes="84px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Inquire Button (Desktop view) */}
             <button 
+              type="button"
+              onClick={scrollToBookingForm}
               className="hidden lg:flex group btn-bubble-fill relative overflow-hidden items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-[#5a234f] text-[#5a234f] font-kanit font-medium text-[14px] uppercase tracking-wider select-none cursor-pointer mt-4 sm:mt-5 transition-colors duration-300 shadow-sm"
               onMouseEnter={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
@@ -278,10 +302,10 @@ export default function StatsOverview() {
             {/* Top Row: 98.6% Student Placed + Student Group Photo Card (Enlarged Width) */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
               
-              {/* Top Left: 98.6% Stat */}
+              {/* Top Left: 98.4% Stat */}
               <div className="sm:col-span-4 flex flex-col justify-center stat-anim-item">
                 <div className="flex items-baseline font-display font-medium text-zinc-950 text-5xl sm:text-6xl md:text-[68px] leading-none tracking-tight">
-                  <span className="counter-num" data-target="98.6" data-decimals="1">0</span>
+                  <span className="counter-num" data-target="98.4" data-decimals="1">0</span>
                   <span className="text-3xl sm:text-4xl md:text-5xl ml-1 font-normal text-zinc-950">%</span>
                 </div>
                 <span className="mt-3 text-[18px] font-display font-medium uppercase tracking-wider text-zinc-800 leading-snug">
@@ -409,11 +433,11 @@ export default function StatsOverview() {
         {/* Mobile View - Recognition Badge & Inquire Button (below section grid) */}
         <div className="mt-10 flex flex-col gap-6 lg:hidden items-start">
           {/* Recognition Badge */}
-          <div className="flex items-center gap-7 sm:gap-30">
+          <div className="flex flex-wrap items-center gap-5 sm:gap-12">
             <div className="flex flex-col items-start gap-2">
               <div>
                 <span className="text-[13px] font-kanit font-light uppercase tracking-wider text-zinc-400">Recognition by</span>
-                <span className="block text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">Mumbai University</span>
+                <span className="block text-[20px] sm:text-[22px] font-sans font-medium text-zinc-900 mt-0.5">University of Mumbai</span>
               </div>
               {/* AICTE Approved Box */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200/90 text-emerald-900 text-xs sm:text-[13px] font-sans font-medium shadow-xs">
@@ -421,19 +445,32 @@ export default function StatsOverview() {
                 <span>AICTE Approved</span>
               </div>
             </div>
-            <div className="relative w-21 h-21 flex-shrink-0">
-              <Image
-                src="/images/home/mumbai-university.png"
-                alt="Mumbai University Logo"
-                fill
-                sizes="84px"
-                className="object-contain"
-              />
+            <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+              <div className="relative w-16 h-16 sm:w-21 sm:h-21 flex-shrink-0">
+                <Image
+                  src="/images/home/mumbai-university.jpg"
+                  alt="University of Mumbai Logo"
+                  fill
+                  sizes="84px"
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative w-16 h-16 sm:w-21 sm:h-21 flex-shrink-0">
+                <Image
+                  src="/images/home/AICTE.png"
+                  alt="AICTE Logo"
+                  fill
+                  sizes="84px"
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
 
           {/* Inquire Button */}
           <button 
+            type="button"
+            onClick={scrollToBookingForm}
             className="group btn-bubble-fill relative overflow-hidden flex items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-[#5a234f] text-[#5a234f] font-kanit font-medium text-[14px] uppercase tracking-wider select-none cursor-pointer transition-colors duration-300 shadow-sm"
             onMouseEnter={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();

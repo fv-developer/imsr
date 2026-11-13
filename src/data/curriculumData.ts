@@ -634,7 +634,7 @@ export const ARTIFICIAL_INTELLIGENCE_STREAMS: StreamItem[] = [
   },
 ];
 
-// 5. B.Sc (Hons.) in Digital Media & Growth Marketing (6 Semesters / 3 Years)
+// 5. B.Sc (Hons.) in Digital Media & Marketing (6 Semesters / 3 Years)
 export const BSC_DIGITAL_MEDIA_STREAMS: StreamItem[] = [
   {
     id: 1,
@@ -757,7 +757,7 @@ export const BSC_DIGITAL_MEDIA_STREAMS: StreamItem[] = [
   },
 ];
 
-// 6. Diploma in Digital Media and Growth Marketing (2 Semesters / 1 Year)
+// 6. Diploma in Digital Media and Marketing (2 Semesters / 1 Year)
 export const DIPLOMA_DIGITAL_MEDIA_STREAMS: StreamItem[] = [
   {
     id: 1,

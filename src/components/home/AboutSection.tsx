@@ -109,7 +109,7 @@ export default function AboutSection() {
                     backgroundClip: "text"
                   }}
                 >
-                  Institute of Management
+                  IMSR - Institute of Management
                 </span>
                 <span 
                   className="font-medium block pb-1 fade-up-scroll"
@@ -120,11 +120,11 @@ export default function AboutSection() {
                     backgroundClip: "text"
                   }}
                 >
-                  Studies &amp; Research
+                  Studies and Research
                 </span>
               </h2>
               <p className="mt-6 text-[#333] font-sans font-light leading-relaxed max-w-2xl text-[18px] fade-up-scroll">
-                Build the knowledge, skills, and confidence needed to shape a successful career. Institute of Management Studies &amp; Research offers industry-focused learning, expert guidance, and opportunities to help you turn your ambitions into meaningful professional growth.
+                Build the knowledge, skills, and confidence needed to shape a successful career. IMSR - Institute of Management Studies and Research offers industry-focused learning, expert guidance, and opportunities to help you turn your ambitions into meaningful professional growth.
               </p>
             </div>
 

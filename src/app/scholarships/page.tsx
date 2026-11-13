@@ -78,7 +78,7 @@ const PROGRAMMES_LIST = [
     image: "/images/experiential-learning/masterclass/viken-shah-1.jpg",
   },
   {
-    title: "Digital Media & Growth Marketing",
+    title: "Digital Media & Marketing",
     description: "Develop an understanding of digital platforms, marketing strategy, audience engagement, and business growth.",
     icon: <Layers className="w-6 h-6 text-fuchsia-600" />,
     href: "/programs/bsc-in-digital-media-growth-marketing",
@@ -267,7 +267,7 @@ export default function ScholarshipsPage() {
                 At Future Varsity – Institute of Management Studies &amp; Research (IMSR), we believe that access to quality education can open doors to meaningful opportunities. Our scholarship initiatives and early bird admission offers are designed to help eligible students take the next step towards their academic and professional goals.
               </p>
               <p>
-                Whether you aspire to pursue business administration, commerce, entrepreneurship, artificial intelligence, or digital media and growth marketing, explore the available financial assistance and early admission benefits that may help make your educational journey more accessible.
+                Whether you aspire to pursue business administration, commerce, entrepreneurship, artificial intelligence, or digital media and marketing, explore the available financial assistance and early admission benefits that may help make your educational journey more accessible.
               </p>
               <p className="text-zinc-950 font-medium text-base sm:text-lg lg:text-[19px] pt-1">
                 Start your journey early. Explore your opportunities. Invest in your future.

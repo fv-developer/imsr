@@ -69,17 +69,17 @@ const SEARCH_DATABASE = [
     icon: GraduationCap,
   },
   {
-    title: "B.Sc (Hons.) in Digital Media & Growth Marketing",
+    title: "B.Sc (Hons.) in Digital Media & Marketing",
     category: "Program",
     href: "/programs/bsc-in-digital-media-growth-marketing",
-    keywords: "bsc digital media growth marketing technology analytics content creation",
+    keywords: "bsc digital media marketing technology analytics content creation",
     icon: GraduationCap,
   },
   {
-    title: "Diploma in Digital Media and Growth Marketing",
+    title: "Diploma in Digital Media and Marketing",
     category: "Diploma",
     href: "/programs/diploma-in-digital-media-and-growth-marketing",
-    keywords: "diploma digital media growth marketing short course certification",
+    keywords: "diploma digital media marketing short course certification",
     icon: BookOpen,
   },
 
@@ -129,7 +129,7 @@ const SEARCH_DATABASE = [
     icon: UserCheck,
   },
   {
-    title: "About Institute of Management Studies and Research",
+    title: "About IMSR – Institute of Management Studies and Research",
     category: "About Us",
     href: "/about-us",
     keywords: "about imsr history vision mission accreditation futurevarsity mkes group",

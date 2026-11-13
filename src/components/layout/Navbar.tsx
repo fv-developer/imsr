@@ -320,8 +320,8 @@ export default function Navbar() {
                   { name: "B.Com (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
                   { name: "B.Com (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
                   { name: "B.Com (Hons.) in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
-                  { name: "B.Sc (Hons.) in Digital Media & Growth Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
-                  { name: "Diploma in Digital Media and Growth Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
+                  { name: "B.Sc (Hons.) in Digital Media & Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
+                  { name: "Diploma in Digital Media and Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
                 ].map((prog, idx) => (
                   <Link
                     key={idx}

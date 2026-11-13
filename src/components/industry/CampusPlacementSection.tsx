@@ -45,23 +45,23 @@ const PLACEMENT_STATS: StatItem[] = [
   },
   {
     id: "s2",
-    targetValue: 10.5,
+    targetValue: 3.5,
     decimals: 1,
     suffix: "LPA",
     label: "Average CTC",
   },
   {
     id: "s4",
-    targetValue: 18.5,
+    targetValue: 6.5,
     decimals: 2,
     suffix: "LPA",
     label: "Highest CTC",
   },
   {
     id: "s5",
-    targetValue: 650,
-    decimals: 0,
-    suffix: "+",
+    targetValue: 98.4,
+    decimals: 1,
+    suffix: "%",
     label: "Students Placed",
   },
 ];

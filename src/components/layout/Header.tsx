@@ -36,16 +36,18 @@ const MEGA_MENU_DATA: Record<string, { title: string; href: string }[]> = {
     { title: "B.Com (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
     { title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
   ],
+  "Bachelors": [
+    { title: "B.Sc (Hons.) in Digital Media & Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
+  ],
   "Digital Media & AI": [
-    { title: "B.Sc (Hons.) in Digital Media & Growth Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
-    { title: "Diploma in Digital Media and Growth Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
+    { title: "Diploma in Digital Media and Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
   ],
 };
 
 const MEGA_MENU_OVERVIEW_LIST = [
-  { title: "Industry Placement Cell", href: "/industry-placement" },
-  { title: "Experiential Learning Modules", href: "#" },
-  { title: "Scholarships & Grants", href: "#" },
+  { title: "Industry Placement", href: "/industry-placement" },
+  { title: "Experiential Learning", href: "/student-life" },
+  { title: "Scholarships", href: "/scholarships" },
 ];
 
 interface HeaderProps {

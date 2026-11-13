@@ -10,7 +10,7 @@ export const HOME_FAQS: FaqItem[] = [
     id: "home-1",
     question: "What programmes does FV - IMSR offer?",
     answer:
-      "FV - IMSR offers undergraduate and diploma programmes across Business Administration, Entrepreneurship, Marketing Management, Digital Media & Growth Marketing and Artificial Intelligence.",
+      "FV - IMSR offers undergraduate and diploma programmes across Business Administration, Entrepreneurship, Marketing Management, Digital Media & Marketing and Artificial Intelligence.",
   },
   {
     id: "home-2",
@@ -62,7 +62,7 @@ export const ABOUT_US_FAQS: FaqItem[] = [
     id: "about-3",
     question: "What areas of education does FV - IMSR specialise in?",
     answer:
-      "FV - IMSR focuses on Business Administration, Entrepreneurship, Marketing Management, Digital Media & Growth Marketing and Artificial Intelligence.",
+      "FV - IMSR focuses on Business Administration, Entrepreneurship, Marketing Management, Digital Media & Marketing and Artificial Intelligence.",
   },
   {
     id: "about-4",
@@ -308,11 +308,11 @@ export const BCOM_AI_FAQS: FaqItem[] = [
   },
 ];
 
-// 11. B.Sc. (Hons.) in Digital Media & Growth Marketing FAQs
+// 11. B.Sc. (Hons.) in Digital Media & Marketing FAQs
 export const BSC_DIGITAL_MEDIA_FAQS: FaqItem[] = [
   {
     id: "bsc-dm-1",
-    question: "What will I learn in Digital Media & Growth Marketing?",
+    question: "What will I learn in Digital Media & Marketing?",
     answer:
       "Students explore digital marketing, content strategy, social media, search engine optimisation, digital advertising, analytics and audience engagement.",
   },
@@ -320,7 +320,7 @@ export const BSC_DIGITAL_MEDIA_FAQS: FaqItem[] = [
     id: "bsc-dm-2",
     question: "Does this programme focus on practical digital marketing skills?",
     answer:
-      "The programme is designed around digital media and growth marketing concepts, helping students understand how digital channels can be used to build visibility and support business growth.",
+      "The programme is designed around digital media and marketing concepts, helping students understand how digital channels can be used to build visibility and support business growth.",
   },
   {
     id: "bsc-dm-3",
@@ -330,7 +330,7 @@ export const BSC_DIGITAL_MEDIA_FAQS: FaqItem[] = [
   },
   {
     id: "bsc-dm-4",
-    question: "Who should choose Digital Media & Growth Marketing?",
+    question: "Who should choose Digital Media & Marketing?",
     answer:
       "The programme is suitable for students interested in digital marketing, social media, content, SEO, performance marketing and digital business growth.",
   },
@@ -342,11 +342,11 @@ export const BSC_DIGITAL_MEDIA_FAQS: FaqItem[] = [
   },
 ];
 
-// 12. Diploma in Digital Media and Growth Marketing FAQs
+// 12. Diploma in Digital Media and Marketing FAQs
 export const DIPLOMA_DIGITAL_MEDIA_FAQS: FaqItem[] = [
   {
     id: "dip-dm-1",
-    question: "What is the Diploma in Digital Media and Growth Marketing about?",
+    question: "What is the Diploma in Digital Media and Marketing about?",
     answer:
       "This programme focuses on the fundamentals of digital media, online marketing, content strategy and techniques used to improve digital reach and audience engagement.",
   },

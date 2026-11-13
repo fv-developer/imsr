@@ -10,12 +10,12 @@ if (typeof window !== "undefined") {
 
 const STATS_DATA = [
   {
-    target: 800,
+    target: 1000,
     suffix: "+",
     label: "Participants",
   },
   {
-    target: 7,
+    target: 35,
     suffix: "",
     label: "Events",
   },
@@ -49,7 +49,7 @@ export default function StudentLifeStats() {
             toggleActions: "play none none none",
           },
           onUpdate: () => {
-            el.textContent = Math.floor(obj.val).toString();
+            el.textContent = Math.floor(obj.val).toLocaleString("en-US");
           },
         });
       });

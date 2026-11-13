@@ -67,9 +67,11 @@ const MEGA_MENU_DATA: Record<string, string[]> = {
     "B.Com. (Hons.) in Business Administration (Marketing Management)",
     "B.Com. Hons. in BA (Artificial Intelligence)",
   ],
+  "Bachelors": [
+    "B.Sc. (Hons.) in Digital Media & Marketing",
+  ],
   "Digital Media & AI": [
-    "B.Sc. (Hons.) in Digital Media & Growth Marketing",
-    "Diploma in Digital Media and Growth Marketing",
+    "Diploma in Digital Media and Marketing",
   ],
 };
 
@@ -139,13 +141,13 @@ const PROGRAMS_DATA = [
     desc: "Acquire high-level competencies in commercial analysis, financial statistics, and corporate accounting.",
   },
   {
-    title: "B.Sc. (Hons.) in Digital Media & Growth Marketing",
+    title: "B.Sc. (Hons.) in Digital Media & Marketing",
     category: "Digital Media & AI",
     duration: "3 Years",
     desc: "Excel in content strategy, SEO frameworks, performance ads, conversion rate optimization, and search rankings.",
   },
   {
-    title: "Diploma in Digital Media and Growth Marketing",
+    title: "Diploma in Digital Media and Marketing",
     category: "Digital Media & AI",
     duration: "1 Year",
     desc: "A fast-track program focused on digital growth tools, social branding, visual content creation, and copywriting.",
@@ -713,9 +715,9 @@ export default function Home2() {
                   {[
                     "BBA (Hons.) In Business Administration",
                     "BBA (Hons.)* in Artificial Intelligence",
-                    "B.Sc. (Hons.) in Digital Media & Growth Marketing",
+                    "B.Sc. (Hons.) in Digital Media & Marketing",
                     "B.Com. Hons. in BA (Artificial Intelligence)",
-                    "Diploma in Digital Media and Growth Marketing"
+                    "Diploma in Digital Media and Marketing"
                   ].map((item, idx) => (
                     <button
                       key={idx}

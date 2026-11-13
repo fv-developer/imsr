@@ -13,7 +13,7 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "IMSR - Institute of Management Studies and Research | Future Varsity",
+  title: "IMSR – Institute of Management Studies and Research | Future Varsity",
   description: "Join IMSR for world-class Sports Management, Sciences, and Business programs. Admissions open for 2025.",
   icons: {
     icon: "/images/IMSR-favicon.jpg",

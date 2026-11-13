@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,7 +19,7 @@ const COLLABORATION_LOGOS = [
   { name: "MKES", logo: "/images/collaboration-partner/mkes.png" },
   { name: "RADAV", logo: "/images/collaboration-partner/radav.png" },
   { name: "RAV", logo: "/images/collaboration-partner/rav.webp" },
-  { name: "TSAP", logo: "/images/collaboration-partner/TSAP.png" },
+  { name: "TIMSR", logo: "/images/collaboration-partner/TIMSR.jpg" },
 ];
 
 const AWARD_LOGOS = [
@@ -260,8 +260,10 @@ export default function AboutBentoGridSection() {
             </div>
 
             {/* Bottom Row Right: Femina Banner Image Card (Clickable with Apply Now Overlay Strip) */}
-            <Link
-              href="/#apply"
+            <a
+              href="https://missindia.futurevarsity.org/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bento-card relative w-full h-[240px] sm:h-[270px] rounded-[28px] overflow-hidden group shadow-sm border border-zinc-100 block cursor-pointer bg-zinc-950"
             >
               <Image
@@ -282,7 +284,7 @@ export default function AboutBentoGridSection() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
 
           </div>
 

@@ -4,15 +4,20 @@ import React from "react";
 
 export default function AdmissionsTicker() {
   const items = [
-    "Masterclasses",
+    "Masterclass",
     "Workshops",
+    "Bootcamp",
+    "Industry Experts",
     "Industry Expert Sessions",
     "Live Projects",
     "Entrepreneurship Development",
     "Business Leadership",
     "Digital Marketing Bootcamps",
     "AI Learning Experiences",
-    "Innovation Challenges",
+    "Innovation",
+    "Challenges",
+    "Rural Emergence",
+    "Research Papers",
     "Networking Events",
     "Career Development Programs",
     "Skill Enhancement Sessions",
@@ -24,8 +29,7 @@ export default function AdmissionsTicker() {
     "Soft Skills Development",
     "Campus Activities",
     "Industry Visits",
-    "Future-Ready Learning",
-    "IMSR Institute of Management Studies and Research"
+    "Future Ready Learning"
   ];
 
   return (

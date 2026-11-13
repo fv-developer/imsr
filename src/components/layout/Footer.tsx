@@ -233,12 +233,12 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/programs/bsc-in-digital-media-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Sc (Hons.) in Digital Media &amp; Growth Marketing
+                B.Sc (Hons.) in Digital Media &amp; Marketing
               </Link>
             </li>
             <li>
               <Link href="/programs/diploma-in-digital-media-and-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                Diploma in Digital Media and Growth Marketing
+                Diploma in Digital Media and Marketing
               </Link>
             </li>
           </ul>

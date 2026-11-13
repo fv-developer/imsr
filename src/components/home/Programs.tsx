@@ -91,7 +91,7 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
     slug: "/programs/bcom-in-business-administration",
   },
   {
-    title: "B.Sc (Hons.) in Digital Media & Growth Marketing",
+    title: "B.Sc (Hons.) in Digital Media & Marketing",
     category: "Digital Media & AI",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#e0f2fe]",
@@ -144,7 +144,7 @@ const ROW_2_PROGRAMS: ProgramItem[] = [
     slug: "/programs/bcom-in-business-administration-artificial-intelligence",
   },
   {
-    title: "Diploma in Digital Media and Growth Marketing",
+    title: "Diploma in Digital Media and Marketing",
     category: "Digital Media & AI",
     image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f0fdf4]",
@@ -235,12 +235,6 @@ export default function Programs() {
                         >
                           {program.title}
                         </h3>
-                        <span 
-                          className="font-sans uppercase tracking-wider text-zinc-300/80 font-light mt-0.5"
-                          style={{ fontSize: "11px" }}
-                        >
-                          {program.category === "BBA" ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
-                        </span>
                       </div>
                     </div>
                   </a>
@@ -282,12 +276,6 @@ export default function Programs() {
                         >
                           {program.title}
                         </h3>
-                        <span 
-                          className="font-sans uppercase tracking-wider text-zinc-300/80 font-light mt-0.5"
-                          style={{ fontSize: "11px" }}
-                        >
-                          {program.category === "BBA" ? "BBA Specialization" : program.category === "B.Com." ? "BCom Specialization" : "Digital Specialization"}
-                        </span>
                       </div>
                     </div>
                   </a>
