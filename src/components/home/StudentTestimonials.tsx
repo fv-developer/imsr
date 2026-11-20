@@ -16,24 +16,16 @@ const TESTIMONIALS: Testimonial[] = [
   {
     name: "Mittali Banerjee",
     src: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/mittali-banerjee.mp4",
-    program: "Digital Media & Marketing",
-    tag: "GROWTH MARKETING",
-    bgGradient: "from-blue-950/40 via-[#0a1128]/70 to-[#08090c]",
-    course: "BBA Student"
-  },
-  {
-    name: "Ishika Jadhav",
-    src: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/Ishika-Jadhav.mp4",
     program: "Business Administration",
     tag: "MANAGEMENT & LEADERSHIP",
-    bgGradient: "from-emerald-950/40 via-[#051c14]/70 to-[#08090c]",
+    bgGradient: "from-blue-950/40 via-[#0a1128]/70 to-[#08090c]",
     course: "BBA Student"
   },
   {
     name: "Tanisi Shah",
     src: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/Tanisi-Shah.mp4",
-    program: "Artificial Intelligence",
-    tag: "TECH & CRITICAL THINKING",
+    program: "Marketing Management",
+    tag: "Marketing & Branding",
     bgGradient: "from-cyan-950/30 via-[#031d26]/70 to-[#08090c]",
     course: "BBA Student"
   },
@@ -46,10 +38,18 @@ const TESTIMONIALS: Testimonial[] = [
     course: "BBA Student"
   },
   {
+    name: "Ishika Jadhav",
+    src: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/Ishika-Jadhav.mp4",
+    program: "Business Administration",
+    tag: "MANAGEMENT & LEADERSHIP",
+    bgGradient: "from-emerald-950/40 via-[#051c14]/70 to-[#08090c]",
+    course: "BBA Student"
+  },
+  {
     name: "Samiksha Jain",
     src: "https://admission.futurevarsity.org/wp-content/uploads/2026/03/Samiksha-Jain.mp4",
-    program: "Finance & Accounts",
-    tag: "FINANCE MANAGEMENT",
+    program: "Bussiness Administration",
+    tag: "MANAGEMENT & LEADERSHIP",
     bgGradient: "from-rose-950/40 via-[#1f050e]/70 to-[#08090c]",
     course: "B. Com Student"
   }

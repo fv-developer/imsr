@@ -11,7 +11,8 @@ import {
   ShoppingBag, 
   Cpu, 
   Megaphone, 
-  Lightbulb 
+  Lightbulb,
+  ShieldCheck 
 } from "lucide-react";
 import MoltenMetal from "@/components/ui/MoltenMetal";
 
@@ -28,6 +29,9 @@ function getProgramIcon(title: string) {
   }
   if (lower.includes("digital media")) {
     return { icon: Tv, color: "text-sky-500" };
+  }
+  if (lower.includes("security")) {
+    return { icon: ShieldCheck, color: "text-amber-500" };
   }
   if (lower.includes("diploma")) {
     return { icon: ShoppingBag, color: "text-green-500" };
@@ -51,48 +55,48 @@ interface ProgramItem {
 
 const ROW_1_PROGRAMS: ProgramItem[] = [
   {
-    title: "BBA (Hons.) in Business Administration (Entrepreneurship)",
+    title: "BBA in Business Administration (Entrepreneurship)",
     category: "BBA",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#fefce8]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bba-in-business-administration-entrepreneurship",
   },
   {
-    title: "BBA (Hons.) in Business Administration",
+    title: "BBA in Business Administration",
     category: "BBA",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f0fdf4]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bba-in-business-administration",
   },
   {
-    title: "B.Com (Hons.) in Business Administration (Entrepreneurship)",
+    title: "B.Com in Business Administration (Entrepreneurship)",
     category: "B.Com",
     image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#fefce8]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bcom-in-business-administration-entrepreneurship",
   },
   {
-    title: "B.Com (Hons.) in Business Administration",
+    title: "B.Com in Business Administration",
     category: "B.Com",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f0fdf4]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bcom-in-business-administration",
   },
   {
-    title: "B.Sc (Hons.) in Digital Media & Marketing",
-    category: "Digital Media & AI",
+    title: "B.Sc in Digital Media & Marketing",
+    category: "B.Sc",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
@@ -104,54 +108,64 @@ const ROW_1_PROGRAMS: ProgramItem[] = [
 
 const ROW_2_PROGRAMS: ProgramItem[] = [
   {
-    title: "BBA (Hons.) in Business Administration (Marketing Management)",
+    title: "BBA in Business Administration (Marketing Management)",
     category: "BBA",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bba-in-business-administration-marketing-management",
   },
   {
-    title: "BBA (Hons.) in Artificial Intelligence",
+    title: "BBA in Artificial Intelligence",
     category: "BBA",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f7fee7]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bba-in-artificial-intelligence",
   },
   {
-    title: "B.Com (Hons.) in Business Administration (Marketing Management)",
+    title: "B.Com in Business Administration (Marketing Management)",
     category: "B.Com",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
     bg: "bg-[#e0f2fe]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bcom-in-business-administration-marketing-management",
   },
   {
-    title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)",
+    title: "B.Com in Business Administration (Artificial Intelligence)",
     category: "B.Com",
     image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f7fee7]",
     format: "On Campus",
     eligibility: "12th Pass-outs",
-    duration: "4 Years",
+    duration: "3 Years",
     slug: "/programs/bcom-in-business-administration-artificial-intelligence",
   },
   {
     title: "Diploma in Digital Media and Marketing",
-    category: "Digital Media & AI",
+    category: "Diploma",
     image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=600&q=80",
     bg: "bg-[#f0fdf4]",
     format: "Online / Hybrid",
     eligibility: "12th Pass-outs",
     duration: "1 Year",
     slug: "/programs/diploma-in-digital-media-and-growth-marketing",
+  },
+  {
+    title: "Diploma in Security Management",
+    category: "Diploma",
+    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80",
+    bg: "bg-[#fefce8]",
+    format: "Online / Hybrid",
+    eligibility: "12th Pass-outs",
+    duration: "1 Year",
+    slug: "/programs/diploma-in-security-management",
   },
 ];
 

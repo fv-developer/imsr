@@ -204,6 +204,23 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                         ))}
                       </div>
                     </div>
+
+                    {/* ADDITIONAL PRACTICAL LEARNING (IF PRESENT) */}
+                    {stream.additionalLearning && stream.additionalLearning.length > 0 && (
+                      <div className="shrink-0 pt-2 border-t border-white/10 pb-2">
+                        <p className="text-[11px] font-semibold uppercase tracking-wider text-cyan-400 mb-2.5">
+                          ADDITIONAL PRACTICAL LEARNING
+                        </p>
+                        <div className="space-y-2">
+                          {stream.additionalLearning.map((item, aIdx) => (
+                            <div key={aIdx} className="flex items-start gap-2 text-xs text-zinc-200 font-light bg-white/5 border border-white/10 rounded-lg px-3 py-2">
+                              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 mt-1.5" />
+                              <span className="leading-relaxed">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   /* -------------------------------------------------------- */
@@ -217,7 +234,7 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
 
                     {/* VERTICAL ROTATED TEXT LABEL */}
                     <div className="flex-1 flex items-center justify-center my-3 overflow-hidden">
-                      <span className="text-[12px] xl:text-[13px] font-medium uppercase tracking-wide text-zinc-200 group-hover:text-white whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
+                      <span className="text-[16px] font-medium uppercase tracking-wide text-zinc-200 group-hover:text-white whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
                         {stream.title}
                       </span>
                     </div>
@@ -260,7 +277,7 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-mono font-semibold tracking-widest text-cyan-300 uppercase">
-                      SEMESTER {stream.num} / {totalStreamsPadded} • {stream.yearLabel}
+                      STREAM {stream.num} / {totalStreamsPadded} • {stream.yearLabel}
                     </span>
                     <div className="p-2 rounded-xl bg-white/10 border border-white/15 text-white">
                       {icon}
@@ -312,6 +329,23 @@ export default function ProgramCurriculumSection({ config }: { config: ProgramCo
                       </div>
                     ))}
                   </div>
+
+                  {/* ADDITIONAL PRACTICAL LEARNING (IF PRESENT) */}
+                  {stream.additionalLearning && stream.additionalLearning.length > 0 && (
+                    <div className="pt-3 border-t border-white/10">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 mb-1.5">
+                        ADDITIONAL PRACTICAL LEARNING
+                      </p>
+                      <div className="space-y-1.5">
+                        {stream.additionalLearning.map((item, aIdx) => (
+                          <div key={aIdx} className="flex items-start gap-2 text-[11px] text-zinc-200 font-light bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5">
+                            <span className="w-1 h-1 rounded-full bg-cyan-400 shrink-0 mt-1.5" />
+                            <span className="leading-snug">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}

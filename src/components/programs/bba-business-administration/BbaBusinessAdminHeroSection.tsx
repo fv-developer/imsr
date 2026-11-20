@@ -115,7 +115,7 @@ export default function BbaBusinessAdminHeroSection() {
           </Link>
           <ChevronRight className="w-4 h-4 text-zinc-600" />
           <span className="text-zinc-200 font-medium truncate">
-            BBA (Hons.) in Business Administration
+            BBA in Business Administration
           </span>
         </div>
 
@@ -130,7 +130,7 @@ export default function BbaBusinessAdminHeroSection() {
               ref={headingRef}
               className="font-display font-medium text-[32px] sm:text-[48px] tracking-tight leading-[45px] text-white text-left mb-6"
             >
-              <SplitText text="BBA (Hons.) in Business" />
+              <SplitText text="BBA in Business" />
               <br className="hidden sm:inline" />
               <span
                 className="font-medium inline-block pb-1 italic font-serif fade-up-scroll pr-3 opacity-0"

@@ -14,8 +14,8 @@ const HIGHLIGHT_CARDS = [
   {
     icon: <Award className="w-6 h-6 text-[#42d392]" />,
     label: "DEGREE",
-    value: "BBA (Hons.)",
-    subtext: "Undergraduate Honors Degree",
+    value: "BBA",
+    subtext: "Undergraduate Degree",
     accentBg: "bg-[#42d392]/10 border-[#42d392]/20",
   },
   {
@@ -28,15 +28,15 @@ const HIGHLIGHT_CARDS = [
   {
     icon: <Clock className="w-6 h-6 text-[#00629f]" />,
     label: "DURATION",
-    value: "3 years (Bachelor’s)",
-    subtext: "4 years (Honours, as per NEP 2020)",
+    value: "3 Years",
+    subtext: "Full-time Undergraduate Degree",
     accentBg: "bg-[#00629f]/10 border-[#00629f]/20",
   },
   {
     icon: <GraduationCap className="w-6 h-6 text-emerald-400" />,
     label: "PROGRAM LEVEL",
     value: "Undergraduate",
-    subtext: "NEP 2020 Aligned 4-Year Structure",
+    subtext: "NEP 2020 Aligned Structure",
     accentBg: "bg-emerald-400/10 border-emerald-400/20",
   },
   {
@@ -145,11 +145,11 @@ export default function BbaOverviewSection() {
           {/* LEFT COLUMN: DESCRIPTION & KEY HIGHLIGHT POINTS */}
           <div className="overview-fade lg:col-span-7 flex flex-col gap-6">
             <h3 className="font-display text-2xl sm:text-3xl font-medium text-zinc-950">
-              Why Pursue BBA (Hons.) at IMSR?
+              Why Pursue BBA at IMSR?
             </h3>
             
             <p className="text-zinc-600 font-light leading-relaxed text-[18px]">
-              The BBA (Hons.) at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.
+              The BBA at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.
             </p>
 
             <ul className="space-y-3.5 pt-2">

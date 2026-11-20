@@ -56,22 +56,23 @@ const MAIN_NAV_LINKS = [
 
 const MEGA_MENU_DATA: Record<string, string[]> = {
   "BBA": [
-    "BBA (Hons.) In Business Administration",
-    "BBA (Hons.) in Business Administration (Entrepreneurship)",
-    "BBA (Hons.) in Business Administration (Marketing Management)",
-    "BBA (Hons.)* in Artificial Intelligence",
+    "BBA in Business Administration",
+    "BBA in Business Administration (Entrepreneurship)",
+    "BBA in Business Administration (Marketing Management)",
+    "BBA in Artificial Intelligence",
   ],
   "B.Com.": [
-    "B.Com. (Hons.) in Business Administration",
-    "B.Com. (Hons.) in Business Administration (Entrepreneurship)",
-    "B.Com. (Hons.) in Business Administration (Marketing Management)",
-    "B.Com. Hons. in BA (Artificial Intelligence)",
+    "B.Com. in Business Administration",
+    "B.Com. in Business Administration (Entrepreneurship)",
+    "B.Com. in Business Administration (Marketing Management)",
+    "B.Com. in Business Administration (Artificial Intelligence)",
   ],
-  "Bachelors": [
-    "B.Sc. (Hons.) in Digital Media & Marketing",
+  "B.Sc": [
+    "B.Sc. in Digital Media & Marketing",
   ],
-  "Digital Media & AI": [
+  "Diploma": [
     "Diploma in Digital Media and Marketing",
+    "Diploma in Security Management",
   ],
 };
 
@@ -105,63 +106,69 @@ const HERO_SLIDES = [
 
 const PROGRAMS_DATA = [
   {
-    title: "BBA (Hons.) in Business Administration (Entrepreneurship)",
+    title: "BBA in Business Administration (Entrepreneurship)",
     category: "BBA",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "Develop foundational business acumen with specialized training in product launch, venture scale, and corporate innovation.",
   },
   {
-    title: "BBA (Hons.) in Business Administration (Marketing Management)",
+    title: "BBA in Business Administration (Marketing Management)",
     category: "BBA",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "Learn brand positioning, consumer psychology, market analytics, and digital engagement strategies.",
   },
   {
-    title: "BBA (Hons.) In Business Administration",
+    title: "BBA in Business Administration",
     category: "BBA",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "A comprehensive foundation in corporate management, organizational leadership, and international trade.",
   },
   {
-    title: "B.Com. (Hons.) in Business Administration (Entrepreneurship)",
+    title: "B.Com. in Business Administration (Entrepreneurship)",
     category: "B.Com.",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "Align financial accounts, taxation laws, and auditing workflows with venture capital management.",
   },
   {
-    title: "B.Com. (Hons.) in Business Administration (Marketing Management)",
+    title: "B.Com. in Business Administration (Marketing Management)",
     category: "B.Com.",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "Focus on commercial business operations, product marketing, supply chain sales, and customer relations.",
   },
   {
-    title: "B.Com. (Hons.) in Business Administration",
+    title: "B.Com. in Business Administration",
     category: "B.Com.",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "Acquire high-level competencies in commercial analysis, financial statistics, and corporate accounting.",
   },
   {
-    title: "B.Sc. (Hons.) in Digital Media & Marketing",
-    category: "Digital Media & AI",
+    title: "B.Sc. in Digital Media & Marketing",
+    category: "B.Sc",
     duration: "3 Years",
     desc: "Excel in content strategy, SEO frameworks, performance ads, conversion rate optimization, and search rankings.",
   },
   {
     title: "Diploma in Digital Media and Marketing",
-    category: "Digital Media & AI",
+    category: "Diploma",
     duration: "1 Year",
     desc: "A fast-track program focused on digital growth tools, social branding, visual content creation, and copywriting.",
   },
   {
-    title: "BBA (Hons.)* in Artificial Intelligence",
-    category: "Digital Media & AI",
-    duration: "4 Years",
+    title: "Diploma in Security Management",
+    category: "Diploma",
+    duration: "1 Year",
+    desc: "A specialized diploma focused on corporate security operations, risk analysis, surveillance, and loss prevention.",
+  },
+  {
+    title: "BBA in Artificial Intelligence",
+    category: "BBA",
+    duration: "3 Years",
     desc: "Understand high-level business intelligence, machine learning strategies, predictive statistics, and cognitive workflow design.",
   },
   {
-    title: "B.Com. Hons. in BA (Artificial Intelligence)",
+    title: "B.Com. in Business Administration (Artificial Intelligence)",
     category: "B.Com.",
-    duration: "4 Years",
+    duration: "3 Years",
     desc: "Integrate algorithmic financial models, automated corporate database audit routines, and AI ledger services.",
   },
 ];
@@ -713,11 +720,12 @@ export default function Home2() {
 
                 <div className="w-full flex flex-col">
                   {[
-                    "BBA (Hons.) In Business Administration",
-                    "BBA (Hons.)* in Artificial Intelligence",
-                    "B.Sc. (Hons.) in Digital Media & Marketing",
-                    "B.Com. Hons. in BA (Artificial Intelligence)",
-                    "Diploma in Digital Media and Marketing"
+                    "BBA In Business Administration",
+                    "BBA in Artificial Intelligence",
+                    "B.Sc. in Digital Media & Marketing",
+                    "B.Com. in Business Administration (Artificial Intelligence)",
+                    "Diploma in Digital Media and Marketing",
+                    "Diploma in Security Management"
                   ].map((item, idx) => (
                     <button
                       key={idx}

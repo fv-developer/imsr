@@ -14,7 +14,7 @@ export interface ProgramConfig {
   degree: string;
   duration: string;
   durationSubtext: string;
-  category: "BBA" | "B.Com" | "Digital Media & AI";
+  category: "BBA" | "B.Com" | "B.Sc" | "Diploma";
   heroImage: string;
   curriculumHighlights: string[];
   semesterBadges: string[][];
@@ -24,9 +24,9 @@ export interface ProgramConfig {
 export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
   "bba-in-business-administration": {
     slug: "bba-in-business-administration",
-    title: "BBA (Hons.) in Business Administration",
-    breadcrumbTitle: "BBA (Hons.) in Business Administration",
-    heroPrefix: "BBA (Hons.) in Business",
+    title: "BBA in Business Administration",
+    breadcrumbTitle: "BBA in Business Administration",
+    heroPrefix: "BBA in Business",
     heroHighlight: "Administration",
     heroDescription:
       "A comprehensive business management programme designed to Develop strong Foundations in Management, Strategy, Finance, Marketing, Operations and Leadership while preparing students for diverse business careers.",
@@ -34,9 +34,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     overviewHeadingHighlight: "Business Leaders",
     overviewDescription:
       "A comprehensive business management programme designed to Develop strong Foundations in Management, Strategy, Finance, Marketing, Operations and Leadership while preparing students for diverse business careers.",
-    whyPursueTitle: "Why Pursue BBA (Hons.) in Business Administration at IMSR?",
+    whyPursueTitle: "Why Pursue BBA in Business Administration at IMSR?",
     whyPursueDescription:
-      "The BBA (Hons.) at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.",
+      "The BBA at IMSR combines academic foundations with practical business exposure, helping students develop strategic thinking, managerial capabilities, analytical skills, and leadership confidence for the evolving business landscape.",
     overviewPoints: [
       "Comprehensive learning across Business Management, Finance, Marketing, Entrepreneurship, and Strategy.",
       "Practical exposure to business analytics, digital tools, data-driven decision-making, and real-world projects.",
@@ -44,9 +44,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Internship opportunities that provide students with meaningful corporate and industry exposure.",
       "Mentorship and guidance from experienced faculty and industry professionals to support career development.",
     ],
-    degree: "BBA (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "BBA",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "BBA",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -86,19 +86,19 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bba-in-business-administration-marketing-management": {
     slug: "bba-in-business-administration-marketing-management",
-    title: "BBA (Hons.) in Business Administration (Marketing Management)",
-    breadcrumbTitle: "BBA (Hons.) in Business Administration (Marketing Management)",
-    heroPrefix: "BBA (Hons.) in Business",
+    title: "BBA in Business Administration (Marketing Management)",
+    breadcrumbTitle: "BBA in Business Administration (Marketing Management)",
+    heroPrefix: "BBA in Business",
     heroHighlight: "Administration (Marketing Management)",
     heroDescription:
       "This programme prepares students for careers in modern Marketing by combining Business Fundamentals with Branding, Consumer Behaviour, Digital Marketing and Strategic Marketing Practices.",
     overviewHeadingPrefix: "Shaping Future-Ready",
     overviewHeadingHighlight: "Marketing Leaders",
     overviewDescription:
-      "The Bachelor of Business Administration (Hons.) in Business Administration (Marketing Management) at IMSR offers a future-focused education designed to develop brand strategy, consumer insights, digital marketing expertise, and creative thinking.",
-    whyPursueTitle: "Why Pursue BBA (Hons.) in Business Administration (Marketing Management) at IMSR?",
+      "The Bachelor of Business Administration in Business Administration (Marketing Management) at IMSR offers a future-focused education designed to develop brand strategy, consumer insights, digital marketing expertise, and creative thinking.",
+    whyPursueTitle: "Why Pursue BBA in Business Administration (Marketing Management) at IMSR?",
     whyPursueDescription:
-      "The BBA (Hons.) in Business Administration (Marketing Management) at IMSR combines marketing fundamentals with practical industry exposure, helping students develop brand-building expertise, consumer understanding, creative thinking, and strategic marketing capabilities.",
+      "The BBA in Business Administration (Marketing Management) at IMSR combines marketing fundamentals with practical industry exposure, helping students develop brand-building expertise, consumer understanding, creative thinking, and strategic marketing capabilities.",
     overviewPoints: [
       "Comprehensive learning across Brand Management, Consumer Behaviour, Digital Marketing, Market Research, and Marketing Strategy.",
       "Practical exposure to digital campaigns, social media marketing, marketing analytics, and consumer insights.",
@@ -106,9 +106,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Internship opportunities that provide exposure to marketing agencies, brands, and corporate marketing teams.",
       "Mentorship from experienced faculty and industry professionals to support marketing career development.",
     ],
-    degree: "BBA (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "BBA",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "BBA",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -146,19 +146,19 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bba-in-business-administration-entrepreneurship": {
     slug: "bba-in-business-administration-entrepreneurship",
-    title: "BBA (Hons.) in Business Administration (Entrepreneurship)",
-    breadcrumbTitle: "BBA (Hons.) in Business Administration (Entrepreneurship)",
-    heroPrefix: "BBA (Hons.) in Business",
+    title: "BBA in Business Administration (Entrepreneurship)",
+    breadcrumbTitle: "BBA in Business Administration (Entrepreneurship)",
+    heroPrefix: "BBA in Business",
     heroHighlight: "Administration (Entrepreneurship)",
     heroDescription:
       "Designed for aspiring entrepreneurs and future Business Leaders, this programme develops Entrepreneurial Thinking, Business Strategy, Innovation and leadership skills through practical and industry-oriented learning.",
     overviewHeadingPrefix: "Empowering Future",
     overviewHeadingHighlight: "Entrepreneurs",
     overviewDescription:
-      "The Bachelor of Business Administration (Hons.) in Business Administration (Entrepreneurship) at IMSR offers a future-focused education designed to develop entrepreneurial thinking, business innovation, strategic decision-making, and venture-building skills.",
-    whyPursueTitle: "Why Pursue BBA (Hons.) in Business Administration (Entrepreneurship) at IMSR?",
+      "The Bachelor of Business Administration in Business Administration (Entrepreneurship) at IMSR offers a future-focused education designed to develop entrepreneurial thinking, business innovation, strategic decision-making, and venture-building skills.",
+    whyPursueTitle: "Why Pursue BBA in Business Administration (Entrepreneurship) at IMSR?",
     whyPursueDescription:
-      "The BBA (Hons.) in Business Administration (Entrepreneurship) at IMSR combines business fundamentals with practical entrepreneurial exposure, helping students develop innovative thinking, venture-building capabilities, financial awareness, and the confidence to pursue business opportunities.",
+      "The BBA in Business Administration (Entrepreneurship) at IMSR combines business fundamentals with practical entrepreneurial exposure, helping students develop innovative thinking, venture-building capabilities, financial awareness, and the confidence to pursue business opportunities.",
     overviewPoints: [
       "Comprehensive learning across Entrepreneurship, Business Planning, Innovation, Finance, and Strategic Management.",
       "Practical exposure to business model development, market validation, opportunity identification, and venture planning.",
@@ -166,9 +166,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore startup ecosystems, business challenges, and real-world entrepreneurial practices.",
       "Mentorship and guidance from faculty and industry professionals to support entrepreneurial and business career goals.",
     ],
-    degree: "BBA (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "BBA",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "BBA",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -207,19 +207,19 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bba-in-artificial-intelligence": {
     slug: "bba-in-artificial-intelligence",
-    title: "BBA (Hons.) in Artificial Intelligence",
-    breadcrumbTitle: "BBA (Hons.) in Artificial Intelligence",
-    heroPrefix: "BBA (Hons.) in",
+    title: "BBA in Artificial Intelligence",
+    breadcrumbTitle: "BBA in Artificial Intelligence",
+    heroPrefix: "BBA in",
     heroHighlight: "Artificial Intelligence",
     heroDescription:
       "This programme combines business management with Artificial Intelligence, preparing students to understand AI applications, Data-Driven Decision-Making and Emerging Technologies in Modern Business.",
     overviewHeadingPrefix: "Developing Future-Ready",
     overviewHeadingHighlight: "AI Leaders",
     overviewDescription:
-      "The Bachelor of Business Administration (Hons.) in Artificial Intelligence at IMSR offers a future-focused education designed to develop AI-driven business thinking, data-informed decision-making, technological awareness, and innovation skills.",
-    whyPursueTitle: "Why Pursue BBA (Hons.) in Artificial Intelligence at IMSR?",
+      "The Bachelor of Business Administration in Artificial Intelligence at IMSR offers a future-focused education designed to develop AI-driven business thinking, data-informed decision-making, technological awareness, and innovation skills.",
+    whyPursueTitle: "Why Pursue BBA in Artificial Intelligence at IMSR?",
     whyPursueDescription:
-      "The BBA (Hons.) in Artificial Intelligence at IMSR combines business education with an understanding of emerging AI technologies, helping students develop analytical thinking, technology awareness, data-informed decision-making, and innovation capabilities.",
+      "The BBA in Artificial Intelligence at IMSR combines business education with an understanding of emerging AI technologies, helping students develop analytical thinking, technology awareness, data-informed decision-making, and innovation capabilities.",
     overviewPoints: [
       "Comprehensive learning across Business Management, Artificial Intelligence, Business Analytics, Digital Transformation, and Strategy.",
       "Practical exposure to AI applications, business data, automation concepts, and technology-enabled decision-making.",
@@ -227,9 +227,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore how AI can support business operations, customer experiences, and organisational growth.",
       "Mentorship and guidance from faculty and industry professionals to support career development in technology-driven business environments.",
     ],
-    degree: "BBA (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "BBA",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "BBA",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -266,9 +266,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bcom-in-marketing-management": {
     slug: "bcom-in-business-administration-marketing-management",
-    title: "B.Com (Hons.) in Business Administration (Marketing Management)",
-    breadcrumbTitle: "B.Com (Hons.) in Business Administration (Marketing Management)",
-    heroPrefix: "B.Com (Hons.) in Business",
+    title: "B.Com in Business Administration (Marketing Management)",
+    breadcrumbTitle: "B.Com in Business Administration (Marketing Management)",
+    heroPrefix: "B.Com in Business",
     heroHighlight: "Administration (Marketing Management)",
     heroDescription:
       "A commerce-focused programme that combines business and financial fundamentals with modern marketing, branding, consumer behaviour and digital marketing skills.",
@@ -276,9 +276,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     overviewHeadingHighlight: "Marketing Professionals",
     overviewDescription:
       "The Bachelor of Commerce in Marketing Management at IMSR offers a future-focused education designed to develop consumer insights, brand management expertise, digital marketing knowledge, and strategic thinking.",
-    whyPursueTitle: "Why Pursue B.Com (Hons.) in Business Administration (Marketing Management) at IMSR?",
+    whyPursueTitle: "Why Pursue B.Com in Business Administration (Marketing Management) at IMSR?",
     whyPursueDescription:
-      "The B.Com (Hons.) in Business Administration (Marketing Management) at IMSR combines commerce education with practical marketing exposure, helping students develop consumer insights, brand awareness, analytical abilities, and strategic marketing skills.",
+      "The B.Com in Business Administration (Marketing Management) at IMSR combines commerce education with practical marketing exposure, helping students develop consumer insights, brand awareness, analytical abilities, and strategic marketing skills.",
     overviewPoints: [
       "Comprehensive learning across Marketing Management, Consumer Behaviour, Brand Management, Digital Marketing, and Market Research.",
       "Practical exposure to marketing campaigns, customer engagement, digital platforms, and market analysis.",
@@ -286,9 +286,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore brand communication, customer acquisition, and marketing strategies across industries.",
       "Mentorship and guidance from experienced faculty and industry professionals to support marketing career development.",
     ],
-    degree: "B.Com (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "B.Com",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "B.Com",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -327,9 +327,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bcom-in-business-administration-marketing-management": {
     slug: "bcom-in-business-administration-marketing-management",
-    title: "B.Com (Hons.) in Business Administration (Marketing Management)",
-    breadcrumbTitle: "B.Com (Hons.) in Business Administration (Marketing Management)",
-    heroPrefix: "B.Com (Hons.) in Business",
+    title: "B.Com in Business Administration (Marketing Management)",
+    breadcrumbTitle: "B.Com in Business Administration (Marketing Management)",
+    heroPrefix: "B.Com in Business",
     heroHighlight: "Administration (Marketing Management)",
     heroDescription:
       "A commerce-focused programme that combines business and financial fundamentals with modern marketing, branding, consumer behaviour and digital marketing skills.",
@@ -337,9 +337,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     overviewHeadingHighlight: "Marketing Professionals",
     overviewDescription:
       "The Bachelor of Commerce in Marketing Management at IMSR offers a future-focused education designed to develop consumer insights, brand management expertise, digital marketing knowledge, and strategic thinking.",
-    whyPursueTitle: "Why Pursue B.Com (Hons.) in Business Administration (Marketing Management) at IMSR?",
+    whyPursueTitle: "Why Pursue B.Com in Business Administration (Marketing Management) at IMSR?",
     whyPursueDescription:
-      "The B.Com (Hons.) in Business Administration (Marketing Management) at IMSR combines commerce education with practical marketing exposure, helping students develop consumer insights, brand awareness, analytical abilities, and strategic marketing skills.",
+      "The B.Com in Business Administration (Marketing Management) at IMSR combines commerce education with practical marketing exposure, helping students develop consumer insights, brand awareness, analytical abilities, and strategic marketing skills.",
     overviewPoints: [
       "Comprehensive learning across Marketing Management, Consumer Behaviour, Brand Management, Digital Marketing, and Market Research.",
       "Practical exposure to marketing campaigns, customer engagement, digital platforms, and market analysis.",
@@ -347,9 +347,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore brand communication, customer acquisition, and marketing strategies across industries.",
       "Mentorship and guidance from experienced faculty and industry professionals to support marketing career development.",
     ],
-    degree: "B.Com (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "B.Com",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "B.Com",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -388,9 +388,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bcom-in-business-administration-entrepreneurship": {
     slug: "bcom-in-business-administration-entrepreneurship",
-    title: "B.Com (Hons.) in Business Administration (Entrepreneurship)",
-    breadcrumbTitle: "B.Com (Hons.) in Business Administration (Entrepreneurship)",
-    heroPrefix: "B.Com (Hons.) in Business",
+    title: "B.Com in Business Administration (Entrepreneurship)",
+    breadcrumbTitle: "B.Com in Business Administration (Entrepreneurship)",
+    heroPrefix: "B.Com in Business",
     heroHighlight: "Administration (Entrepreneurship)",
     heroDescription:
       "This programme combines commerce education with entrepreneurial and business management skills, preparing students to understand financial fundamentals while developing the ability to create and manage businesses.",
@@ -398,9 +398,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     overviewHeadingHighlight: "Business Innovators",
     overviewDescription:
       "The Bachelor of Commerce in Entrepreneurship at IMSR offers a future-focused education designed to develop entrepreneurial skills, business planning expertise, innovative thinking, and venture management capabilities.",
-    whyPursueTitle: "Why Pursue B.Com (Hons.) in Business Administration (Entrepreneurship) at IMSR?",
+    whyPursueTitle: "Why Pursue B.Com in Business Administration (Entrepreneurship) at IMSR?",
     whyPursueDescription:
-      "The B.Com (Hons.) in Business Administration (Entrepreneurship) at IMSR combines commerce fundamentals with practical entrepreneurial learning, helping students develop business acumen, financial understanding, innovative thinking, and the ability to identify business opportunities.",
+      "The B.Com in Business Administration (Entrepreneurship) at IMSR combines commerce fundamentals with practical entrepreneurial learning, helping students develop business acumen, financial understanding, innovative thinking, and the ability to identify business opportunities.",
     overviewPoints: [
       "Comprehensive learning across Entrepreneurship, Commerce, Business Planning, Financial Management, and Innovation.",
       "Practical exposure to business models, market research, business planning, and entrepreneurial decision-making.",
@@ -408,9 +408,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore startup development, business opportunities, and strategies for sustainable growth.",
       "Mentorship and guidance from experienced faculty and industry professionals to support entrepreneurial aspirations and career development.",
     ],
-    degree: "B.Com (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "B.Com",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "B.Com",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -449,9 +449,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bcom-in-business-administration": {
     slug: "bcom-in-business-administration",
-    title: "B.Com (Hons.) in Business Administration",
-    breadcrumbTitle: "B.Com (Hons.) in Business Administration",
-    heroPrefix: "B.Com (Hons.) in Business",
+    title: "B.Com in Business Administration",
+    breadcrumbTitle: "B.Com in Business Administration",
+    heroPrefix: "B.Com in Business",
     heroHighlight: "Administration",
     heroDescription:
       "This programme provides a strong foundation in commerce and business administration, helping students develop financial, analytical, managerial and professional skills for diverse career opportunities.",
@@ -459,9 +459,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     overviewHeadingHighlight: "Business Foundations",
     overviewDescription:
       "The Bachelor of Commerce in Business Administration at IMSR offers a future-focused education designed to develop business acumen, managerial understanding, analytical thinking, and organisational skills.",
-    whyPursueTitle: "Why Pursue B.Com (Hons.) in Business Administration at IMSR?",
+    whyPursueTitle: "Why Pursue B.Com in Business Administration at IMSR?",
     whyPursueDescription:
-      "The B.Com (Hons.) in Business Administration at IMSR combines commerce fundamentals with practical business exposure, helping students develop financial awareness, organisational skills, analytical thinking, and a strong understanding of business operations.",
+      "The B.Com in Business Administration at IMSR combines commerce fundamentals with practical business exposure, helping students develop financial awareness, organisational skills, analytical thinking, and a strong understanding of business operations.",
     overviewPoints: [
       "Comprehensive learning across Commerce, Business Management, Finance, Accounting, and Marketing.",
       "Practical exposure to business operations, financial concepts, analytical tools, and real-world business scenarios.",
@@ -469,9 +469,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to understand business processes, organisational functions, and commercial decision-making.",
       "Mentorship and guidance from experienced faculty and industry professionals to support career development.",
     ],
-    degree: "B.Com (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "B.Com",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "B.Com",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -509,9 +509,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bcom-in-business-administration-artificial-intelligence": {
     slug: "bcom-in-business-administration-artificial-intelligence",
-    title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)",
-    breadcrumbTitle: "B.Com (Hons.) in Business Administration (Artificial Intelligence)",
-    heroPrefix: "B.Com (Hons.) in Business",
+    title: "B.Com in Business Administration (Artificial Intelligence)",
+    breadcrumbTitle: "B.Com in Business Administration (Artificial Intelligence)",
+    heroPrefix: "B.Com in Business",
     heroHighlight: "Administration (Artificial Intelligence)",
     heroDescription:
       "This programme combines commerce and business administration with artificial intelligence concepts, enabling students to understand how emerging technologies are transforming finance, commerce and business operations.",
@@ -519,9 +519,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     overviewHeadingHighlight: "Business and AI",
     overviewDescription:
       "The Bachelor of Commerce in Artificial Intelligence at IMSR offers a future-focused education designed to develop AI awareness, data-driven decision-making, digital business skills, and technological innovation.",
-    whyPursueTitle: "Why Pursue B.Com (Hons.) in Business Administration (Artificial Intelligence) at IMSR?",
+    whyPursueTitle: "Why Pursue B.Com in Business Administration (Artificial Intelligence) at IMSR?",
     whyPursueDescription:
-      "The B.Com (Hons.) in Business Administration (Artificial Intelligence) at IMSR combines commerce education with emerging AI applications, helping students develop analytical thinking, digital awareness, data-driven decision-making, and an understanding of technology-enabled business practices.",
+      "The B.Com in Business Administration (Artificial Intelligence) at IMSR combines commerce education with emerging AI applications, helping students develop analytical thinking, digital awareness, data-driven decision-making, and an understanding of technology-enabled business practices.",
     overviewPoints: [
       "Comprehensive learning across Commerce, Business Analytics, Artificial Intelligence, Digital Business, and Financial Management.",
       "Practical exposure to AI applications, business data analysis, automation concepts, and technology-driven commercial processes.",
@@ -529,9 +529,9 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore the role of AI in financial analysis, business operations, customer insights, and organisational efficiency.",
       "Mentorship and guidance from experienced faculty and industry professionals to support career development in technology-enabled commerce.",
     ],
-    degree: "B.Com (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
+    degree: "B.Com",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
     category: "B.Com",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
@@ -569,19 +569,19 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
 
   "bsc-in-digital-media-growth-marketing": {
     slug: "bsc-in-digital-media-growth-marketing",
-    title: "B.Sc (Hons.) in Digital Media & Marketing",
-    breadcrumbTitle: "B.Sc (Hons.) in Digital Media & Marketing",
-    heroPrefix: "B.Sc (Hons.) in",
+    title: "B.Sc in Digital Media & Marketing",
+    breadcrumbTitle: "B.Sc in Digital Media & Marketing",
+    heroPrefix: "B.Sc in",
     heroHighlight: "Digital Media & Marketing",
     heroDescription:
       "Designed for students interested in the rapidly evolving digital economy, this programme develops skills across digital marketing, content, social media, SEO, performance marketing and growth strategies.",
     overviewHeadingPrefix: "Driving Digital",
     overviewHeadingHighlight: "Growth & Innovation",
     overviewDescription:
-      "The B.Sc (Hons.) in Digital Media & Marketing at IMSR offers a future-focused education designed to develop digital marketing expertise, content strategy, data-driven insights, and growth-oriented thinking.",
-    whyPursueTitle: "Why Pursue B.Sc (Hons.) in Digital Media & Marketing at IMSR?",
+      "The B.Sc in Digital Media & Marketing at IMSR offers a future-focused education designed to develop digital marketing expertise, content strategy, data-driven insights, and growth-oriented thinking.",
+    whyPursueTitle: "Why Pursue B.Sc in Digital Media & Marketing at IMSR?",
     whyPursueDescription:
-      "The B.Sc (Hons.) in Digital Media & Marketing at IMSR combines digital media education with practical marketing exposure, helping students develop content creation skills, digital strategy expertise, analytical thinking, and growth-focused marketing capabilities.",
+      "The B.Sc in Digital Media & Marketing at IMSR combines digital media education with practical marketing exposure, helping students develop content creation skills, digital strategy expertise, analytical thinking, and growth-focused marketing capabilities.",
     overviewPoints: [
       "Comprehensive learning across Digital Marketing, Content Strategy, Social Media, Performance Marketing, and Growth Analytics.",
       "Practical exposure to digital campaigns, audience engagement, content development, and marketing performance measurement.",
@@ -589,10 +589,10 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Opportunities to explore campaign planning, customer acquisition, online brand building, and data-driven growth strategies.",
       "Mentorship and guidance from experienced faculty and industry professionals to support career development in digital media and marketing.",
     ],
-    degree: "B.Sc (Hons.)",
-    duration: "3 years (Bachelor’s)",
-    durationSubtext: "4 years (Honours, as per NEP 2020)",
-    category: "Digital Media & AI",
+    degree: "B.Sc",
+    duration: "3 Years",
+    durationSubtext: "Full-time Undergraduate Degree",
+    category: "B.Sc",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
       "Digital Marketing",
@@ -654,7 +654,7 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
     degree: "Diploma",
     duration: "As per programme guidelines",
     durationSubtext: "Practical Industry Immersion",
-    category: "Digital Media & AI",
+    category: "Diploma",
     heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
     curriculumHighlights: [
       "Digital Marketing",
@@ -685,6 +685,78 @@ export const PROGRAMS_CONFIG: Record<string, ProgramConfig> = {
       "Digital Media Executive",
     ],
   },
+
+  "diploma-in-security-management": {
+    slug: "diploma-in-security-management",
+    title: "Diploma in Security Management",
+    breadcrumbTitle: "Diploma in Security Management",
+    heroPrefix: "Diploma in",
+    heroHighlight: "Security Management",
+    heroDescription:
+      "A career-focused diploma programme developing practical skills in security operations, risk assessment, surveillance, and crisis management.",
+    overviewHeadingPrefix: "Building Future-Ready",
+    overviewHeadingHighlight: "Security Professionals",
+    overviewDescription:
+      "The Diploma in Security Management at IMSR offers industry-oriented education designed to prepare students for the growing security sector. The programme focuses on developing security awareness, operational expertise, risk management capabilities, emergency response skills, and professional conduct required to manage security responsibilities across diverse environments.",
+    whyPursueTitle: "Why Pursue a Diploma in Security Management at IMSR?",
+    whyPursueDescription:
+      "The Diploma in Security Management at IMSR combines theoretical knowledge with practical training to help students develop the skills and confidence required to handle modern security challenges. The programme prepares students to understand security operations, identify potential threats, manage emergencies, and maintain safe environments across different industries.",
+    overviewPoints: [
+      "Comprehensive learning across Industrial Security, Corporate Security, Physical Security, and Security Operations.",
+      "Practical understanding of risk assessment, threat identification, surveillance, and access control systems.",
+      "Exposure to fire safety, emergency response, first aid, and crisis management techniques.",
+      "Training in communication, report writing, professional conduct, and interpersonal skills.",
+      "Understanding of legal frameworks, security protocols, and responsibilities of security personnel.",
+      "Practical exposure through internship and project-based learning opportunities.",
+    ],
+    degree: "Diploma",
+    duration: "As per programme guidelines",
+    durationSubtext: "Practical Industry Immersion",
+    category: "Diploma",
+    heroImage: "/images/programs/bba-In-business-administration/program-bg.jpg",
+    curriculumHighlights: [
+      "Security Services",
+      "Industrial and Corporate Security",
+      "Security Laws and Regulations",
+      "Access Control",
+      "Physical Security Systems",
+      "Risk and Threat Assessment",
+      "Fire Safety",
+      "Emergency Response",
+      "Event Security",
+      "Crowd Management",
+      "Surveillance Techniques",
+      "Crisis Management",
+      "First Aid",
+      "Communication Skills",
+      "Report Writing",
+      "Professional Conduct",
+    ],
+    semesterBadges: [
+      ["Security Services", "Physical Security Systems", "Access Control"],
+      ["Industrial and Corporate Security", "Surveillance Techniques", "Loss Prevention"],
+      ["Fire Safety", "Emergency Response", "Crisis Management"],
+      ["Security Laws and Regulations", "Risk and Threat Assessment", "First Aid"],
+      ["Event Security", "Crowd Management", "Safety and Security"],
+      ["Communication Skills", "Report Writing", "Professional Conduct"],
+      ["Facility Security", "Incident Response", "Emergency Planning"],
+      ["Security Operations", "Risk Mitigation", "Project Internship"],
+    ],
+    careerOpportunities: [
+      "Security Supervisor",
+      "Security Operations Executive",
+      "Corporate Security Executive",
+      "Industrial Security Officer",
+      "Security Coordinator",
+      "Event Security Executive",
+      "Loss Prevention Executive",
+      "Risk Assessment Assistant",
+      "Surveillance Operator",
+      "Safety and Security Assistant",
+      "Facility Security Executive",
+      "Emergency Response Coordinator",
+    ],
+  },
 };
 
 // Backward-compatibility aliases for legacy URLs
@@ -701,3 +773,4 @@ PROGRAMS_CONFIG["bcom-artificial-intelligence"] = PROGRAMS_CONFIG["bcom-in-busin
 PROGRAMS_CONFIG["bsc-digital-media-growth-marketing"] = PROGRAMS_CONFIG["bsc-in-digital-media-growth-marketing"];
 PROGRAMS_CONFIG["diploma-digital-media-growth-marketing"] = PROGRAMS_CONFIG["diploma-in-digital-media-and-growth-marketing"];
 PROGRAMS_CONFIG["diploma-in-digital-media-growth-marketing"] = PROGRAMS_CONFIG["diploma-in-digital-media-and-growth-marketing"];
+PROGRAMS_CONFIG["diploma-security-management"] = PROGRAMS_CONFIG["diploma-in-security-management"];

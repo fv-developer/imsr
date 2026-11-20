@@ -8,6 +8,7 @@ export interface StreamItem {
   learnBadges: string[];
   keyOutcomes: string[];
   coreSubjects?: string;
+  additionalLearning?: string[];
 }
 
 // 1. Marketing Management Curriculum (BBA & B.Com)
@@ -634,7 +635,7 @@ export const ARTIFICIAL_INTELLIGENCE_STREAMS: StreamItem[] = [
   },
 ];
 
-// 5. B.Sc (Hons.) in Digital Media & Marketing (6 Semesters / 3 Years)
+// 5. B.Sc in Digital Media & Marketing (6 Semesters / 3 Years)
 export const BSC_DIGITAL_MEDIA_STREAMS: StreamItem[] = [
   {
     id: 1,
@@ -799,6 +800,56 @@ export const DIPLOMA_DIGITAL_MEDIA_STREAMS: StreamItem[] = [
   },
 ];
 
+// 7. Diploma in Security Management (2 Semesters / 1 Year)
+export const DIPLOMA_SECURITY_MANAGEMENT_STREAMS: StreamItem[] = [
+  {
+    id: 1,
+    num: "01",
+    yearLabel: "YEAR 1 / SEMESTER 1",
+    title: "Fundamentals of Security Management",
+    quote: "Build a strong foundation in security services, industrial and corporate security, legal frameworks, and physical security systems while developing essential professional and communication skills.",
+    description: "Understand the fundamentals of security services, industrial and corporate security operations, basic laws applicable to security personnel, access control systems, and physical security measures. Develop physical fitness, unarmed combat techniques, communication abilities, report writing skills, and professional conduct required in the security industry.",
+    learnBadges: [
+      "Introduction to Security Services",
+      "Industrial and Corporate Security",
+      "Basics of Law for Security Personnel",
+      "Access Control and Physical Security Systems",
+    ],
+    keyOutcomes: [
+      "Understand the fundamentals of security services and the responsibilities of security personnel.",
+      "Develop knowledge of industrial security, corporate security, legal frameworks, and physical security systems.",
+      "Strengthen physical fitness, communication, report writing, and professional conduct skills.",
+    ],
+    additionalLearning: [
+      "Physical Fitness and Unarmed Combat OR Communication and Report Writing",
+      "Soft Skills and Professional Conduct",
+    ],
+  },
+  {
+    id: 2,
+    num: "02",
+    yearLabel: "YEAR 1 / SEMESTER 2",
+    title: "Risk Management & Emergency Response",
+    quote: "Develop practical security management capabilities while learning risk assessment, fire safety, emergency response, event security, surveillance, and crisis management.",
+    description: "Explore risk and threat assessment techniques, fire safety procedures, emergency response protocols, event security planning, and crowd management. Understand surveillance techniques, crisis management, first aid, and computer fundamentals while developing the ability to respond effectively to security challenges. Apply classroom learning through internship or project-based work.",
+    learnBadges: [
+      "Risk and Threat Assessment",
+      "Fire Safety and Emergency Response",
+      "Event Security and Crowd Management",
+      "Surveillance Techniques",
+    ],
+    keyOutcomes: [
+      "Identify potential security threats and understand risk assessment and prevention strategies.",
+      "Develop knowledge of fire safety, emergency response, surveillance, and crowd management techniques.",
+      "Understand crisis management and first aid while developing practical skills through internship or project work.",
+    ],
+    additionalLearning: [
+      "Crisis Management and First Aid OR Computer Fundamentals",
+      "Internship / Project Work",
+    ],
+  },
+];
+
 // Mapping helper to return the curriculum for any given program slug
 export function getCurriculumForProgram(slug: string): StreamItem[] {
   switch (slug) {
@@ -834,6 +885,10 @@ export function getCurriculumForProgram(slug: string): StreamItem[] {
     case "diploma-in-digital-media-growth-marketing":
     case "diploma-digital-media-growth-marketing":
       return DIPLOMA_DIGITAL_MEDIA_STREAMS;
+
+    case "diploma-in-security-management":
+    case "diploma-security-management":
+      return DIPLOMA_SECURITY_MANAGEMENT_STREAMS;
 
     default:
       return BUSINESS_ADMINISTRATION_STREAMS;

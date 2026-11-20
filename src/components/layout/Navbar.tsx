@@ -312,16 +312,17 @@ export default function Navbar() {
               {/* Scrollable program list */}
               <div className="flex flex-col pr-2 divide-y divide-zinc-100">
                 {[
-                  { name: "BBA (Hons.) in Business Administration", href: "/programs/bba-in-business-administration" },
-                  { name: "BBA (Hons.) in Business Administration (Marketing Management)", href: "/programs/bba-in-business-administration-marketing-management" },
-                  { name: "BBA (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bba-in-business-administration-entrepreneurship" },
-                  { name: "BBA (Hons.) in Artificial Intelligence", href: "/programs/bba-in-artificial-intelligence" },
-                  { name: "B.Com (Hons.) in Business Administration", href: "/programs/bcom-in-business-administration" },
-                  { name: "B.Com (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
-                  { name: "B.Com (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
-                  { name: "B.Com (Hons.) in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
-                  { name: "B.Sc (Hons.) in Digital Media & Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
+                  { name: "BBA in Business Administration", href: "/programs/bba-in-business-administration" },
+                  { name: "BBA in Business Administration (Marketing Management)", href: "/programs/bba-in-business-administration-marketing-management" },
+                  { name: "BBA in Business Administration (Entrepreneurship)", href: "/programs/bba-in-business-administration-entrepreneurship" },
+                  { name: "BBA in Artificial Intelligence", href: "/programs/bba-in-artificial-intelligence" },
+                  { name: "B.Com in Business Administration", href: "/programs/bcom-in-business-administration" },
+                  { name: "B.Com in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
+                  { name: "B.Com in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
+                  { name: "B.Com in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
+                  { name: "B.Sc in Digital Media & Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
                   { name: "Diploma in Digital Media and Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
+                  { name: "Diploma in Security Management", href: "/programs/diploma-in-security-management" },
                 ].map((prog, idx) => (
                   <Link
                     key={idx}

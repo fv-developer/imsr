@@ -204,7 +204,7 @@ export default function BbaCurriculumSection() {
 
                     {/* VERTICAL ROTATED TEXT LABEL */}
                     <div className="flex-1 flex items-center justify-center my-3 overflow-hidden">
-                      <span className="text-[12px] xl:text-[13px] font-medium uppercase tracking-wide text-zinc-200 group-hover:text-white whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
+                      <span className="text-[16px] font-medium uppercase tracking-wide text-zinc-200 group-hover:text-white whitespace-nowrap [writing-mode:vertical-rl] rotate-180">
                         {stream.title}
                       </span>
                     </div>

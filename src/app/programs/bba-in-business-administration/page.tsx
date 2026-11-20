@@ -60,7 +60,7 @@ export default function BbaBusinessAdminPage() {
       {/* SECTION 9: FREQUENTLY ASKED QUESTIONS */}
       <FAQs
         items={BBA_BUSINESS_ADMIN_FAQS}
-        subtitle="Everything you need to know about the BBA (Hons.) in Business Administration curriculum, outcomes, and admissions."
+        subtitle="Everything you need to know about the BBA in Business Administration curriculum, outcomes, and admissions."
       />
 
       {/* FOOTER */}

@@ -13,63 +13,63 @@ interface SearchDrawerProps {
 const SEARCH_DATABASE = [
   // Programs
   {
-    title: "BBA (Hons.) in Business Administration",
+    title: "BBA in Business Administration",
     category: "Program",
     href: "/programs/bba-in-business-administration",
     keywords: "bba business administration undergraduate degree management bachelors",
     icon: GraduationCap,
   },
   {
-    title: "BBA (Hons.) in Business Administration (Marketing Management)",
+    title: "BBA in Business Administration (Marketing Management)",
     category: "Program",
     href: "/programs/bba-in-business-administration-marketing-management",
     keywords: "bba marketing management growth advertising branding sales business",
     icon: GraduationCap,
   },
   {
-    title: "BBA (Hons.) in Business Administration (Entrepreneurship)",
+    title: "BBA in Business Administration (Entrepreneurship)",
     category: "Program",
     href: "/programs/bba-in-business-administration-entrepreneurship",
     keywords: "bba entrepreneurship startup business innovation founder management",
     icon: GraduationCap,
   },
   {
-    title: "BBA (Hons.) in Artificial Intelligence",
+    title: "BBA in Artificial Intelligence",
     category: "Program",
     href: "/programs/bba-in-artificial-intelligence",
     keywords: "bba ai artificial intelligence business technology data analytics future",
     icon: GraduationCap,
   },
   {
-    title: "B.Com (Hons.) in Business Administration",
+    title: "B.Com in Business Administration",
     category: "Program",
     href: "/programs/bcom-in-business-administration",
-    keywords: "bcom commerce finance accounting business administration hons degree",
+    keywords: "bcom commerce finance accounting business administration degree",
     icon: GraduationCap,
   },
   {
-    title: "B.Com (Hons.) in Business Administration (Marketing Management)",
+    title: "B.Com in Business Administration (Marketing Management)",
     category: "Program",
     href: "/programs/bcom-in-business-administration-marketing-management",
     keywords: "bcom marketing commercial marketing advertising sales finance",
     icon: GraduationCap,
   },
   {
-    title: "B.Com (Hons.) in Business Administration (Entrepreneurship)",
+    title: "B.Com in Business Administration (Entrepreneurship)",
     category: "Program",
     href: "/programs/bcom-in-business-administration-entrepreneurship",
     keywords: "bcom entrepreneurship startup business venture commerce finance",
     icon: GraduationCap,
   },
   {
-    title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)",
+    title: "B.Com in Business Administration (Artificial Intelligence)",
     category: "Program",
     href: "/programs/bcom-in-business-administration-artificial-intelligence",
     keywords: "bcom ai artificial intelligence commerce technology fintech data",
     icon: GraduationCap,
   },
   {
-    title: "B.Sc (Hons.) in Digital Media & Marketing",
+    title: "B.Sc in Digital Media & Marketing",
     category: "Program",
     href: "/programs/bsc-in-digital-media-growth-marketing",
     keywords: "bsc digital media marketing technology analytics content creation",
@@ -80,6 +80,13 @@ const SEARCH_DATABASE = [
     category: "Diploma",
     href: "/programs/diploma-in-digital-media-and-growth-marketing",
     keywords: "diploma digital media marketing short course certification",
+    icon: BookOpen,
+  },
+  {
+    title: "Diploma in Security Management",
+    category: "Diploma",
+    href: "/programs/diploma-in-security-management",
+    keywords: "diploma security management loss prevention surveillance risk assessment short course certification",
     icon: BookOpen,
   },
 
@@ -152,7 +159,7 @@ const SEARCH_DATABASE = [
 ];
 
 const POPULAR_SEARCH_TAGS = [
-  "BBA (Hons.)",
+  "BBA",
   "Digital Marketing",
   "Admissions 2026",
   "Campus Tour",

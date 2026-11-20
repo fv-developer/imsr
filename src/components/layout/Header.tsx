@@ -25,22 +25,23 @@ const MAIN_NAV_LINKS = [
 
 const MEGA_MENU_DATA: Record<string, { title: string; href: string }[]> = {
   "BBA": [
-    { title: "BBA (Hons.) in Business Administration", href: "/programs/bba-in-business-administration" },
-    { title: "BBA (Hons.) in Business Administration (Marketing Management)", href: "/programs/bba-in-business-administration-marketing-management" },
-    { title: "BBA (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bba-in-business-administration-entrepreneurship" },
-    { title: "BBA (Hons.) in Artificial Intelligence", href: "/programs/bba-in-artificial-intelligence" },
+    { title: "BBA in Business Administration", href: "/programs/bba-in-business-administration" },
+    { title: "BBA in Business Administration (Marketing Management)", href: "/programs/bba-in-business-administration-marketing-management" },
+    { title: "BBA in Business Administration (Entrepreneurship)", href: "/programs/bba-in-business-administration-entrepreneurship" },
+    { title: "BBA in Artificial Intelligence", href: "/programs/bba-in-artificial-intelligence" },
   ],
   "B.Com": [
-    { title: "B.Com (Hons.) in Business Administration", href: "/programs/bcom-in-business-administration" },
-    { title: "B.Com (Hons.) in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
-    { title: "B.Com (Hons.) in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
-    { title: "B.Com (Hons.) in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
+    { title: "B.Com in Business Administration", href: "/programs/bcom-in-business-administration" },
+    { title: "B.Com in Business Administration (Marketing Management)", href: "/programs/bcom-in-business-administration-marketing-management" },
+    { title: "B.Com in Business Administration (Entrepreneurship)", href: "/programs/bcom-in-business-administration-entrepreneurship" },
+    { title: "B.Com in Business Administration (Artificial Intelligence)", href: "/programs/bcom-in-business-administration-artificial-intelligence" },
   ],
-  "Bachelors": [
-    { title: "B.Sc (Hons.) in Digital Media & Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
+  "B.Sc": [
+    { title: "B.Sc in Digital Media & Marketing", href: "/programs/bsc-in-digital-media-growth-marketing" },
   ],
-  "Digital Media & AI": [
+  "Diploma": [
     { title: "Diploma in Digital Media and Marketing", href: "/programs/diploma-in-digital-media-and-growth-marketing" },
+    { title: "Diploma in Security Management", href: "/programs/diploma-in-security-management" },
   ],
 };
 

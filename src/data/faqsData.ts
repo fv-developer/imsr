@@ -84,11 +84,11 @@ export const ABOUT_US_FAQS: FaqItem[] = [
   },
 ];
 
-// 3. BBA (Hons.) in Business Administration FAQs
+// 3. BBA in Business Administration FAQs
 export const BBA_BUSINESS_ADMIN_FAQS: FaqItem[] = [
   {
     id: "bba-ba-1",
-    question: "What is the BBA (Hons.) in Business Administration programme about?",
+    question: "What is the BBA in Business Administration programme about?",
     answer:
       "This programme introduces students to business management, finance, marketing, economics, operations and strategic decision-making.",
   },
@@ -114,7 +114,7 @@ export const BBA_BUSINESS_ADMIN_FAQS: FaqItem[] = [
     id: "bba-ba-5",
     question: "How long is the programme?",
     answer:
-      "The programme follows the applicable University of Mumbai / NEP 2020 structure, with a 3-year bachelor's degree and 4-year Honours pathway, wherever applicable.",
+      "The programme follows the applicable University of Mumbai structure for a 3-year bachelor's degree.",
   },
   {
     id: "bba-ba-6",
@@ -130,7 +130,7 @@ export const BBA_BUSINESS_ADMIN_FAQS: FaqItem[] = [
   },
 ];
 
-// 4. BBA (Hons.) in Business Administration (Marketing Management) FAQs
+// 4. BBA in Business Administration (Marketing Management) FAQs
 export const BBA_MARKETING_FAQS: FaqItem[] = [
   {
     id: "bba-mkt-1",
@@ -152,7 +152,7 @@ export const BBA_MARKETING_FAQS: FaqItem[] = [
   },
 ];
 
-// 5. BBA (Hons.) in Business Administration (Entrepreneurship) FAQs
+// 5. BBA in Business Administration (Entrepreneurship) FAQs
 export const BBA_ENTREPRENEURSHIP_FAQS: FaqItem[] = [
   {
     id: "bba-ent-1",
@@ -186,7 +186,7 @@ export const BBA_ENTREPRENEURSHIP_FAQS: FaqItem[] = [
   },
 ];
 
-// 6. BBA (Hons.) in Artificial Intelligence FAQs
+// 6. BBA in Artificial Intelligence FAQs
 export const BBA_AI_FAQS: FaqItem[] = [
   {
     id: "bba-ai-1",
@@ -214,11 +214,11 @@ export const BBA_AI_FAQS: FaqItem[] = [
   },
 ];
 
-// 7. B.Com. (Hons.) in Business Administration FAQs
+// 7. B.Com. in Business Administration FAQs
 export const BCOM_BUSINESS_ADMIN_FAQS: FaqItem[] = [
   {
     id: "bcom-ba-1",
-    question: "What does the B.Com. (Hons.) in Business Administration programme cover?",
+    question: "What does the B.Com. in Business Administration programme cover?",
     answer:
       "This programme combines commerce fundamentals with business administration, economics, finance and management-related learning.",
   },
@@ -242,7 +242,7 @@ export const BCOM_BUSINESS_ADMIN_FAQS: FaqItem[] = [
   },
 ];
 
-// 8. B.Com. (Hons.) in Business Administration (Marketing Management) FAQs
+// 8. B.Com. in Business Administration (Marketing Management) FAQs
 export const BCOM_MARKETING_FAQS: FaqItem[] = [
   {
     id: "bcom-mkt-1",
@@ -264,7 +264,7 @@ export const BCOM_MARKETING_FAQS: FaqItem[] = [
   },
 ];
 
-// 9. B.Com. (Hons.) in Business Administration (Entrepreneurship) FAQs
+// 9. B.Com. in Business Administration (Entrepreneurship) FAQs
 export const BCOM_ENTREPRENEURSHIP_FAQS: FaqItem[] = [
   {
     id: "bcom-ent-1",
@@ -286,7 +286,7 @@ export const BCOM_ENTREPRENEURSHIP_FAQS: FaqItem[] = [
   },
 ];
 
-// 10. B.Com. (Hons.) in Business Administration (Artificial Intelligence) FAQs
+// 10. B.Com. in Business Administration (Artificial Intelligence) FAQs
 export const BCOM_AI_FAQS: FaqItem[] = [
   {
     id: "bcom-ai-1",
@@ -308,7 +308,7 @@ export const BCOM_AI_FAQS: FaqItem[] = [
   },
 ];
 
-// 11. B.Sc. (Hons.) in Digital Media & Marketing FAQs
+// 11. B.Sc. in Digital Media & Marketing FAQs
 export const BSC_DIGITAL_MEDIA_FAQS: FaqItem[] = [
   {
     id: "bsc-dm-1",
@@ -373,6 +373,40 @@ export const DIPLOMA_DIGITAL_MEDIA_FAQS: FaqItem[] = [
     question: "Who can apply for the diploma programme?",
     answer:
       "The published programme information lists a 10+2 qualification in any stream as the eligibility requirement.",
+  },
+];
+
+// 12b. Diploma in Security Management FAQs
+export const DIPLOMA_SECURITY_MANAGEMENT_FAQS: FaqItem[] = [
+  {
+    id: "dip-sm-1",
+    question: "What is the Diploma in Security Management about?",
+    answer:
+      "This programme focuses on core competencies in corporate security, physical protection, surveillance management, asset safeguarding, and crisis mitigation.",
+  },
+  {
+    id: "dip-sm-2",
+    question: "What skills can I develop through this diploma?",
+    answer:
+      "Students build essential skills in security risk assessment, CCTV and perimeter control, loss prevention, emergency response, and safety regulatory compliance.",
+  },
+  {
+    id: "dip-sm-3",
+    question: "What career opportunities can I explore after completing this diploma?",
+    answer:
+      "Graduates can pursue entry and executive-level roles such as Security Operations Executive, Risk Assessment Analyst, Loss Prevention Officer, and Facility Safety Coordinator.",
+  },
+  {
+    id: "dip-sm-4",
+    question: "What is the duration of the diploma programme?",
+    answer:
+      "The diploma programme is structured over 1 year (2 semesters).",
+  },
+  {
+    id: "dip-sm-5",
+    question: "Who is eligible to apply for this programme?",
+    answer:
+      "Candidates who have passed 10+2 (Higher Secondary) in any stream from a recognized board are eligible to apply.",
   },
 ];
 
@@ -700,6 +734,10 @@ export function getProgramFaqs(slug: string): FaqItem[] {
     case "diploma-in-digital-media-and-growth-marketing":
     case "diploma-digital-media-growth-marketing":
       return DIPLOMA_DIGITAL_MEDIA_FAQS;
+
+    case "diploma-in-security-management":
+    case "diploma-security-management":
+      return DIPLOMA_SECURITY_MANAGEMENT_FAQS;
 
     default:
       return HOME_FAQS;

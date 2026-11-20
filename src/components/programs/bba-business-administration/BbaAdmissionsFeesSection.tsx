@@ -124,7 +124,7 @@ export default function BbaAdmissionsFeesSection() {
                     Academic Investment
                   </span>
                   <h3 className="font-display font-semibold text-2xl md:text-3xl text-zinc-950 mt-1">
-                    BBA (Hons.) Fee Schedule
+                    BBA Fee Schedule
                   </h3>
                 </div>
                 <div className="w-12 h-12 rounded-2xl bg-[#00629f]/10 text-[#00629f] flex items-center justify-center border border-[#00629f]/20 shrink-0">

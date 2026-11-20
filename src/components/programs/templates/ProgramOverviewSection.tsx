@@ -47,7 +47,7 @@ export default function ProgramOverviewSection({ config }: { config: ProgramConf
     {
       icon: <GraduationCap className="w-6 h-6 text-emerald-400" />,
       label: "PROGRAM LEVEL",
-      value: config.category === "Digital Media & AI" && config.degree === "Diploma" ? "Certification" : "Undergraduate",
+      value: config.degree === "Diploma" ? "Certification" : "Undergraduate",
       subtext: "NEP 2020 Aligned Structure",
       accentBg: "bg-emerald-400/10 border-emerald-400/20",
     },

@@ -86,10 +86,10 @@ const CATEGORIES_DATA: Category[] = [
         title: "Environmental Sustainability & Clean Shoreline Action",
         image: "/images/experiential-learning/sahyog-club/beach-cleaning-2.jpg",
       },
-      {
-        title: "Social Impact & Volunteer Campus Action",
-        image: "/images/student-life/activity/activity-left.jpg",
-      },
+      // {
+      //   title: "Social Impact & Volunteer Campus Action",
+      //   image: "/images/student-life/activity/activity-left.jpg",
+      // },
       {
         title: "Community Health & Welfare Outreach",
         image: "/images/student-life/activity/activity-center-bottom.jpg",
@@ -105,17 +105,25 @@ const CATEGORIES_DATA: Category[] = [
         image: "/images/experiential-learning/sports-club/badminton-league-1.jpg",
       },
       {
+        title: "IMSR Campus Cricket Tournament 2025",
+        image: "/images/student-life/activity/activity-top.jpg",
+      },
+      {
+        title: "Corporate Headquarters & Media Interaction",
+        image: "/images/student-life/activity/activity-right.jpg",
+      },
+      {
         title: "Elite Kho-Kho Premier League",
         image: "/images/experiential-learning/sports-club/kho-kho-league-1.jpg",
-      },
-      {
-        title: "Inter-College Sports & Athletics Meet",
-        image: "/images/student-life/activity/activity-right-bottom.png",
-      },
-      {
-        title: "Campus Badminton Tournament Showcase",
-        image: "/images/student-life/activity/activity-center.jpg",
-      },
+      }
+      // {
+      //   title: "Inter-College Sports & Athletics Meet",
+      //   image: "/images/student-life/activity/activity-right-bottom.png",
+      // },
+      // {
+      //   title: "Campus Badminton Tournament Showcase",
+      //   image: "/images/student-life/activity/activity-center.jpg",
+      // },
     ],
   },
   {
@@ -130,10 +138,7 @@ const CATEGORIES_DATA: Category[] = [
         title: "Youth Talent & Performing Arts Showcase",
         image: "/images/experiential-learning/cultural-club/teachers-day-2.jpg",
       },
-      {
-        title: "IMSR Campus Cultural Fest & Talent Showcase",
-        image: "/images/student-life/activity/activity-top.jpg",
-      },
+      
       {
         title: "Performing Arts, Theater & Musical Ensemble",
         image: "/images/student-life/activity/activity-left-bottom.jpg",
@@ -151,27 +156,18 @@ const CATEGORIES_DATA: Category[] = [
       {
         title: "Industrial Plant Visit to Parle & Jayesh Industries",
         image: "/images/new-folder/PARLE.jpg",
-      },
-      {
-        title: "Corporate Headquarters & Media Interaction",
-        image: "/images/student-life/activity/activity-right.jpg",
-      },
-      {
-        title: "Enterprise Operations & Logistics Tour",
-        image: "/images/student-life/activity/activity-right-bottom.png",
-      },
+      }     
+      // {
+      //   title: "Enterprise Operations & Logistics Tour",
+      //   image: "/images/student-life/activity/activity-right-bottom.png",
+      // },
     ],
   },
   {
     id: "workshop",
     name: "Workshop",
     items: [
-      {
-        title: "Interactive Hands-on Laboratory & Workshop Sessions",
-        video: "/images/video.mp4",
-        isVideo: true,
-      },
-      {
+    {
         title: "Business Etiquette For Modern Workplace - Mr. James Fernandes",
         image: "/images/new-folder/James.webp",
       },

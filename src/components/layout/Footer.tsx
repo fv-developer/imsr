@@ -48,11 +48,13 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Phone className="w-4.5 h-4.5 text-[#00bcda] mt-0.5 flex-shrink-0" />
-              <span className="text-zinc-300">-</span>
+              <span className="text-zinc-300">+91 78689 42000 / +91 83309 42000</span>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="w-4.5 h-4.5 text-[#00bcda] mt-0.5 flex-shrink-0" />
-              <span className="text-zinc-300">-</span>
+              <a href="mailto:som.timsr@futurevarsity.edu.in" className="text-zinc-300 hover:text-[#00bcda] transition-colors break-all">
+                som.timsr@futurevarsity.edu.in
+              </a>
             </li>
           </ul>
         </div>
@@ -193,52 +195,57 @@ export default function Footer() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-[15px] font-light text-zinc-350">
             <li>
               <Link href="/programs/bba-in-business-administration" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                BBA (Hons.) in Business Administration
+                BBA in Business Administration
               </Link>
             </li>
             <li>
               <Link href="/programs/bcom-in-business-administration" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com (Hons.) in Business Administration
+                B.Com in Business Administration
               </Link>
             </li>
             <li>
               <Link href="/programs/bba-in-business-administration-marketing-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                BBA (Hons.) in Business Administration (Marketing Management)
+                BBA in Business Administration (Marketing Management)
               </Link>
             </li>
             <li>
               <Link href="/programs/bcom-in-business-administration-marketing-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com (Hons.) in Business Administration (Marketing Management)
+                B.Com in Business Administration (Marketing Management)
               </Link>
             </li>
             <li>
               <Link href="/programs/bba-in-business-administration-entrepreneurship" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                BBA (Hons.) in Business Administration (Entrepreneurship)
+                BBA in Business Administration (Entrepreneurship)
               </Link>
             </li>
             <li>
               <Link href="/programs/bcom-in-business-administration-entrepreneurship" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com (Hons.) in Business Administration (Entrepreneurship)
+                B.Com in Business Administration (Entrepreneurship)
               </Link>
             </li>
             <li>
               <Link href="/programs/bba-in-artificial-intelligence" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                BBA (Hons.) in Artificial Intelligence
+                BBA in Artificial Intelligence
               </Link>
             </li>
             <li>
               <Link href="/programs/bcom-in-business-administration-artificial-intelligence" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Com (Hons.) in Business Administration (Artificial Intelligence)
+                B.Com in Business Administration (Artificial Intelligence)
               </Link>
             </li>
             <li>
               <Link href="/programs/bsc-in-digital-media-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
-                B.Sc (Hons.) in Digital Media &amp; Marketing
+                B.Sc in Digital Media &amp; Marketing
               </Link>
             </li>
             <li>
               <Link href="/programs/diploma-in-digital-media-and-growth-marketing" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
                 Diploma in Digital Media and Marketing
+              </Link>
+            </li>
+            <li>
+              <Link href="/programs/diploma-in-security-management" className="hover:text-[#00bcda] transition-colors leading-relaxed block">
+                Diploma in Security Management
               </Link>
             </li>
           </ul>
